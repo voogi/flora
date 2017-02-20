@@ -1,0 +1,17 @@
+.footer {
+  height: 30px;
+  line-height: 30px;
+  color: aliceblue;
+  z-index: 1000;
+}
+
+.footer > div {
+  background-color: #6B7A8F;
+}
+
+.impress {
+  background-color: #32475c !important;
+  color: aliceblue;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}

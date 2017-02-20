@@ -1,0 +1,33 @@
+.slider {
+  height: 100%;
+  position: fixed;
+  top:0;
+}
+
+.slider > .row {
+  background-color: #F7882E;
+  transition: all 0.5s ease;
+  transform: translateX(74%);
+}
+
+.slider > .row.active {
+  transform: translateX(0);
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.slider > .row:hover {
+  transform: translateX(0);
+  cursor: pointer;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.slider.left {
+  left: 0;
+}
+
+.slider.right {
+  right: 0;
+}
+
