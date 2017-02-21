@@ -1,72 +1,15 @@
-<div data-spy="affix" data-offset-top="60" data-offset-bottom="200" class="col-lg-2 slider">
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="icon-background">
-            <div class="icon house-icon"></div>
-          </div>
-        </div>
-         <div class="col-lg-6 menu-label">
-           kapcsolat
-         </div>
+<div class="col-lg-2 slider">
+
+  <div *ngFor="let menuItem of menuItems,
+   let i=index" (click)="onMenuItemClick(menuItem)" class="row {{i === 0 ? 'active' : ''}}">
+    <div class="col-lg-6">
+      <div class="icon-background">
+        <div class="icon {{menuItem.icon}}"></div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="icon-background">
-            <div class="icon book-icon"></div>
-          </div>
-        </div>
-        <div class="col-lg-6 menu-label">
-          kapcsolat
-        </div>
-      </div>
+    <div class="col-lg-6 menu-label">
+      {{menuItem.title}}
     </div>
   </div>
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="icon-background">
-            <div class="icon banknotes-icon"></div>
-          </div>
-        </div>
-        <div class="col-lg-6 menu-label">
-          kapcsolat
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="icon-background">
-            <div class="icon house-icon"></div>
-          </div>
-        </div>
-        <div class="col-lg-6 menu-label">
-          kapcsolat
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="icon-background">
-            <div class="icon house-icon"></div>
-          </div>
-        </div>
-        <div class="col-lg-6 menu-label">
-          kapcsolat
-        </div>
-      </div>
-    </div>
-  </div>
+
 </div>

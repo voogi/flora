@@ -48,6 +48,14 @@ html {
   background-image: url('assets/imgs/banknotes-256-white.gif');
 }
 
+.gallery-icon {
+  background-image: url('assets/imgs/stack-of-photos-256-white.gif');
+}
+
+.project-icon {
+  background-image: url('assets/imgs/network-256.gif');
+}
+
 .icon-background {
   /*background-color: aliceblue;*/
   height: 56px;

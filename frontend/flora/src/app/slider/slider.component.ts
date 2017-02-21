@@ -1,20 +1,66 @@
-import {Component, OnInit, Input, ElementRef} from '@angular/core';
+import {Component, OnInit, Input, ElementRef, AfterViewInit} from '@angular/core';
+import {ScrollService} from "../service/scroll.service";
 
 @Component({
   selector: 'flora-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css']
 })
-export class SliderComponent implements OnInit {
+export class SliderComponent implements OnInit, AfterViewInit {
 
   @Input() private direction:string;
+  private menuItems:Array<any> = [];
+  private activeElement:any;
 
-  constructor(private elementRef:ElementRef) {
+  constructor(private elementRef:ElementRef, private scrollService:ScrollService) {
+
+    this.menuItems = [
+      {
+        title : "home",
+        icon : "house-icon",
+        anchor : "home"
+      },
+      {
+        title : "rolunk",
+        icon : "gallery-icon",
+        anchor : "contact"
+      },
+      {
+        title : "galeria",
+        icon : "book-icon",
+        anchor : "gallery"
+      },
+      {
+        title : "tamogatas",
+        icon : "banknotes-icon",
+        anchor : "donation"
+      },
+      {
+        title : "projektek",
+        icon : "project-icon",
+        anchor : "projects"
+      }
+    ];
 
   }
 
   ngOnInit() {
     this.elementRef.nativeElement.querySelector(".slider").classList.add(this.direction);
+    this.scrollService.getScrollDirection().subscribe( data => {
+      this.activeElement.classList.remove("active");
+      this.activeElement = data == "down" ? this.activeElement.nextElementSibling : this.activeElement.previousElementSibling;
+      this.activeElement.classList.add("active");
+    } );
+  }
+
+  ngAfterViewInit(){
+    this.activeElement = this.elementRef.nativeElement.querySelector(".active");
+  }
+
+  onMenuItemClick(menuItem:any) {
+    document.querySelector("."+menuItem.anchor).scrollIntoView({
+      behavior: 'smooth'
+    });
   }
 
 }

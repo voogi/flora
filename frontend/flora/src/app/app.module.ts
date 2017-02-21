@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { SliderComponent } from './slider/slider.component';
+import {ScrollService} from "./service/scroll.service";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { SliderComponent } from './slider/slider.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ScrollService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

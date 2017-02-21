@@ -7,7 +7,7 @@
 .slider > .row {
   background-color: #F7882E;
   transition: all 1s ease;
-  transform: translateX(74%);
+  transform: translateX(240px);
   -webkit-box-shadow: 0px 0px 31px 0px gray;
   -moz-box-shadow: 0px 0px 31px 0px grey;
   box-shadow: 0px 3px 7px 0px grey;
