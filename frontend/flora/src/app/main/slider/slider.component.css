@@ -1,7 +1,7 @@
 .slider {
-  height: 100%;
   position: fixed;
   top:60px;
+  z-index: 99999;
 }
 
 .slider > .row {
