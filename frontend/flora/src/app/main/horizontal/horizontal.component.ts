@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var Swiper;
 
 @Component({
   selector: 'flora-horizontal',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HorizontalComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    var swiper = new Swiper('.swiper-container', {
+      pagination: '.swiper-pagination',
+      paginationClickable: true,
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev'/*,
+      spaceBetween: 30*/
+    });
   }
 
 }

@@ -1,0 +1,12 @@
+.horizontal {
+  height: 100%;
+
+}
+
+.horizontal-content {
+  display: inline-block;
+}
+
+.horizontal-btn {
+  display: inline-block;
+}
