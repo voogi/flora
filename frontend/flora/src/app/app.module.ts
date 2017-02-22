@@ -11,6 +11,7 @@ import { AdminComponent } from './admin/admin.component';
 import {appRouting} from "./app.routing";
 import { HorizontalComponent } from './main/horizontal/horizontal.component';
 import { MainComponent } from './main/main.component';
+import {DataTableModule} from "angular2-datatable";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MainComponent } from './main/main.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    DataTableModule,
     appRouting
   ],
   providers: [ScrollService],
