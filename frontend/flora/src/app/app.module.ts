@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -12,21 +12,25 @@ import {appRouting} from "./app.routing";
 import { HorizontalComponent } from './main/horizontal/horizontal.component';
 import { MainComponent } from './main/main.component';
 import {DataTableModule} from "angular2-datatable";
+import { ModalComponent } from './admin/modal/modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
+    ModalComponent,
     FooterComponent,
     SliderComponent,
     HorizontalComponent,
-    MainComponent
+    MainComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     DataTableModule,
+    ReactiveFormsModule,
     appRouting
   ],
   providers: [ScrollService],

@@ -7,34 +7,40 @@ import {Headers, Http, Response} from "@angular/http";
   templateUrl: 'admin.component.html',
   styleUrls: ['admin.component.css']
 })
-export class AdminComponent implements OnInit, OnDestroy  {
+export class AdminComponent implements OnInit, OnDestroy {
 
   private bURL: string = "http://localhost:8080";
 
-  private headers: Headers = new Headers({
-    'Content-Type' : 'application/json'
-  });
-
   public news: Object[];
+  public sortBy = "title";
   private newsSub: Subscription;
+  private selectedRow: any;
 
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {
+  }
 
   ngOnInit() {
-
-    this.newsSub = this.getNews().subscribe(
-      data => this.news = data
-    );
+    this.loadNews();
   }
 
   ngOnDestroy() {
     this.newsSub.unsubscribe();
   }
 
+  onNewsSaved() {
+    this.loadNews();
+  }
 
-  private getNews() :Observable<any> {
+  private loadNews() {
+    this.newsSub = this.getNews().subscribe(
+      data => this.news = data
+    );
+  }
+
+
+  private getNews(): Observable<any> {
     return this.http.get(this.bURL + "/api/news")
-      .map( (response: Response) => response.json() );
+      .map((response: Response) => response.json());
   }
 }
