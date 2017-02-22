@@ -7,17 +7,22 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { SliderComponent } from './slider/slider.component';
 import {ScrollService} from "./service/scroll.service";
+import { AdminComponent } from './admin/admin/admin.component';
+import {appRouting} from "./app.routing";
 
 @NgModule({
   declarations: [
     AppComponent,
+    AdminComponent,
     FooterComponent,
-    SliderComponent
+    SliderComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    appRouting
   ],
   providers: [ScrollService],
   bootstrap: [AppComponent]
