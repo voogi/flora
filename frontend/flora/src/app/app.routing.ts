@@ -1,8 +1,8 @@
 import {Routes, RouterModule} from "@angular/router";
-import {AppComponent} from "./app.component";
-import {AdminComponent} from "./admin/admin/admin.component";
+import {AdminComponent} from "./admin/admin.component";
+import {MainComponent} from "./main/main.component";
 const APP_ROUTES: Routes = [
-  { path: '', component: AppComponent},
+  { path: '', component: MainComponent},
   { path: 'admin', component: AdminComponent}
 ];
 

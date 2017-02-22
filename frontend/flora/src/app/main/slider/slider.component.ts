@@ -1,10 +1,10 @@
 import {Component, OnInit, Input, ElementRef, AfterViewInit} from '@angular/core';
-import {ScrollService} from "../service/scroll.service";
+import {ScrollService} from "../../service/scroll.service";
 
 @Component({
   selector: 'flora-slider',
-  templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.css']
+  templateUrl: 'slider.component.html',
+  styleUrls: ['slider.component.css']
 })
 export class SliderComponent implements OnInit, AfterViewInit {
 

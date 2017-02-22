@@ -4,12 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
-import { SliderComponent } from './slider/slider.component';
+import { FooterComponent } from './main/footer/footer.component';
+import { SliderComponent } from './main/slider/slider.component';
 import {ScrollService} from "./service/scroll.service";
-import { AdminComponent } from './admin/admin/admin.component';
+import { AdminComponent } from './admin/admin.component';
 import {appRouting} from "./app.routing";
-import { HorizontalComponent } from './horizontal/horizontal.component';
+import { HorizontalComponent } from './main/horizontal/horizontal.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HorizontalComponent } from './horizontal/horizontal.component';
     AdminComponent,
     FooterComponent,
     SliderComponent,
-    HorizontalComponent
+    HorizontalComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
