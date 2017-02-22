@@ -22,6 +22,11 @@ public class NewsController {
         return newsService.save(news);
     }
 
+    @RequestMapping(value = "",  method = RequestMethod.PUT)
+    public News updateNews(@RequestBody News news) {
+        return newsService.save(news);
+    }
+
     @RequestMapping("{id}")
     public News findNews(@PathVariable("id") Long id) {
         return newsService.findOne(id);
