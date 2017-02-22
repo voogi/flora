@@ -1,4 +1,6 @@
 
+
+
 html {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 300;
@@ -6,6 +8,13 @@ html {
   font-size: 20px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+
+
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+
 }
 
 .center {

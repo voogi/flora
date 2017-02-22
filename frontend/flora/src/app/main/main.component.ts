@@ -12,7 +12,8 @@ export class MainComponent implements OnInit, AfterViewInit {
   private homeElement:any;
   private activeElement:any;
 
-  constructor(@Inject(DOCUMENT) private document: Document, private scrollService:ScrollService) { }
+  constructor(@Inject(DOCUMENT) private document: Document, private scrollService:ScrollService) {
+  }
 
   ngOnInit() {
   }
