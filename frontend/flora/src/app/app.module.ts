@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { SliderComponent } from './slider/slider.component';
 import {ScrollService} from "./service/scroll.service";
+import { HorizontalComponent } from './horizontal/horizontal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    SliderComponent
+    SliderComponent,
+    HorizontalComponent
   ],
   imports: [
     BrowserModule,

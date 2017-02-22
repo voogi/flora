@@ -22,9 +22,7 @@ export class AppComponent implements OnInit {
 
   @HostListener("window:scroll", [])
   onWindowScroll() {
-    // let number = this.document.body.scrollTop;
     let bcr = this.activeElement.getBoundingClientRect();
-    console.log(bcr);
     if( /*bcr.bottom == 0 || */bcr.bottom < this.activeElement.offsetHeight/2){
       this.activeElement = this.activeElement.nextElementSibling;
       this.scrollService.scrollDown();
