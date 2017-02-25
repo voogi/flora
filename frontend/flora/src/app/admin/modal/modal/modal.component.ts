@@ -2,6 +2,7 @@ import {Component, OnInit, Input, OnDestroy, EventEmitter, Output} from '@angula
 import {Validators, FormBuilder, FormGroup} from "@angular/forms";
 import {Headers, Response, Http} from "@angular/http";
 import {Observable, Subscription} from "rxjs";
+import {BackendService} from "../../../service/backend.service";
 
 @Component({
   selector: 'flora-modal',
@@ -10,11 +11,6 @@ import {Observable, Subscription} from "rxjs";
 })
 export class ModalComponent implements OnInit, OnDestroy {
 
-  private bURL: string = "http://localhost:8080";
-  private headers: Headers = new Headers({
-    'Content-Type': 'application/json'
-  });
-
   public showModal = false;
   private isNew = false;
   private newsForm: FormGroup;
@@ -22,7 +18,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   @Input() public news: any;
   @Output() newsSaved: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private formBuilder: FormBuilder, private http: Http) {
+  constructor(private formBuilder: FormBuilder, private backendService:BackendService) {
     this.newsForm = formBuilder.group({
       'id': [''],
       'title': ['', Validators.required],
@@ -55,7 +51,8 @@ export class ModalComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    this.saveSubscription = this.saveNews().subscribe(
+    const body = JSON.stringify(this.newsForm.value);
+    this.saveSubscription = this.backendService.saveNews(body, this.isNew).subscribe(
       data => {
         this.isNew = false;
         data.date = new Date(data.date);
@@ -63,24 +60,6 @@ export class ModalComponent implements OnInit, OnDestroy {
         return this.newsSaved.emit(data);
       }
     );
-  }
-
-  saveNews() {
-    const body = JSON.stringify(this.newsForm.value);
-    if (this.isNew) {
-      return this.http.post(this.bURL + "/api/news", body, {headers: this.headers})
-        .map((data: Response) => data.json())
-        .catch(this.handleError);
-    }
-
-    return this.http.put(this.bURL + "/api/news", body, {headers: this.headers})
-      .map((data: Response) => data.json())
-      .catch(this.handleError);
-  }
-
-  private handleError(error: any) {
-    console.log(error);
-    return Observable.throw(error.json())
   }
 
 }

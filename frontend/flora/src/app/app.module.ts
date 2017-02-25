@@ -14,6 +14,7 @@ import { MainComponent } from './main/main.component';
 import {DataTableModule} from "angular2-datatable";
 import { ModalComponent } from './admin/modal/modal/modal.component';
 import {DateValueAccessorModule} from "angular-date-value-accessor";
+import {BackendService} from "./service/backend.service";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import {DateValueAccessorModule} from "angular-date-value-accessor";
     DateValueAccessorModule,
     appRouting
   ],
-  providers: [ScrollService],
+  providers: [ScrollService, BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
