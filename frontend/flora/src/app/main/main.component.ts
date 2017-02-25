@@ -16,6 +16,7 @@ export class MainComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+
   }
 
   ngAfterViewInit(){
@@ -24,7 +25,15 @@ export class MainComponent implements OnInit, AfterViewInit {
   }
 
   @HostListener("window:scroll", [])
-  onWindowScroll() {
+  onWindowScroll(args) {
+    let offset = this.document.querySelector("body").getBoundingClientRect().top;
+    if(offset < -70){
+      this.document.querySelector(".header").classList.add("header-fixed")
+    }
+    else{
+      this.document.querySelector(".header").classList.remove("header-fixed")
+    }
+
     let bcr = this.activeElement.getBoundingClientRect();
     if( /*bcr.bottom == 0 || */bcr.bottom < this.activeElement.offsetHeight/2){
       this.activeElement = this.activeElement.nextElementSibling;
