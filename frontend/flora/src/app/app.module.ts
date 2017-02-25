@@ -17,6 +17,7 @@ import {DateValueAccessorModule} from "angular-date-value-accessor";
 import {BackendService} from "./service/backend.service";
 import { UploaderComponent } from './admin/uploader/uploader.component';
 import {FileSelectDirective} from "ng2-file-upload";
+import { HeaderComponent } from './main/header/header.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +30,8 @@ import {FileSelectDirective} from "ng2-file-upload";
     UploaderComponent,
     MainComponent,
     ModalComponent,
-    FileSelectDirective,
-    UploaderComponent
+    HeaderComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,

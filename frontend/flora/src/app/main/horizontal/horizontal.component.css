@@ -10,3 +10,7 @@
 .horizontal-btn {
   display: inline-block;
 }
+
+.swiper-slide {
+  background: #FFEB83;
+}

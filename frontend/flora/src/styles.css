@@ -17,6 +17,15 @@ html {
 
 }
 
+.v-center {
+  display: flex;
+  align-items: center;
+}
+
+.no-form-group-margin-bottom {
+  margin-bottom: 0px !important;
+}
+
 .center {
   text-align: center;
 }
