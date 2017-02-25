@@ -2,6 +2,7 @@ import {Component, OnInit, Input, OnDestroy, EventEmitter, Output, ViewChild} fr
 import {Validators, FormBuilder, FormGroup} from "@angular/forms";
 import {Headers, Response, Http} from "@angular/http";
 import {Observable, Subscription} from "rxjs";
+import {BackendService} from "../../../service/backend.service";
 import {UploaderComponent} from "../../uploader/uploader.component";
 
 @Component({
@@ -10,13 +11,7 @@ import {UploaderComponent} from "../../uploader/uploader.component";
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit, OnDestroy {
-
-  private bURL: string = "http://localhost:8080";
   private IMAGES_URL: string = "http://localhost:8080/static/images/";
-  private headers: Headers = new Headers({
-    'Content-Type': 'application/json'
-  });
-
   public showModal = false;
   private isNew = false;
   private newsForm: FormGroup;
@@ -27,7 +22,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   @ViewChild(UploaderComponent) uploaderComponent: UploaderComponent;
 
 
-  constructor(private formBuilder: FormBuilder, private http: Http) {
+  constructor(private formBuilder: FormBuilder, private backendService:BackendService) {
     this.newsForm = formBuilder.group({
       'id': [''],
       'title': ['', Validators.required],
@@ -78,7 +73,8 @@ export class ModalComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    this.saveSubscription = this.saveNews().subscribe(
+    const body = JSON.stringify(this.newsForm.value);
+    this.saveSubscription = this.backendService.saveNews(body, this.isNew).subscribe(
       data => {
         this.isNew = false;
         data.date = new Date(data.date);
@@ -86,26 +82,6 @@ export class ModalComponent implements OnInit, OnDestroy {
         return this.newsSaved.emit(data);
       }
     );
-  }
-
-  saveNews() {
-    let form = this.newsForm.value;
-    form["image"] = this.image;
-    const body = JSON.stringify(form);
-    if (this.isNew) {
-      return this.http.post(this.bURL + "/api/news", body, {headers: this.headers})
-        .map((data: Response) => data.json())
-        .catch(this.handleError);
-    }
-
-    return this.http.put(this.bURL + "/api/news", body, {headers: this.headers})
-      .map((data: Response) => data.json())
-      .catch(this.handleError);
-  }
-
-  private handleError(error: any) {
-    console.log(error);
-    return Observable.throw(error.json())
   }
 
 }

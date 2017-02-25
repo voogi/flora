@@ -14,6 +14,7 @@ import { MainComponent } from './main/main.component';
 import {DataTableModule} from "angular2-datatable";
 import { ModalComponent } from './admin/modal/modal/modal.component';
 import {DateValueAccessorModule} from "angular-date-value-accessor";
+import {BackendService} from "./service/backend.service";
 import { UploaderComponent } from './admin/uploader/uploader.component';
 import {FileSelectDirective} from "ng2-file-upload";
 
@@ -40,7 +41,7 @@ import {FileSelectDirective} from "ng2-file-upload";
     DateValueAccessorModule,
     appRouting
   ],
-  providers: [ScrollService],
+  providers: [ScrollService, BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
