@@ -2,9 +2,10 @@
   position: fixed;
   top:0;
   left: 0;
-  background-color: whitesmoke;
+  background-color: #ffffff;
   z-index: 99999;
   width: 100%;
+  box-shadow: 0px 3px 7px 0px grey;
 }
 
 .logo {
@@ -16,7 +17,7 @@
 }
 
 .title {
-  font-size: large;
+  font-size: x-large;
 }
 
 .newsletter {
