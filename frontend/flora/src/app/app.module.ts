@@ -14,6 +14,8 @@ import { MainComponent } from './main/main.component';
 import {DataTableModule} from "angular2-datatable";
 import { ModalComponent } from './admin/modal/modal/modal.component';
 import {DateValueAccessorModule} from "angular-date-value-accessor";
+import { UploaderComponent } from './admin/uploader/uploader.component';
+import {FileSelectDirective} from "ng2-file-upload";
 
 @NgModule({
   declarations: [
@@ -23,8 +25,11 @@ import {DateValueAccessorModule} from "angular-date-value-accessor";
     FooterComponent,
     SliderComponent,
     HorizontalComponent,
+    UploaderComponent,
     MainComponent,
-    ModalComponent
+    ModalComponent,
+    FileSelectDirective,
+    UploaderComponent
   ],
   imports: [
     BrowserModule,

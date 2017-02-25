@@ -18,11 +18,11 @@ public class WebConfig extends WebMvcConfigurerAdapter
      */
     public static final String IMAGES_RESOURCE_PATH = "/static/images/";
 
-//    /**
-//     * Define image location folder.
-//     */
-//	@Value("${images.location}")
-//	private String imagesLocation;
+    /**
+     * Define image location folder.
+     */
+	@Value("${images.location}")
+	private String imagesLocation;
 
 	@Override
 	public final void addCorsMappings(final CorsRegistry registry)
@@ -34,6 +34,6 @@ public class WebConfig extends WebMvcConfigurerAdapter
 	@Override
 	public final void addResourceHandlers(final ResourceHandlerRegistry registry)
 	{
-//		registry.addResourceHandler(IMAGES_RESOURCE_PATH + "**").addResourceLocations("file:///" + imagesLocation);
+		registry.addResourceHandler(IMAGES_RESOURCE_PATH + "**").addResourceLocations("file:///" + imagesLocation);
 	}
 }
