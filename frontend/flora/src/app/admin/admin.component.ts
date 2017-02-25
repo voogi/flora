@@ -30,6 +30,12 @@ export class AdminComponent implements OnInit, OnDestroy {
 
   onNewsSaved() {
     this.loadNews();
+    this.selectedRow = null;
+  }
+
+  onDelete(){
+    this.http.delete(this.bURL + "/api/news/"  + this.selectedRow["id"])
+      .subscribe((resp) => {this.loadNews(); this.selectedRow = null})
   }
 
   private loadNews() {

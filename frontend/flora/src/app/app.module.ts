@@ -13,6 +13,7 @@ import { HorizontalComponent } from './main/horizontal/horizontal.component';
 import { MainComponent } from './main/main.component';
 import {DataTableModule} from "angular2-datatable";
 import { ModalComponent } from './admin/modal/modal/modal.component';
+import {DateValueAccessorModule} from "angular-date-value-accessor";
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ModalComponent } from './admin/modal/modal/modal.component';
     HttpModule,
     DataTableModule,
     ReactiveFormsModule,
+    DateValueAccessorModule,
     appRouting
   ],
   providers: [ScrollService],

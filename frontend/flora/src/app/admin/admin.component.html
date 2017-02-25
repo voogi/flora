@@ -1,8 +1,10 @@
 <div class="row">
-  <h1>Hírek</h1>
   <flora-modal #modal [news]="selectedRow" (newsSaved)="onNewsSaved($event)"></flora-modal>
   <div class="col-lg-8">
-    <a class="btn btn-primary" (click)="modal.onLoadValue()">Szerkesztés</a>
+    <h1>Hírek</h1>
+    <a class="btn btn-success" (click)="modal.onNew()">Új</a>
+    <a class="btn btn-primary" [class.disabled]="!selectedRow"  (click)="modal.onLoadValue()">Szerkesztés</a>
+    <a class="btn btn-danger" [class.disabled]="!selectedRow"  (click)="onDelete()">Törlés</a>
   <table class="table table-striped table-hover" [mfData]="news" #mf="mfDataTable" [(mfSortBy)]="sortBy" [mfRowsOnPage]="5">
     <thead>
     <tr>

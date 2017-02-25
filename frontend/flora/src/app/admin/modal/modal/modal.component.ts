@@ -12,10 +12,11 @@ export class ModalComponent implements OnInit, OnDestroy {
 
   private bURL: string = "http://localhost:8080";
   private headers: Headers = new Headers({
-    'Content-Type' : 'application/json'
+    'Content-Type': 'application/json'
   });
 
   public showModal = false;
+  private isNew = false;
   private newsForm: FormGroup;
   private saveSubscription: Subscription;
   @Input() public news: any;
@@ -40,31 +41,46 @@ export class ModalComponent implements OnInit, OnDestroy {
   }
 
 
-  onLoadValue(){
+  onLoadValue() {
     this.showModal = true;
+    this.isNew = false;
+    this.news.date = new Date(this.news.date);
     this.newsForm.setValue(this.news);
   }
 
-  onSubmit(){
+  onNew() {
+    this.showModal = true;
+    this.isNew = true;
+    this.newsForm.reset();
+  }
+
+  onSubmit() {
     this.saveSubscription = this.saveNews().subscribe(
-      data => this.newsSaved.emit(data)
+      data => {
+        this.isNew = false;
+        data.date = new Date(data.date);
+        this.newsForm.setValue(data);
+        return this.newsSaved.emit(data);
+      }
     );
   }
 
-  saveNews(){
-
+  saveNews() {
     const body = JSON.stringify(this.newsForm.value);
-    const headers = this.headers;
-    return this.http.put(this.bURL + "/api/news", body, {
-      headers : this.headers
-    })
-      .map( (data: Response) => data.json() )
+    if (this.isNew) {
+      return this.http.post(this.bURL + "/api/news", body, {headers: this.headers})
+        .map((data: Response) => data.json())
+        .catch(this.handleError);
+    }
+
+    return this.http.put(this.bURL + "/api/news", body, {headers: this.headers})
+      .map((data: Response) => data.json())
       .catch(this.handleError);
   }
 
-  private handleError(error: any){
+  private handleError(error: any) {
     console.log(error);
-    return Observable.throw( error.json() )
+    return Observable.throw(error.json())
   }
 
 }

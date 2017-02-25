@@ -17,8 +17,14 @@ public class NewsService {
     private NewsRepository newsRepository;
 
     public News save(News news){
+        news.setActive(true);
         return newsRepository.save(news);
     }
+
+    public void delete(Long id){
+        newsRepository.delete(id);
+    }
+
 
     public News findOne(Long id){
         return newsRepository.findOne(id);

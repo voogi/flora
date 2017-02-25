@@ -27,6 +27,12 @@ public class NewsController {
         return newsService.save(news);
     }
 
+    @RequestMapping(value = "{id}",  method = RequestMethod.DELETE)
+    public void deleteNews(@PathVariable("id") Long id) {
+        newsService.delete(id);
+    }
+
+
     @RequestMapping("{id}")
     public News findNews(@PathVariable("id") Long id) {
         return newsService.findOne(id);
