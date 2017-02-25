@@ -102,10 +102,10 @@ body {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: #2c6c92;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .btn {

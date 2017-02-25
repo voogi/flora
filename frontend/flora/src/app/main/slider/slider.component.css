@@ -5,12 +5,12 @@
 }
 
 .slider > .row {
-  background-color: #F7882E;
+  background-color: #ef8e0e;
   transition: all 1s ease;
   transform: translateX(240px);
-  -webkit-box-shadow: 0px 0px 31px 0px gray;
-  -moz-box-shadow: 0px 0px 31px 0px grey;
-  box-shadow: 0px 3px 7px 0px grey;
+  -webkit-box-shadow: 0px 0px 31px 0px #424242;
+  -moz-box-shadow: 0px 0px 31px 0px #424242;
+  box-shadow: 0px 3px 7px 0px #424242;
   margin-top: 5px;
 }
 
@@ -39,7 +39,8 @@
   height: 56px;
   line-height: 56px;
   text-transform: uppercase;
-  color: aliceblue;
-  font-size: 18px;
+  color: white;
+  font-size: 25px;
+  font-weight: 400;
 }
 

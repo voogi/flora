@@ -3,6 +3,8 @@ import {
 } from '@angular/core';
 import {BackendService} from "../../service/backend.service";
 import {Subscription} from "rxjs";
+import {environment} from "../../../environments/environment";
+import {DomSanitizer} from "@angular/platform-browser";
 declare var Swiper;
 
 @Component({
@@ -15,7 +17,7 @@ export class HorizontalComponent implements OnInit{
   private getNewsSubscription:Subscription;
   private news: Array<any> = [];
 
-  constructor(private backendService:BackendService) {
+  constructor(private backendService:BackendService, private sanitizer: DomSanitizer) {
     // this.initSwiper();
   }
 
@@ -29,6 +31,7 @@ export class HorizontalComponent implements OnInit{
     });
   }
   ngOnInit() {
+
     this.getNewsSubscription = this.backendService.getNews().subscribe(
       data => {
 
@@ -44,6 +47,11 @@ export class HorizontalComponent implements OnInit{
 
   ngOnDestroy(){
     this.getNewsSubscription.unsubscribe();
+  }
+
+  getImageUrl(fileName: string){
+    this.sanitizer.bypassSecurityTrustStyle("url("+environment.imagesUrl + fileName+")");
+    return environment.imagesUrl + fileName;
   }
 
 }
