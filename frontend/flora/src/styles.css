@@ -108,6 +108,15 @@ body {
   align-items: center;
 }
 
+.btn {
+  font-size: 17px;
+}
+
+.form-control {
+  font-size: 21px;
+  height: 38px;
+}
+
 /* cyrillic-ext */
 @font-face {
   font-family: 'Roboto';
