@@ -31,6 +31,10 @@ public final class News {
     @Column(name = "description", nullable = true)
     private String description;
 
+    @Basic
+    @Column(name = "image", nullable = true)
+    private String image;
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date", nullable = true)
     private Date date;

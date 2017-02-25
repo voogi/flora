@@ -1,9 +1,9 @@
 import {Component, OnInit, Input, OnDestroy, EventEmitter, Output, ViewChild} from '@angular/core';
 import {Validators, FormBuilder, FormGroup} from "@angular/forms";
-import {Headers, Response, Http} from "@angular/http";
-import {Observable, Subscription} from "rxjs";
+import {Subscription} from "rxjs";
 import {BackendService} from "../../../service/backend.service";
 import {UploaderComponent} from "../../uploader/uploader.component";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'flora-modal',
@@ -11,7 +11,6 @@ import {UploaderComponent} from "../../uploader/uploader.component";
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit, OnDestroy {
-  private IMAGES_URL: string = "http://localhost:8080/static/images/";
   public showModal = false;
   private isNew = false;
   private newsForm: FormGroup;
@@ -45,7 +44,7 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.image = fileName;
   }
   getImage(){
-    return this.IMAGES_URL + this.image;
+    return environment.imagesUrl + this.image;
   }
 
   onDeleteImage(){
@@ -67,13 +66,16 @@ export class ModalComponent implements OnInit, OnDestroy {
   onNew() {
     this.showModal = true;
     this.isNew = true;
+    this.image = null;
     this.uploaderComponent.uploader.clearQueue();
     this.uploaderComponent.fileInput.nativeElement.value = "";
     this.newsForm.reset();
   }
 
   onSubmit() {
-    const body = JSON.stringify(this.newsForm.value);
+    let form = this.newsForm.value;
+    form["image"] = this.image;
+    const body = JSON.stringify(form);
     this.saveSubscription = this.backendService.saveNews(body, this.isNew).subscribe(
       data => {
         this.isNew = false;
