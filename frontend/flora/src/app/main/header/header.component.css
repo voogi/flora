@@ -1,0 +1,24 @@
+.header {
+  position: fixed;
+  top:0;
+  left: 0;
+  background-color: whitesmoke;
+  z-index: 99999;
+  width: 100%;
+}
+
+.logo {
+  background-size: 70px 70px;
+  background: url("../../../assets/imgs/logo.jpg") no-repeat;
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+}
+
+.title {
+  font-size: large;
+}
+
+.newsletter {
+  /*transform: translateY(50%);*/
+}
