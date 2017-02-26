@@ -28,6 +28,13 @@ export class BackendService {
       .catch(this.handleError);
   }
 
+  newsLetterReg(body:any):Observable<any>{
+    // TODO newsletter api
+    return this.http.post(environment.bUrl + "",body, {headers: this.headers})
+      .map((data: Response) => data.json())
+      .catch(this.handleError);
+  }
+
   private handleError(error: any) {
     console.log(error);
     return Observable.throw(error.json())

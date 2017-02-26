@@ -5,14 +5,14 @@
     </div>
     <div class="col-lg-4 col-sm-4 title">Flóra Értelmi Fogyatékosokért és Autistákért Alapítvány</div>
     <div class="col-lg-6 col-sm-6 newsletter">
-      <form class="form-horizontal">
+      <form (submit)="onNewsLetter()" [formGroup]="newsletterForm" class="form-horizontal">
         <div class="form-group no-form-group-margin-bottom">
           <label class="col-lg-2 control-label">Hirlevél</label>
           <div class="col-lg-6">
             <div class="input-group">
-              <input type="text" class="form-control" id="newsletter" placeholder="Email cim">
+              <input formControlName="email" type="text" class="form-control" id="newsletter" placeholder="Email cim">
               <span class="input-group-btn">
-                <button (click)="onNewsLetter()" class="btn btn-default" type="button">Küld</button>
+                <button [disabled]="!newsletterForm.valid" class="btn btn-default" type="submit">Küld</button>
               </span>
             </div>
           </div>

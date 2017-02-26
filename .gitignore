@@ -24,3 +24,4 @@ nbdist/
 .nb-gradle/
 frontend/flora/node_modules
 frontend/flora/dist
+backend/src/main/resources/application.properties

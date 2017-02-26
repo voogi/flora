@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {BackendService} from "../../service/backend.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'flora-header',
@@ -7,12 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  private newsletterForm: FormGroup;
+
+  constructor(private backendService:BackendService, private formBuilder:FormBuilder) {
+
+    this.newsletterForm = formBuilder.group({
+      'email' : ['', Validators.required]
+    })
+
+  }
 
   ngOnInit() {
   }
 
   onNewsLetter(){
+    // this.backendService.newsLetterReg(this.newsletterForm.value).subscribe( data => console.log("sikeres"))
+    //TODO sikeres popup
   }
 
 }

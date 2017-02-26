@@ -30,7 +30,7 @@ export class MainComponent implements OnInit, AfterViewInit {
     if(offset < -70){
       this.document.querySelector(".header").classList.add("header-fixed")
     }
-    else{
+    if(offset == 0){
       this.document.querySelector(".header").classList.remove("header-fixed")
     }
 
