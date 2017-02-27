@@ -30,4 +30,8 @@ public class ColleagueService {
         return (List<Colleague>) colleagueRepository.findAll();
     }
 
+    public void delete(Long id){
+        colleagueRepository.delete(id);
+    }
+
 }
