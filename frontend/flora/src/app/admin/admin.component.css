@@ -1,0 +1,24 @@
+.header {
+  top:0;
+  left: 0;
+  background-color: #ffffff;
+  width: 100%;
+  box-shadow: 0px 3px 7px 0px #424242;
+  position: absolute;
+}
+
+.logo {
+  background-size: 70px 70px;
+  background: url("../../assets/imgs/logo.jpg") no-repeat;
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+}
+
+.title {
+  font-size: x-large;
+}
+
+.admin-tabs {
+  margin-top: 100px;
+}

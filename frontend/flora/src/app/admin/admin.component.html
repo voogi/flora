@@ -1,43 +1,26 @@
-<div class="row">
-  <flora-modal #modal [news]="selectedRow" (newsSaved)="onNewsSaved($event)"></flora-modal>
-  <div class="col-lg-8">
-    <h1>Hírek</h1>
-    <a class="btn btn-success" (click)="modal.onNew()">Új</a>
-    <a class="btn btn-primary" [class.disabled]="!selectedRow"  (click)="modal.onLoadValue()">Szerkesztés</a>
-    <a class="btn btn-danger" [class.disabled]="!selectedRow"  (click)="onDelete()">Törlés</a>
-  <table class="table table-striped table-hover" [mfData]="news" #mf="mfDataTable" [(mfSortBy)]="sortBy" [mfRowsOnPage]="5">
-    <thead>
-    <tr>
-      <th style="width: 20%">
-        <mfDefaultSorter by="title">Cím</mfDefaultSorter>
-      </th>
-      <th style="width: 30%">
-        <mfDefaultSorter by="shortDescription">Rövid leírás</mfDefaultSorter>
-      </th>
-      <th style="width: 40%">
-        <mfDefaultSorter by="description">Leírás</mfDefaultSorter>
-      </th>
-      <th style="width: 10%" class="text-right">
-        <mfDefaultSorter by="date">Dátum</mfDefaultSorter>
-      </th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let item of mf.data" (click)="selectedRow = item" [class.info]="selectedRow == item">
-      <td>{{item.title}}</td>
-      <td>{{item.shortDescription}}</td>
-      <td>{{item.description}}</td>
-      <td class="text-right">{{item.date | date }}</td>
-    </tr>
-    </tbody>
-    <tfoot>
-    <tr>
-      <td colspan="4">
-        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
-      </td>
-    </tr>
-    </tfoot>
-  </table>
+<div class="col-lg-12 header">
+  <div class="row v-center">
+    <div class="col-lg-2">
+      <div class="logo"></div>
+    </div>
+    <div class="col-lg-4 col-sm-4 title">Flóra Értelmi Fogyatékosokért és Autistákért Alapítvány</div>
+    <div class="col-lg-3 col-lg-offset-2 col-sm-3 col-sm-offset-2 title">Adminisztrációs felület</div>
   </div>
+</div>
+
+<div class="admin-tabs">
+  <!--<ul class="nav nav-tabs">-->
+    <!--<li id="admin-news" role="presentation"><a>Hírek</a></li>-->
+    <!--<li id="admin-colleagues"role="presentation"><a>Munkatársal</a></li>-->
+  <!--</ul>-->
+  <!--<flora-news #newscomp [news]="selectedRow" (newsSaved)="onNewsSaved($event)"></flora-news>-->
+  <tabset>
+    <tab title="Hírek">
+      <flora-news ></flora-news>
+    </tab>
+    <tab title="Munkatársak">
+      This is content of the contacts tab
+    </tab>
+  </tabset>
 
 </div>

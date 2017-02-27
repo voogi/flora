@@ -12,27 +12,30 @@ import {appRouting} from "./app.routing";
 import { HorizontalComponent } from './main/horizontal/horizontal.component';
 import { MainComponent } from './main/main.component';
 import {DataTableModule} from "angular2-datatable";
-import { ModalComponent } from './admin/modal/modal/modal.component';
+import { NewsComponent } from './admin/news/news.component';
 import {DateValueAccessorModule} from "angular-date-value-accessor";
 import {BackendService} from "./service/backend.service";
 import { UploaderComponent } from './admin/uploader/uploader.component';
 import {FileSelectDirective} from "ng2-file-upload";
 import { HeaderComponent } from './main/header/header.component';
 import { ColleagueComponent } from './main/colleague/colleague.component';
+import {TabsModule} from "ngx-tabs";
+import {TruncatePipe} from "../pipes/truncate";
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
-    ModalComponent,
+    NewsComponent,
     FooterComponent,
     SliderComponent,
     HorizontalComponent,
     UploaderComponent,
     MainComponent,
-    ModalComponent,
+    NewsComponent,
     HeaderComponent,
     FileSelectDirective,
+    TruncatePipe,
     ColleagueComponent
   ],
   imports: [
@@ -41,6 +44,7 @@ import { ColleagueComponent } from './main/colleague/colleague.component';
     HttpModule,
     DataTableModule,
     ReactiveFormsModule,
+    TabsModule,
     DateValueAccessorModule,
     appRouting
   ],

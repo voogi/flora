@@ -1,5 +1,5 @@
 import {
-  Component, OnInit, AfterContentInit, OnChanges
+  Component, OnInit, AfterContentInit, OnChanges, OnDestroy
 } from '@angular/core';
 import {BackendService} from "../../service/backend.service";
 import {Subscription} from "rxjs";
@@ -12,7 +12,7 @@ declare var Swiper;
   templateUrl: 'horizontal.component.html',
   styleUrls: ['horizontal.component.css']
 })
-export class HorizontalComponent implements OnInit{
+export class HorizontalComponent implements OnInit, OnDestroy{
 
   private getNewsSubscription:Subscription;
   private news: Array<any> = [];
