@@ -14,12 +14,21 @@
 
 .header .logo {
   transition: all 0.5s ease;
-  margin-left: 38%;
+  background: url("../../../assets/imgs/logo_nagy.jpg") no-repeat;
+  display: inline-block;
+  height: 140px;
+  width: 140px;
+  background-size: cover;
+
 }
 
 .header-fixed .logo {
   transition: all 0.5s ease;
-  margin-left: 0;
+  background-size: 70px 70px;
+  background: url("../../../assets/imgs/logo.jpg") no-repeat;
+  display: inline-block;
+  height: 70px;
+  width: 70px;
 }
 
 .header .newsletter {
