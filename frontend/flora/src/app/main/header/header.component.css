@@ -12,6 +12,13 @@
   transition: all 0.5s ease;
 }
 
+.header-fixed {
+  animation: mymove 0.1s forwards;
+  animation-timing-function: ease;
+  transition: all 0.5s ease;
+  /*animation-delay: 0.5s;*/
+}
+
 .header .logo {
   transition: all 0.5s ease;
   background: url("../../../assets/imgs/logo_nagy.jpg") no-repeat;
@@ -41,19 +48,12 @@
 
 .header .title {
   font-size: 52px;
-  transition: all 1s ease;
-}
-
-.header-fixed {
-  animation: mymove 0.1s forwards;
-  animation-timing-function: ease;
-  transition: all 0.5s ease;
-  /*animation-delay: 0.5s;*/
+  transition: all 0.2s ease;
 }
 
 .header-fixed .title {
   font-size: 20px;
-  transition: all 1s ease;
+  transition: all 0.2s ease;
 }
 
 .header-fixed .newsletter {
