@@ -18,6 +18,11 @@ export class BackendService {
       .map((response: Response) => response.json())
   }
 
+  getColleagues(): Observable<any> {
+    return this.http.get(environment.bUrl + "/api/colleague")
+      .map((response: Response) => response.json())
+  }
+
   deleteNews(id: string): Observable<any> {
     return this.http.delete(environment.bUrl + "/api/news/" + id);
   }

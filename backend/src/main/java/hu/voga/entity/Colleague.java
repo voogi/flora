@@ -28,8 +28,12 @@ public final class Colleague {
     private String description;
 
     @Basic
-    @Column(name = "contact", nullable = true)
-    private String contact;
+    @Column(name = "phone", nullable = true)
+    private String phone;
+
+    @Basic
+    @Column(name = "email", nullable = true)
+    private String email;
 
     @Basic
     @Column(name = "profile", nullable = true)

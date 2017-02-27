@@ -18,6 +18,7 @@ import {BackendService} from "./service/backend.service";
 import { UploaderComponent } from './admin/uploader/uploader.component';
 import {FileSelectDirective} from "ng2-file-upload";
 import { HeaderComponent } from './main/header/header.component';
+import { ColleagueComponent } from './main/colleague/colleague.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HeaderComponent } from './main/header/header.component';
     MainComponent,
     ModalComponent,
     HeaderComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    ColleagueComponent
   ],
   imports: [
     BrowserModule,

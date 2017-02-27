@@ -1,0 +1,26 @@
+.colleague-image {
+  width: 150px;
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  box-shadow: 1px 1px 3px 0px #424242;
+}
+
+.panel {
+  margin-top: 100px;
+  margin-bottom: 70px;
+  padding-bottom: 30px;
+}
+
+.colleague-desc {
+  margin-top: 50px;
+  white-space: pre-line;
+}
+
+.colleague-contact-wrapper {
+  margin-top: 55px;
+}
+
+.colleague-contacts {
+  margin-top: 20px;
+}
