@@ -16,7 +16,7 @@ export class SliderComponent implements OnInit, AfterViewInit {
 
     this.menuItems = [
       {
-        title : "home",
+        title : "kezdőlap",
         icon : "house-icon",
         anchor : "home"
       },
@@ -24,11 +24,31 @@ export class SliderComponent implements OnInit, AfterViewInit {
         title : "rolunk",
         icon : "gallery-icon",
         anchor : "contact"
-      },
+      }/*,
       {
         title : "galeria",
         icon : "book-icon",
         anchor : "gallery"
+      }*/,
+      {
+        title : "esemenyek",
+        icon : "book-icon",
+        anchor : "projects"
+      },
+      {
+        title : "projektek",
+        icon : "project-icon",
+        anchor : "projects"
+      },
+      {
+        title : "tudasbazis",
+        icon : "book-icon",
+        anchor : "contact"
+      },
+      {
+        title : "önkéntesség",
+        icon : "book-icon",
+        anchor : "contact"
       },
       {
         title : "tamogatas",
@@ -36,9 +56,9 @@ export class SliderComponent implements OnInit, AfterViewInit {
         anchor : "donation"
       },
       {
-        title : "projektek",
-        icon : "project-icon",
-        anchor : "projects"
+        title : "kapcsolat",
+        icon : "book-icon",
+        anchor : "contact"
       }
     ];
 
