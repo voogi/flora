@@ -15,20 +15,23 @@
 .header .logo {
   transition: all 0.5s ease;
   background: url("../../../assets/imgs/logo_nagy.jpg") no-repeat;
+  background-size: cover;
   display: inline-block;
   height: 140px;
   width: 140px;
-  background-size: cover;
+  /*background-size: cover;*/
+  margin-left: 30%;
 
 }
 
 .header-fixed .logo {
   transition: all 0.5s ease;
-  background-size: 70px 70px;
-  background: url("../../../assets/imgs/logo.jpg") no-repeat;
+  background: url("../../../assets/imgs/logo_nagy.jpg") no-repeat;
+  background-size: cover;
   display: inline-block;
   height: 70px;
   width: 70px;
+  margin-left: 0;
 }
 
 .header .newsletter {
@@ -74,14 +77,6 @@
   100%{
     height: auto;
   }
-}
-
-.logo {
-  background-size: 70px 70px;
-  background: url("../../../assets/imgs/logo.jpg") no-repeat;
-  display: inline-block;
-  height: 70px;
-  width: 70px;
 }
 
 .title {
