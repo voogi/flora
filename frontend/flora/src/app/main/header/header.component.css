@@ -5,22 +5,65 @@
   z-index: 99999;
   width: 100%;
   box-shadow: 0px 3px 7px 0px #424242;
-  position: absolute;
+  position: fixed;
+  /*height: 180px;*/
+  animation: mymove1 0.1s forwards;
+  animation-timing-function: ease;
+  transition: all 0.5s ease;
+}
+
+.header .logo {
+  transition: all 0.5s ease;
+  margin-left: 38%;
+}
+
+.header-fixed .logo {
+  transition: all 0.5s ease;
+  margin-left: 0;
+}
+
+.header .newsletter {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.header .title {
+  font-size: 52px;
+  transition: all 1s ease;
 }
 
 .header-fixed {
-  animation: mymove 1s forwards;
+  animation: mymove 0.1s forwards;
   animation-timing-function: ease;
+  transition: all 0.5s ease;
   /*animation-delay: 0.5s;*/
+}
+
+.header-fixed .title {
+  font-size: 20px;
+  transition: all 1s ease;
+}
+
+.header-fixed .newsletter {
+  opacity: 1;
+  transition: all 0.5s ease;
 }
 
 @keyframes mymove {
   0%{
-    top: -170px;
+    height: auto;
   }
   100%{
-    top:0;
-    position: fixed;
+    height: auto;
+  }
+}
+
+@keyframes mymove1 {
+  0%{
+    height: auto;
+  }
+  100%{
+    height: auto;
   }
 }
 
