@@ -23,7 +23,7 @@ export class SliderComponent implements OnInit, AfterViewInit {
       {
         title : "rolunk",
         icon : "gallery-icon",
-        anchor : "contact"
+        anchor : "us"
       }/*,
       {
         title : "galeria",
@@ -33,17 +33,17 @@ export class SliderComponent implements OnInit, AfterViewInit {
       {
         title : "esemenyek",
         icon : "book-icon",
-        anchor : "projects"
+        anchor : "event"
       },
       {
-        title : "projektek",
+        title : "munkatarsak",
         icon : "project-icon",
-        anchor : "projects"
+        anchor : "colleges"
       },
       {
         title : "tudasbazis",
         icon : "book-icon",
-        anchor : "contact"
+        anchor : "library"
       },
       {
         title : "önkéntesség",
