@@ -41,15 +41,10 @@
   margin-left: 0;
 }
 
-.header .newsletter {
-  opacity: 0;
-  transition: all 0.5s ease;
-  display: none;
-}
-
 .header .title {
   font-size: 65px;
   transition: all 0.2s ease;
+  transition-delay: 0.3s;
 }
 
 .header-fixed .title {
@@ -61,12 +56,24 @@
   display: none;
 }
 
+.header .newsletter {
+  opacity: 0;
+  transition: all 0.5s ease;
+  /*transition-delay: 0.3s;*/
+  /*transform: translateX(400px);*/
+  /*visibility: hidden;*/
+  width: 0;
+}
 
 .header-fixed .newsletter {
   opacity: 1;
   transition: all 0.5s ease;
-  display: block;
+  transition-delay: 0.3s;
+  /*transform: translateX(0);*/
+  width: 100%;
+  /*visibility: visible;*/
 }
+
 
 @keyframes mymove {
   0%{
