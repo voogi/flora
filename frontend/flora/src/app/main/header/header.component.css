@@ -47,20 +47,25 @@
   display: none;
 }
 
-.header-fixed .newsletter {
-  opacity: 1;
-  transition: all 0.5s ease;
-  display: block;
-}
-
 .header .title {
   font-size: 65px;
   transition: all 0.2s ease;
 }
 
 .header-fixed .title {
-  font-size: 20px;
+  font-size: 35px;
   transition: all 0.2s ease;
+}
+
+.header-fixed blockquote {
+  display: none;
+}
+
+
+.header-fixed .newsletter {
+  opacity: 1;
+  transition: all 0.5s ease;
+  display: block;
 }
 
 @keyframes mymove {
