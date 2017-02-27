@@ -33,7 +33,7 @@ export class SliderComponent implements OnInit, AfterViewInit {
       {
         title : "esemenyek",
         icon : "book-icon",
-        anchor : "event"
+        anchor : "events"
       },
       {
         title : "munkatarsak",
@@ -48,7 +48,7 @@ export class SliderComponent implements OnInit, AfterViewInit {
       {
         title : "önkéntesség",
         icon : "book-icon",
-        anchor : "contact"
+        anchor : "self"
       },
       {
         title : "tamogatas",
