@@ -12,12 +12,65 @@
   transition: all 0.5s ease;
 }
 
+.social {
+  position: absolute;
+  left: 60px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.social ul {
+  list-style: none;
+  background: #ffffff;
+  padding: 0px;
+  box-shadow: 0px 5px 7px 0px #424242;
+}
+
+.social ul li {
+  display: inline-block;
+  padding: 6px;
+}
+
+.social ul li:hover {
+  cursor: pointer;
+}
+
+.social ul li a {
+  background-size: 24px 24px;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+  margin-bottom: -5px;
+}
+
+.social a.facebook {
+  background: url("../../../assets/imgs/facebook-orange-256.png") no-repeat;
+}
+
+.social a.google {
+  background: url("../../../assets/imgs/google-plus-orange-256.png") no-repeat;
+}
+
+.social a.youtube {
+  background: url("../../../assets/imgs/youtube-orange-256.png") no-repeat;
+}
+
 .header-fixed {
   animation: mymove 0.1s forwards;
   animation-timing-function: ease;
   transition: all 0.5s ease;
   position: fixed;
   /*animation-delay: 0.5s;*/
+}
+
+.header .social {
+  transition: all 0.5s ease;
+  left: -300px;
+}
+
+.header-fixed .social {
+  transition: all 0.5s ease;
+  left: 16px;
 }
 
 .header .logo {
