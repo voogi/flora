@@ -22,6 +22,7 @@ import { ColleagueComponent } from './main/colleague/colleague.component';
 import {TabsModule} from "ngx-tabs";
 import {TruncatePipe} from "../pipes/truncate";
 import { VolunteerComponent } from './main/volunteer/volunteer.component';
+import { KnowledgeComponent } from './admin/knowledge/knowledge.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { VolunteerComponent } from './main/volunteer/volunteer.component';
     FileSelectDirective,
     TruncatePipe,
     ColleagueComponent,
-    VolunteerComponent
+    VolunteerComponent,
+    KnowledgeComponent
   ],
   imports: [
     BrowserModule,

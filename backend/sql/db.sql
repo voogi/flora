@@ -15,6 +15,16 @@ DROP DATABASE IF EXISTS `flora`;
 CREATE DATABASE IF NOT EXISTS `flora` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `flora`;
 
+DROP TABLE IF EXISTS `knowledge_base`;
+CREATE TABLE IF NOT EXISTS `knowledge_base` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `description` text,
+  `creator` varchar(255) DEFAULT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Dumping structure for tábla flora.colleague
 DROP TABLE IF EXISTS `colleague`;
