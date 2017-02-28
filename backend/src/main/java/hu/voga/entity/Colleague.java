@@ -36,8 +36,8 @@ public final class Colleague {
     private String email;
 
     @Basic
-    @Column(name = "profile", nullable = true)
-    private String profile;
+    @Column(name = "image", nullable = true)
+    private String image;
 
     @Basic
     @Column(name = "active", nullable = false)

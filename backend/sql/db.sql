@@ -15,16 +15,6 @@ DROP DATABASE IF EXISTS `flora`;
 CREATE DATABASE IF NOT EXISTS `flora` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `flora`;
 
-DROP TABLE IF EXISTS `knowledge_base`;
-CREATE TABLE IF NOT EXISTS `knowledge_base` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `description` text,
-  `creator` varchar(255) DEFAULT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '1',
-  `date` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Dumping structure for tábla flora.colleague
 DROP TABLE IF EXISTS `colleague`;
@@ -34,18 +24,37 @@ CREATE TABLE IF NOT EXISTS `colleague` (
   `description` text,
   `phone` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
-  `profile` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Dumping data for table flora.colleague: ~1 rows (approximately)
+-- Dumping data for table flora.colleague: ~3 rows (approximately)
 /*!40000 ALTER TABLE `colleague` DISABLE KEYS */;
-INSERT INTO `colleague` (`id`, `name`, `description`, `phone`, `email`, `profile`, `active`) VALUES
+INSERT INTO `colleague` (`id`, `name`, `description`, `phone`, `email`, `image`, `active`) VALUES
 	(1, 'Munkatárs neve', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque hendrerit lorem sit amet aliquet. Aliquam eu risus ut mauris cursus euismod elementum dictum sapien. Pellentesque aliquet faucibus nunc, ac pharetra diam volutpat a. Donec at arcu leo. Nulla eget tristique purus. Vivamus sollicitudin lacus quis mauris malesuada, non accumsan massa varius. Nunc tristique magna eget tortor vestibulum viverra.\r\n\r\nFusce mollis egestas turpis. Maecenas at arcu tincidunt, placerat magna vitae, lacinia arcu. Nullam sit amet justo a nibh mattis sagittis ut sit amet dolor. Praesent enim lorem, consectetur laoreet semper vel, facilisis vel arcu. Donec elementum ut velit ut varius. Mauris sit amet ipsum felis. Nunc vitae purus id ex fringilla luctus. Donec feugiat arcu lectus, sit amet dictum lacus vulputate tristique. Cras velit ligula, egestas ut mi at, venenatis scelerisque neque. Proin pellentesque ligula id lacus semper, id lacinia velit tristique. Nulla et orci hendrerit, varius nulla non, ullamcorper ante. Proin eget lacinia sapien, in ultrices arcu.\r\n\r\nAliquam pharetra ullamcorper turpis sed sagittis. Praesent quis orci sit amet quam porta lobortis. Phasellus pharetra, tortor non feugiat commodo, nisl massa pulvinar felis, ut pellentesque odio sem nec nunc. Nunc vel libero placerat, malesuada libero ac, auctor odio. Donec molestie mauris quis justo interdum, nec porta orci congue. Suspendisse congue porttitor tempor. Praesent quis dolor ante. Vivamus nisi tellus, viverra at nibh ut, finibus auctor est. In hac habitasse platea dictumst. Vivamus viverra, augue vitae laoreet eleifend, erat velit suscipit justo, vitae rhoncus odio augue sit amet purus. Phasellus lobortis nulla quis efficitur auctor. In hendrerit ex vitae sapien varius dictum. Phasellus scelerisque turpis dui, in lobortis tortor elementum sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam eget lectus a nunc congue vestibulum quis in quam. Duis interdum, nulla in finibus molestie, urna dui elementum justo, nec viverra nibh nunc at ipsum.', '+36 70 123 4567', 'minta@eamil.hu', NULL, 1),
 	(2, 'Munkatárs2 neve', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque hendrerit lorem sit amet aliquet. Aliquam eu risus ut mauris cursus euismod elementum dictum sapien. Pellentesque aliquet faucibus nunc, ac pharetra diam volutpat a. Donec at arcu leo. Nulla eget tristique purus. Vivamus sollicitudin lacus quis mauris malesuada, non accumsan massa varius. Nunc tristique magna eget tortor vestibulum viverra.\r\n\r\nFusce mollis egestas turpis. Maecenas at arcu tincidunt, placerat magna vitae, lacinia arcu. Nullam sit amet justo a nibh mattis sagittis ut sit amet dolor. Praesent enim lorem, consectetur laoreet semper vel, facilisis vel arcu. Donec elementum ut velit ut varius. Mauris sit amet ipsum felis. Nunc vitae purus id ex fringilla luctus. Donec feugiat arcu lectus, sit amet dictum lacus vulputate tristique. Cras velit ligula, egestas ut mi at, venenatis scelerisque neque. Proin pellentesque ligula id lacus semper, id lacinia velit tristique. Nulla et orci hendrerit, varius nulla non, ullamcorper ante. Proin eget lacinia sapien, in ultrices arcu.\r\n\r\nAliquam pharetra ullamcorper turpis sed sagittis. Praesent quis orci sit amet quam porta lobortis. Phasellus pharetra, tortor non feugiat commodo, nisl massa pulvinar felis, ut pellentesque odio sem nec nunc. Nunc vel libero placerat, malesuada libero ac, auctor odio. Donec molestie mauris quis justo interdum, nec porta orci congue. Suspendisse congue porttitor tempor. Praesent quis dolor ante. Vivamus nisi tellus, viverra at nibh ut, finibus auctor est. In hac habitasse platea dictumst. Vivamus viverra, augue vitae laoreet eleifend, erat velit suscipit justo, vitae rhoncus odio augue sit amet purus. Phasellus lobortis nulla quis efficitur auctor. In hendrerit ex vitae sapien varius dictum. Phasellus scelerisque turpis dui, in lobortis tortor elementum sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam eget lectus a nunc congue vestibulum quis in quam. Duis interdum, nulla in finibus molestie, urna dui elementum justo, nec viverra nibh nunc at ipsum.', '+36 70 123 4567', 'minta@eamil.hu', NULL, 1),
 	(3, 'Munkatár3 neve', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque hendrerit lorem sit amet aliquet. Aliquam eu risus ut mauris cursus euismod elementum dictum sapien. Pellentesque aliquet faucibus nunc, ac pharetra diam volutpat a. Donec at arcu leo. Nulla eget tristique purus. Vivamus sollicitudin lacus quis mauris malesuada, non accumsan massa varius. Nunc tristique magna eget tortor vestibulum viverra.\r\n\r\nFusce mollis egestas turpis. Maecenas at arcu tincidunt, placerat magna vitae, lacinia arcu. Nullam sit amet justo a nibh mattis sagittis ut sit amet dolor. Praesent enim lorem, consectetur laoreet semper vel, facilisis vel arcu. Donec elementum ut velit ut varius. Mauris sit amet ipsum felis. Nunc vitae purus id ex fringilla luctus. Donec feugiat arcu lectus, sit amet dictum lacus vulputate tristique. Cras velit ligula, egestas ut mi at, venenatis scelerisque neque. Proin pellentesque ligula id lacus semper, id lacinia velit tristique. Nulla et orci hendrerit, varius nulla non, ullamcorper ante. Proin eget lacinia sapien, in ultrices arcu.\r\n\r\nAliquam pharetra ullamcorper turpis sed sagittis. Praesent quis orci sit amet quam porta lobortis. Phasellus pharetra, tortor non feugiat commodo, nisl massa pulvinar felis, ut pellentesque odio sem nec nunc. Nunc vel libero placerat, malesuada libero ac, auctor odio. Donec molestie mauris quis justo interdum, nec porta orci congue. Suspendisse congue porttitor tempor. Praesent quis dolor ante. Vivamus nisi tellus, viverra at nibh ut, finibus auctor est. In hac habitasse platea dictumst. Vivamus viverra, augue vitae laoreet eleifend, erat velit suscipit justo, vitae rhoncus odio augue sit amet purus. Phasellus lobortis nulla quis efficitur auctor. In hendrerit ex vitae sapien varius dictum. Phasellus scelerisque turpis dui, in lobortis tortor elementum sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam eget lectus a nunc congue vestibulum quis in quam. Duis interdum, nulla in finibus molestie, urna dui elementum justo, nec viverra nibh nunc at ipsum.', '+36 70 123 4567', 'minta@eamil.hu', NULL, 1);
 /*!40000 ALTER TABLE `colleague` ENABLE KEYS */;
+
+
+-- Dumping structure for tábla flora.knowledge_base
+DROP TABLE IF EXISTS `knowledge_base`;
+CREATE TABLE IF NOT EXISTS `knowledge_base` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `description` text,
+  `creator` varchar(255) DEFAULT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table flora.knowledge_base: ~1 rows (approximately)
+/*!40000 ALTER TABLE `knowledge_base` DISABLE KEYS */;
+INSERT INTO `knowledge_base` (`id`, `title`, `description`, `creator`, `active`, `date`) VALUES
+	(5, 'hfgh', 'jhkhjkhjkhjkh', 'jkuzjkz', 1, '2017-02-18 01:00:00');
+/*!40000 ALTER TABLE `knowledge_base` ENABLE KEYS */;
 
 
 -- Dumping structure for tábla flora.news
