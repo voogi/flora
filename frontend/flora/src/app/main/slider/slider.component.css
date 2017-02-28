@@ -2,6 +2,137 @@
   position: fixed;
   top:140px;
   z-index: 99999;
+  display: table;
+  height: 60vh;
+}
+
+
+.sticky-nav li:nth-of-type(1) a {
+  -webkit-transition-delay: 0.1s;
+  -moz-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+.sticky-nav li:nth-of-type(2) a {
+  -webkit-transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.sticky-nav li:nth-of-type(3) a {
+  -webkit-transition-delay: 0.3s;
+  -moz-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.sticky-nav li:nth-of-type(4) a {
+  -webkit-transition-delay: 0.4s;
+  -moz-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.sticky-nav li:nth-of-type(5) a {
+  -webkit-transition-delay: 0.5s;
+  -moz-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.sticky-nav li:nth-of-type(6) a {
+  -webkit-transition-delay: 0.6s;
+  -moz-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+
+.sticky-nav li:nth-of-type(7) a {
+  -webkit-transition-delay: 0.7s;
+  -moz-transition-delay: 0.7s;
+  transition-delay: 0.7s;
+}
+
+.sticky-nav li:nth-of-type(8) a {
+  -webkit-transition-delay: 0.8s;
+  -moz-transition-delay: 0.8s;
+  transition-delay: 0.8s;
+}
+
+.sticky-nav {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  list-style: none;
+}
+
+.sticky-nav  li {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+  cursor: pointer;
+
+  -webkit-transition: 0.3s all ease-in-out;
+  -moz-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+.sticky-nav:hover li a {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+   transform: translateX(0px);
+  color: #010102;
+}
+
+.sticky-nav li:before {
+  background-image: url("https://ubistatic19-a.akamaihd.net/resource/en-GB/game/ghost-recon/grw/grw_home_nav_icons.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  background-color: #000;
+  border: 2px solid #e19f28;
+
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+
+  content: "";
+  display: block;
+  position: absolute;
+  margin: auto;
+  bottom: 0;
+  right: 10px;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(0,0,0,0.5);
+
+}
+
+.sticky-nav li a {
+  -webkit-transition: 0.3s transform ease-in-out, 0.3s opacity ease-in-out;
+  -moz-transition: 0.3s transform ease-in-out, 0.3s opacity ease-in-out;
+  transition: 0.3s transform ease-in-out, 0.3s opacity ease-in-out;
+
+  -webkit-transform: translateX(-50px);
+  -moz-transform: translateX(-50px);
+  transform: translateX(-50px);
+
+  display: block;
+  position: absolute;
+  left: auto;
+  right: 60px;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  color: black;
+  font-size: 20px;
+  text-transform: uppercase;
+  opacity: 0;
+  pointer-events: none;
+
+
 }
 
 .slider > .row {
@@ -15,16 +146,16 @@
 }
 
 .slider > .row.active {
-  transform: translateX(80px);
-  border-bottom-left-radius: 15px;
-  border-top-left-radius: 15px;
+  /*transform: translateX(80px);*/
+  /*border-bottom-left-radius: 15px;*/
+  /*border-top-left-radius: 15px;*/
 }
 
 .slider > .row:hover {
-  transform: translateX(80px);
+  /*transform: translateX(80px);*/
   cursor: pointer;
-  border-bottom-left-radius: 15px;
-  border-top-left-radius: 15px;
+  /*border-bottom-left-radius: 15px;*/
+  /*border-top-left-radius: 15px;*/
 }
 
 .slider.left {
