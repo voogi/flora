@@ -64,8 +64,8 @@
 
 .sticky-nav  li {
   position: relative;
-  height: 40px;
-  line-height: 40px;
+  height: 54px;
+  line-height: 54px;
   text-align: left;
   cursor: pointer;
 
@@ -82,30 +82,37 @@
   color: #010102;
 }
 
-.sticky-nav li:before {
-  background-image: url("https://ubistatic19-a.akamaihd.net/resource/en-GB/game/ghost-recon/grw/grw_home_nav_icons.png");
-  background-repeat: no-repeat;
-  background-position: 0 0;
+.sticky-nav li:hover a {
+  color: #e19f28;
+}
 
-  background-color: #000;
+.sticky-nav li:hover:before {
   border: 2px solid #e19f28;
+}
+
+.sticky-nav li:before {
+  background: url("../../../assets/imgs/house-256-white.gif") no-repeat;
+  background-position: 50% 50%;
+  background-size: 40px 40px;
+  background-color: #000;
+  border: 2px solid whitesmoke;
 
   -webkit-transition: none;
   -moz-transition: none;
   transition: none;
 
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
+  /*-webkit-border-radius: 50%;*/
+  /*-moz-border-radius: 50%;*/
+  /*border-radius: 50%;*/
 
   content: "";
   display: block;
   position: absolute;
   margin: auto;
   bottom: 0;
-  right: 10px;
-  height: 40px;
-  width: 40px;
+  right: 0px;
+  height: 54px;
+  width: 54px;
   background-color: rgba(0,0,0,0.5);
 
 }
@@ -122,10 +129,10 @@
   display: block;
   position: absolute;
   left: auto;
-  right: 60px;
+  right: 90px;
   width: 100px;
-  height: 40px;
-  line-height: 40px;
+  height: 54px;
+  line-height: 54px;
   color: black;
   font-size: 20px;
   text-transform: uppercase;
