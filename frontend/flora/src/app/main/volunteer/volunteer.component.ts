@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup, FormBuilder, Validators} from "@angular/forms";
+import {BackendService} from "../../service/backend.service";
 
 @Component({
   selector: 'flora-volunteer',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VolunteerComponent implements OnInit {
 
-  constructor() { }
+  private volunteerForm: FormGroup;
+
+  constructor(private backendService:BackendService, private formBuilder:FormBuilder) {
+
+    this.volunteerForm = formBuilder.group({
+      'email' : ['', Validators.required],
+      'name' : ['', Validators.required],
+      'phone' : ['', Validators.required]
+    })
+
+  }
 
   ngOnInit() {
+  }
+
+  onSubmit(){
+    //TODO register volunteer
   }
 
 }

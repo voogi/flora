@@ -8,32 +8,32 @@
     <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
   </div>
   <div class="col-lg-6 col-sm-6">
-    <form class="form-horizontal">
+    <form [formGroup]="volunteerForm" (submit)="onSubmit()" class="form-horizontal">
 
       <div class="form-group">
         <label for="inputName" class="col-lg-2 control-label">Név</label>
         <div class="col-lg-6">
-          <input id="inputName" type="text" class="form-control">
+          <input formControlName="name" id="inputName" type="text" class="form-control">
         </div>
       </div>
 
       <div class="form-group">
         <label for="inputEmail" class="col-lg-2 control-label">Email</label>
         <div class="col-lg-6">
-          <input id="inputEmail" type="text" class="form-control">
+          <input formControlName="email" id="inputEmail" type="text" class="form-control">
         </div>
       </div>
 
       <div class="form-group">
         <label for="inputPhone" class="col-lg-2 control-label">Telefonszám</label>
         <div class="col-lg-6">
-          <input id="inputPhone" type="text" class="form-control">
+          <input formControlName="phone" id="inputPhone" type="text" class="form-control">
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-lg-6 col-lg-offset-2">
-          <button type="submit" class="btn btn-primary">Jelentkezek</button>
+          <button [disabled]="!volunteerForm.valid" type="submit" class="btn btn-primary">Jelentkezek</button>
         </div>
       </div>
 
