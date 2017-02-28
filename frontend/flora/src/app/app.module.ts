@@ -21,6 +21,7 @@ import { HeaderComponent } from './main/header/header.component';
 import { ColleagueComponent } from './main/colleague/colleague.component';
 import {TabsModule} from "ngx-tabs";
 import {TruncatePipe} from "../pipes/truncate";
+import { VolunteerComponent } from './main/volunteer/volunteer.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {TruncatePipe} from "../pipes/truncate";
     HeaderComponent,
     FileSelectDirective,
     TruncatePipe,
-    ColleagueComponent
+    ColleagueComponent,
+    VolunteerComponent
   ],
   imports: [
     BrowserModule,

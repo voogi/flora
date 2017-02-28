@@ -2,7 +2,7 @@
 
   <div *ngFor="let menuItem of menuItems,
    let i=index" (click)="onMenuItemClick(menuItem)" class="row {{i === 0 ? 'active' : ''}}">
-    <div class="col-lg-6">
+    <div class="col-lg-3">
       <div class="icon-background">
         <div class="icon {{menuItem.icon}}"></div>
       </div>
