@@ -82,11 +82,13 @@
   color: #010102;
 }
 
-.sticky-nav li:hover a {
+
+
+.sticky-nav li:hover a, .sticky-nav li.active a {
   color: #e19f28;
 }
 
-.sticky-nav li:hover:before {
+.sticky-nav li:hover:before, .sticky-nav li.active:before {
   border: 2px solid #e19f28;
 }
 

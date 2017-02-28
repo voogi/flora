@@ -1,8 +1,8 @@
 <div class="col-lg-2 slider">
 
   <ul class="sticky-nav">
-    <li *ngFor="let menuItem of menuItems">
-      <a> {{menuItem.title}}</a>
+    <li *ngFor="let menuItem of menuItems; let i = index;" class="{{i === 0 ? 'active' : ''}}">
+      <a><strong> {{menuItem.title}} </strong></a>
     </li>
   </ul>
 
