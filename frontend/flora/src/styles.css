@@ -16,8 +16,8 @@ body {
   font-size: 20px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-
   overflow-x: hidden;
+  background-color: rgb(246,209,201);
 }
 
 .v-center {

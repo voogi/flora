@@ -26,6 +26,7 @@ import { KnowledgeComponent } from './admin/knowledge/knowledge.component';
 import { KnowledgeBaseComponent } from './main/knowledgeBase/knowledgeBase.component';
 import {KSSwiperModule} from "angular2-swiper";
 import {AdminColleagueComponent} from "./admin/colleague/colleague.component";
+import { ContactComponent } from './main/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import {AdminColleagueComponent} from "./admin/colleague/colleague.component";
     ColleagueComponent,
     VolunteerComponent,
     KnowledgeComponent,
-    KnowledgeBaseComponent
+    KnowledgeBaseComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
