@@ -11,8 +11,8 @@ import java.util.Date;
 @Getter
 @Setter
 @Accessors(chain = true)
-@Table(name = "colleague")
-public final class Colleague {
+@Table(name = "knowledge_base")
+public final class KnowledgeBase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,24 +20,20 @@ public final class Colleague {
     private Long id;
 
     @Basic
-    @Column(name = "name", nullable = false)
-    private String name;
+    @Column(name = "title", nullable = false)
+    private String title;
 
     @Basic
     @Column(name = "description", nullable = true)
     private String description;
 
     @Basic
-    @Column(name = "phone", nullable = true)
-    private String phone;
+    @Column(name = "creator", nullable = false)
+    private String creator;
 
-    @Basic
-    @Column(name = "email", nullable = true)
-    private String email;
-
-    @Basic
-    @Column(name = "image", nullable = true)
-    private String image;
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "date", nullable = true)
+    private Date date;
 
     @Basic
     @Column(name = "active", nullable = false)

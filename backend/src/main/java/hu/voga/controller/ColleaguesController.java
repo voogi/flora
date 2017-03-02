@@ -21,6 +21,7 @@ public class ColleaguesController {
 
     @RequestMapping(value = "",  method = RequestMethod.POST)
     public Colleague saveColleague(@RequestBody Colleague colleague) {
+        colleague.setActive(true);
         return colleagueService.save(colleague);
     }
 

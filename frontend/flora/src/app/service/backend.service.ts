@@ -33,6 +33,21 @@ export class BackendService {
       .catch(this.handleError);
   }
 
+  getKnowledges(): Observable<any> {
+    return this.http.get(environment.bUrl + "/api/knowledge")
+      .map((response: Response) => response.json())
+  }
+
+  deleteKnowledge(id: string): Observable<any> {
+    return this.http.delete(environment.bUrl + "/api/knowledge/" + id);
+  }
+
+  saveKnowledge(body: any, isNew: boolean): Observable<any> {
+    return this.http[isNew ? "post" : "put"](environment.bUrl + "/api/knowledge", body, {headers: this.headers})
+      .map((data: Response) => data.json())
+      .catch(this.handleError);
+  }
+
   newsLetterReg(body:any):Observable<any>{
     // TODO newsletter api
     return this.http.post(environment.bUrl + "",body, {headers: this.headers})
