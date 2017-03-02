@@ -23,6 +23,7 @@ import {TabsModule} from "ngx-tabs";
 import {TruncatePipe} from "../pipes/truncate";
 import { VolunteerComponent } from './main/volunteer/volunteer.component';
 import { KnowledgeComponent } from './admin/knowledge/knowledge.component';
+import { KnowledgeBaseComponent } from './main/knowledgeBase/knowledgeBase.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { KnowledgeComponent } from './admin/knowledge/knowledge.component';
     TruncatePipe,
     ColleagueComponent,
     VolunteerComponent,
-    KnowledgeComponent
+    KnowledgeComponent,
+    KnowledgeBaseComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,7 @@
 import {Component, OnInit, ViewChild, OnDestroy} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {Subscription} from "rxjs";
-import {UploaderComponent} from "../uploader/uploader.component";
 import {BackendService} from "../../service/backend.service";
-import {environment} from "../../../environments/environment.prod";
 
 @Component({
   selector: 'flora-knowledge',
