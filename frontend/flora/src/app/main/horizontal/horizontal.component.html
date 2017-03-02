@@ -1,6 +1,6 @@
 <div class="row horizontal">
   <!-- Swiper -->
-  <div class="swiper-container">
+  <div class="swiper-container news-swiper">
     <div class="swiper-wrapper">
       <div *ngFor="let item of news" class="swiper-slide"
            [style.background-image]=" 'url(' + getImageUrl(item.image) + ')'">
@@ -24,9 +24,9 @@
       </div>
     </div>
     <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
+    <div class="swiper-pagination news-pagination"></div>
     <!-- Add Arrows -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next news-left"></div>
+    <div class="swiper-button-prev news-right"></div>
   </div>
 </div>

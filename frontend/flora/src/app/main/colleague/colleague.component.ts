@@ -38,7 +38,7 @@ export class ColleagueComponent implements OnInit, OnDestroy {
 
 
   public initSwiper(){
-    var swiper = new Swiper('.swiper-container', {
+    var swiper = new Swiper('.colleague-swiper', {
       pagination: '.swiper-pagination',
       paginationClickable: true,
       nextButton: '.swiper-button-next',

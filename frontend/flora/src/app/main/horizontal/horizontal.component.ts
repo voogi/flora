@@ -22,11 +22,11 @@ export class HorizontalComponent implements OnInit, OnDestroy{
   }
 
   public initSwiper(){
-    var swiper = new Swiper('.swiper-container', {
-      pagination: '.swiper-pagination',
+    var swiper = new Swiper('.news-swiper', {
+      pagination: '.news-pagination',
       paginationClickable: true,
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev'/*,
+      nextButton: '.news-left',
+      prevButton: '.news-right'/*,
        spaceBetween: 30*/
     });
   }
