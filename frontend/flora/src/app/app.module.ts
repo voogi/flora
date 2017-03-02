@@ -25,11 +25,13 @@ import { VolunteerComponent } from './main/volunteer/volunteer.component';
 import { KnowledgeComponent } from './admin/knowledge/knowledge.component';
 import { KnowledgeBaseComponent } from './main/knowledgeBase/knowledgeBase.component';
 import {KSSwiperModule} from "angular2-swiper";
+import {AdminColleagueComponent} from "./admin/colleague/colleague.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
+    AdminColleagueComponent,
     NewsComponent,
     FooterComponent,
     SliderComponent,

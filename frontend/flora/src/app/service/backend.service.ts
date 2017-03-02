@@ -23,6 +23,16 @@ export class BackendService {
       .map((response: Response) => response.json())
   }
 
+  deleteColleague(id: string): Observable<any> {
+    return this.http.delete(environment.bUrl + "/api/colleague/" + id);
+  }
+
+  saveColleague(body: any, isNew: boolean): Observable<any> {
+    return this.http[isNew ? "post" : "put"](environment.bUrl + "/api/colleague", body, {headers: this.headers})
+      .map((data: Response) => data.json())
+      .catch(this.handleError);
+  }
+
   deleteNews(id: string): Observable<any> {
     return this.http.delete(environment.bUrl + "/api/news/" + id);
   }
