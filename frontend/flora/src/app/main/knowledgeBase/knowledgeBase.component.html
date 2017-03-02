@@ -1,11 +1,6 @@
 <div class="row horizontal">
-  <div class="swiper-container knowledge-swiper">
-    <div class="swiper-wrapper">
-      <div *ngFor="let item of knowledges;" class="swiper-slide">
-        item.title
-      </div>
-    </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
-  </div>
+  <ks-swiper-container [options]="swiperOptions">
+    <ks-swiper-slide *ngFor="let item of knowledges;">
+    {{item.title}}</ks-swiper-slide>
+  </ks-swiper-container>
 </div>

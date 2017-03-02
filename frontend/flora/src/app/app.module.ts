@@ -26,6 +26,7 @@ import { KnowledgeComponent } from './admin/knowledge/knowledge.component';
 import { KnowledgeBaseComponent } from './main/knowledgeBase/knowledgeBase.component';
 import {KSSwiperModule} from "angular2-swiper";
 import {AdminColleagueComponent} from "./admin/colleague/colleague.component";
+import { ContactComponent } from './main/contact/contact.component';
 import { EventComponent } from './main/event/event.component';
 import {AdminEventComponent} from "./admin/event/event.component";
 import {CalendarModule} from "angular-calendar";
@@ -49,6 +50,8 @@ import {CalendarModule} from "angular-calendar";
     ColleagueComponent,
     VolunteerComponent,
     KnowledgeComponent,
+    KnowledgeBaseComponent,
+    ContactComponent
     KnowledgeBaseComponent,
     EventComponent
   ],
