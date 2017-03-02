@@ -53,8 +53,8 @@ import {KSSwiperModule} from "angular2-swiper";
     ReactiveFormsModule,
     TabsModule,
     DateValueAccessorModule,
-    KSSwiperModule,
-    appRouting
+    appRouting,
+    KSSwiperModule
   ],
   providers: [ScrollService, BackendService],
   bootstrap: [AppComponent]
