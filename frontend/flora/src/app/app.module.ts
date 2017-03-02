@@ -51,7 +51,7 @@ import {CalendarModule} from "angular-calendar";
     VolunteerComponent,
     KnowledgeComponent,
     KnowledgeBaseComponent,
-    ContactComponent
+    ContactComponent,
     KnowledgeBaseComponent,
     EventComponent
   ],
