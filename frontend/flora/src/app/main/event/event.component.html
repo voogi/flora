@@ -1,0 +1,77 @@
+<div class="row">
+  <div class="col-lg-3 col-lg-offset-4 text-center"><h2 class="title">Események</h2></div>
+</div>
+
+<div class="row">
+  <div class="col-lg-5 col-md-5 calendar">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="btn-group">
+          <div
+            class="btn btn-primary"
+            mwlCalendarPreviousView
+            [view]="view"
+            [(viewDate)]="viewDate">
+            Előző
+          </div>
+          <div
+            class="btn btn-secondary"
+            mwlCalendarToday
+            [(viewDate)]="viewDate">
+            Ma
+          </div>
+          <div
+            class="btn btn-primary"
+            mwlCalendarNextView
+            [view]="view"
+            [(viewDate)]="viewDate">
+            Következő
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'hu' }}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <mwl-calendar-month-view
+        [viewDate]="viewDate"
+        [refresh]="refresh"
+        [locale]="locale"
+        (dayClicked)="dayClicked($event.day)"
+        [events]="calEvents">
+      </mwl-calendar-month-view>
+    </div>
+  </div>
+  <div class="col-lg-5 col-lg-offset-1">
+    <div class="swiper-container colleague-swiper">
+      <div class="swiper-wrapper">
+        <div *ngFor="let item of events" class="swiper-slide">
+          <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 col-sm-10 col-sm-offset-1">
+
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <div class="col-lg-10 col-lg-offset-1 col-sm-10 col-sm-offset-1">
+                    <h2>{{item.title}}</h2>
+                  </div>
+                  <div class="row">
+                    <div class="text-justify colleague-desc col-lg-12 col-sm-12">
+                      {{item.description}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</div>
+

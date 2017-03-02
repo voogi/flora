@@ -26,12 +26,16 @@ import { KnowledgeComponent } from './admin/knowledge/knowledge.component';
 import { KnowledgeBaseComponent } from './main/knowledgeBase/knowledgeBase.component';
 import {KSSwiperModule} from "angular2-swiper";
 import {AdminColleagueComponent} from "./admin/colleague/colleague.component";
+import { EventComponent } from './main/event/event.component';
+import {AdminEventComponent} from "./admin/event/event.component";
+import {CalendarModule} from "angular-calendar";
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
     AdminColleagueComponent,
+    AdminEventComponent,
     NewsComponent,
     FooterComponent,
     SliderComponent,
@@ -45,7 +49,8 @@ import {AdminColleagueComponent} from "./admin/colleague/colleague.component";
     ColleagueComponent,
     VolunteerComponent,
     KnowledgeComponent,
-    KnowledgeBaseComponent
+    KnowledgeBaseComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +60,7 @@ import {AdminColleagueComponent} from "./admin/colleague/colleague.component";
     ReactiveFormsModule,
     TabsModule,
     DateValueAccessorModule,
+    CalendarModule.forRoot(),
     appRouting,
     KSSwiperModule
   ],

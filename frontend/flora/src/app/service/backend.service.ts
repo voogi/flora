@@ -23,6 +23,22 @@ export class BackendService {
       .map((response: Response) => response.json())
   }
 
+  getEvents(): Observable<any> {
+    return this.http.get(environment.bUrl + "/api/event")
+      .map((response: Response) => response.json())
+  }
+
+  saveEvent(body: any, isNew: boolean): Observable<any> {
+    return this.http[isNew ? "post" : "put"](environment.bUrl + "/api/event", body, {headers: this.headers})
+      .map((data: Response) => data.json())
+      .catch(this.handleError);
+  }
+
+  deleteEvent(id: string): Observable<any> {
+    return this.http.delete(environment.bUrl + "/api/event/" + id);
+  }
+
+
   deleteColleague(id: string): Observable<any> {
     return this.http.delete(environment.bUrl + "/api/colleague/" + id);
   }

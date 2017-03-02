@@ -1,0 +1,19 @@
+.cal-day-selected {
+  background-color: #fb8e0e !important;
+}
+
+.calendar {
+  background-color: #ffffff;
+  margin-left: 30px;
+  box-shadow: 1px 1px 3px 0px #424242;
+}
+
+.title {
+  background-color: #ef8e0e;
+  padding: 0.3em;
+  color: #ffffff;
+  font-family: Roboto Bold, sans-serif;
+  font-size: 35px;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
