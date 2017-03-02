@@ -1,32 +1,21 @@
 <div class="row horizontal">
-  <!-- Swiper -->
-  <div class="swiper-container news-swiper">
-    <div class="swiper-wrapper">
-      <div *ngFor="let item of news" class="swiper-slide"
-           [style.background-image]=" 'url(' + getImageUrl(item.image) + ')'">
-        <div class="row">
-          <div class="col-lg-4 col-lg-offset-1 col-sm-4 col-sm-offset-1">
-            <div class="item-title">{{item.title}}</div>
-          </div>
+  <ks-swiper-container [options]="newsOptions">
+    <ks-swiper-slide [style.background-image]=" 'url(' + getImageUrl(item.image) + ')'" *ngFor="let item of news">
+      <div class="row">
+        <div class="col-lg-4 col-lg-offset-1 col-sm-4 col-sm-offset-1">
+          <div class="item-title">{{item.title}}</div>
         </div>
-
-        <!--{{last ? initSwiper() : ''}}-->
-        <div class="row">
-          <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3">
-            <div class="item-short-desc">{{item.shortDescription}}
-              <div class="text-right">{{item.date | date }}</div>
-            </div>
-          </div>
-        </div>
-        <!--<div>{{item.description}}</div>-->
-
-        <!--<span *ngIf="l">{{initSwiper()}}</span>-->
       </div>
-    </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination news-pagination"></div>
-    <!-- Add Arrows -->
-    <div class="swiper-button-next news-left"></div>
-    <div class="swiper-button-prev news-right"></div>
-  </div>
+
+      <!--{{last ? initSwiper() : ''}}-->
+      <div class="row">
+        <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3">
+          <div class="item-short-desc">{{item.shortDescription}}
+            <div class="text-right">{{item.date | date }}</div>
+          </div>
+        </div>
+      </div>
+    </ks-swiper-slide>
+    <!--<div class="swiper-pagination"></div>-->
+  </ks-swiper-container>
 </div>
