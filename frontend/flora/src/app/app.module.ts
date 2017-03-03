@@ -64,8 +64,9 @@ import {CalendarModule} from "angular-calendar";
     TabsModule,
     DateValueAccessorModule,
     CalendarModule.forRoot(),
-    appRouting,
-    KSSwiperModule
+    KSSwiperModule,
+    appRouting
+
   ],
   providers: [ScrollService, BackendService],
   bootstrap: [AppComponent]

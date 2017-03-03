@@ -27,8 +27,14 @@ export class EventComponent implements OnInit, OnDestroy {
 
   private events: Array<any> = [];
   private getEventsSubscription:Subscription;
+  private swiperOptions: any;
 
-  constructor(private backendService:BackendService) { }
+  constructor(private backendService:BackendService) {
+    this.swiperOptions = {
+      pagination: '.swiper-pagination',
+      paginationClickable: true
+    };
+  }
 
   ngOnInit() {
     this.getEventsSubscription = this.backendService.getEvents().subscribe(
@@ -43,12 +49,7 @@ export class EventComponent implements OnInit, OnDestroy {
             allDay: true
           });
         });
-
         this.refresh.next();
-        setTimeout(function(){
-          this.initSwiper();
-        }.bind(this),0);
-
       }
     );
   }
@@ -63,16 +64,6 @@ export class EventComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(){
     this.getEventsSubscription.unsubscribe();
-  }
-
-  public initSwiper(){
-    var swiper = new Swiper('.colleague-swiper', {
-      pagination: '.swiper-pagination',
-      paginationClickable: true,
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev'/*,
-       spaceBetween: 30*/
-    });
   }
 
 }
