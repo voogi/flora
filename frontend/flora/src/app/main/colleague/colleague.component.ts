@@ -14,37 +14,27 @@ export class ColleagueComponent implements OnInit, OnDestroy {
 
   private colleagues: Array<any> = [];
   private getColleaguesSubscription:Subscription;
+  private swiperOptions: any;
 
-  constructor(private backendService:BackendService, private sanitizer: DomSanitizer) { }
+  constructor(private backendService:BackendService, private sanitizer: DomSanitizer) {
+    this.swiperOptions = {
+      pagination: '.swiper-pagination',
+      paginationClickable: true,
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev'
+    };
+  }
 
   ngOnInit() {
 
     this.getColleaguesSubscription = this.backendService.getColleagues().subscribe(
       data => {
-
         this.colleagues = data;
-
-        setTimeout(function(){
-          this.initSwiper();
-        }.bind(this),0);
-
       }
     );
   }
   ngOnDestroy(){
     this.getColleaguesSubscription.unsubscribe();
-  }
-
-
-
-  public initSwiper(){
-    var swiper = new Swiper('.colleague-swiper', {
-      pagination: '.swiper-pagination',
-      paginationClickable: true,
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev'/*,
-       spaceBetween: 30*/
-    });
   }
 
   getImageUrl(fileName: string){

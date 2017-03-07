@@ -63,8 +63,8 @@ import {CalendarModule} from "angular-calendar";
     ReactiveFormsModule,
     TabsModule,
     DateValueAccessorModule,
-    CalendarModule.forRoot(),
     KSSwiperModule,
+    CalendarModule.forRoot(),
     appRouting
 
   ],

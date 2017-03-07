@@ -1,49 +1,39 @@
 <div class="row horizontal">
 
-
-  <div class="swiper-container colleague-swiper">
-    <div class="swiper-wrapper">
-      <div *ngFor="let item of colleagues" class="swiper-slide">
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 col-sm-8 col-sm-offset-2">
-
-            <div class="panel panel-default">
-              <div class="colleague-image">
-                <img alt="" class="img-responsive img-thumbnail"
-                     src="{{item.image ? getImageUrl(item.image) : 'https://www.whatmatrix.com/assets/images/default_user.png'}}">
+  <ks-swiper-container [options]="swiperOptions">
+    <ks-swiper-slide *ngFor="let item of colleagues">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-sm-8 col-sm-offset-2">
+          <div class="panel panel-default">
+            <div class="colleague-image">
+              <img alt="" class="img-responsive img-thumbnail"
+                   src="{{item.image ? getImageUrl(item.image) : 'https://www.whatmatrix.com/assets/images/default_user.png'}}">
+            </div>
+            <div class="panel-body">
+              <div class="col-lg-8 col-lg-offset-3 col-sm-8 col-sm-offset-3">
+                <h2>{{item.name}}</h2>
               </div>
-              <div class="panel-body">
-                <div class="col-lg-8 col-lg-offset-3 col-sm-8 col-sm-offset-3">
-                  <h2>{{item.name}}</h2>
-                </div>
-                <div class="row">
-                  <div class="col-lg-3 col-sm-3">
-                    <div class="colleague-contact-wrapper">
-                      <h4>Elérhetőségek</h4>
-                      <div class="colleague-contacts">
-                        <label>Telefon</label>
-                        <p>{{item.phone}}</p>
-                        <label>Email</label>
-                        <p>{{item.email}}</p>
-                      </div>
+              <div class="row">
+                <div class="col-lg-3 col-sm-3">
+                  <div class="colleague-contact-wrapper">
+                    <h4>Elérhetőségek</h4>
+                    <div class="colleague-contacts">
+                      <label>Telefon</label>
+                      <p>{{item.phone}}</p>
+                      <label>Email</label>
+                      <p>{{item.email}}</p>
                     </div>
+                  </div>
 
-                  </div>
-                  <div class="text-justify colleague-desc col-lg-8 col-sm-8">
-                    {{item.description}}
-                  </div>
                 </div>
-
+                <div class="text-justify colleague-desc col-lg-8 col-sm-8">
+                  {{item.description}}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- Add Arrows -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
+    </ks-swiper-slide>
+  </ks-swiper-container>
 </div>
