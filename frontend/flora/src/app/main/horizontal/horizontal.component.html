@@ -10,7 +10,7 @@
       <!--{{last ? initSwiper() : ''}}-->
       <div class="row">
         <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3">
-          <div class="item-short-desc">{{item.shortDescription}}
+          <div class="item-short-desc" [innerHTML]="item.shortDescription">{{item.shortDescription}}
             <div class="text-right">{{item.date | date }}</div>
           </div>
         </div>

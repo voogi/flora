@@ -67,13 +67,17 @@
             <div class="form-group">
               <label for="shortDescription" class="col-lg-2 control-label">Rövid leírás</label>
               <div class="col-lg-9">
-                <input formControlName="shortDescription" id="shortDescription" type="text" class="form-control">
+                <!--<input formControlName="shortDescription" id="shortDescription" type="text" class="form-control">-->
+                <input id="shortDescription" formControlName="shortDescription" class="hidden" [(ngModel)]="shortDescContent"/>
+                <div [froalaEditor]="froalaOptions" [(froalaModel)]="shortDescContent" (froalaInit)="initShortDesc($event)"></div>
               </div>
             </div>
             <div class="form-group">
               <label for="description" class="col-lg-2 control-label">Hosszú leírás</label>
               <div class="col-lg-9">
-                <textarea formControlName="description" id="description" class="form-control"></textarea>
+                <!--<textarea formControlName="description" id="description" class="form-control"></textarea>-->
+                <input formControlName="description" id="description" class="hidden" [(ngModel)]="descContent"/>
+                <div [froalaEditor]="froalaOptions" [(froalaModel)]="descContent" (froalaInit)="initDesc($event)"></div>
               </div>
             </div>
             <div class="form-group">

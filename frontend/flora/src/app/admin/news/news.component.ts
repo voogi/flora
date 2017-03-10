@@ -22,6 +22,16 @@ export class NewsComponent implements OnInit, OnDestroy {
   public sortBy = "title";
   private newsSub: Subscription;
   private selectedRow: any;
+  public froalaOptions: Object = {
+    imageUploadURL: environment.bUrl + "/api/file/image"
+  };
+
+  public shortDescContent;
+  public descContent;
+  public clearShortEditor;
+  public clearEditor;
+  public shortDescControl;
+  public descControl;
 
 
 
@@ -39,6 +49,7 @@ export class NewsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.loadNews();
+
   }
 
   ngOnDestroy(): void {
@@ -48,6 +59,22 @@ export class NewsComponent implements OnInit, OnDestroy {
 
   onNewsSaved() {
 
+  }
+
+  public initShortDesc(initControls) {
+    initControls.initialize();
+    this.shortDescControl = initControls;
+    this.clearShortEditor = function() {
+      this.shortDescControl.getEditor()('html.set', '');
+    };
+  }
+
+  public initDesc(initControls) {
+    initControls.initialize();
+    this.descControl = initControls;
+    this.clearEditor = function() {
+      this.descControl.getEditor()('html.set', '');
+    };
   }
 
   onDelete(){
@@ -82,6 +109,8 @@ export class NewsComponent implements OnInit, OnDestroy {
     this.uploaderComponent.uploader.clearQueue();
     this.uploaderComponent.fileInput.nativeElement.value = "";
     this.image = this.selectedRow.image;
+    this.clearEditor();
+    this.clearShortEditor();
     this.newsForm.setValue(this.selectedRow);
   }
 
@@ -89,6 +118,8 @@ export class NewsComponent implements OnInit, OnDestroy {
     this.showModal = true;
     this.isNew = true;
     this.image = null;
+    this.clearEditor();
+    this.clearShortEditor();
     this.uploaderComponent.uploader.clearQueue();
     this.uploaderComponent.fileInput.nativeElement.value = "";
     this.newsForm.reset();

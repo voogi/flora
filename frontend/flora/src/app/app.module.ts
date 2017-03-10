@@ -30,6 +30,7 @@ import { ContactComponent } from './main/contact/contact.component';
 import { EventComponent } from './main/event/event.component';
 import {AdminEventComponent} from "./admin/event/event.component";
 import {CalendarModule} from "angular-calendar";
+import {FroalaEditorModule} from "angular2-froala-wysiwyg";
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import {CalendarModule} from "angular-calendar";
     DateValueAccessorModule,
     KSSwiperModule,
     CalendarModule.forRoot(),
+    FroalaEditorModule.forRoot(),
     appRouting
 
   ],
