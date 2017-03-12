@@ -20,6 +20,11 @@ body {
   background-color: rgb(246,209,201);
 }
 
+.row-padding {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .v-center {
   display: flex;
   align-items: center;
