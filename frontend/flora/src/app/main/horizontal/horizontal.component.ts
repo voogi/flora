@@ -1,10 +1,11 @@
 import {
-  Component, OnInit, OnDestroy
+  Component, OnInit, OnDestroy, ViewChild
 } from '@angular/core';
 import {BackendService} from "../../service/backend.service";
 import {Subscription} from "rxjs";
 import {environment} from "../../../environments/environment";
 import {DomSanitizer} from "@angular/platform-browser";
+import {DetailedViewComponent} from "../../detailed-view/detailed-view.component";
 
 @Component({
   selector: 'flora-horizontal',
@@ -16,6 +17,7 @@ export class HorizontalComponent implements OnInit, OnDestroy {
   private getNewsSubscription: Subscription;
   private news: Array<any> = [];
   private newsOptions: any = {};
+  @ViewChild(DetailedViewComponent) detailedView: DetailedViewComponent;
 
   constructor(private backendService: BackendService, private sanitizer: DomSanitizer) {
     this.newsOptions = {
@@ -36,6 +38,10 @@ export class HorizontalComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.getNewsSubscription.unsubscribe();
+  }
+
+  onDetailedView(item:any){
+    this.detailedView.onShow(item);
   }
 
   getImageUrl(fileName: string) {

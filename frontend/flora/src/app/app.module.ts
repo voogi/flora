@@ -31,6 +31,7 @@ import { EventComponent } from './main/event/event.component';
 import {AdminEventComponent} from "./admin/event/event.component";
 import {CalendarModule} from "angular-calendar";
 import {FroalaEditorModule} from "angular2-froala-wysiwyg";
+import { DetailedViewComponent } from './detailed-view/detailed-view.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import {FroalaEditorModule} from "angular2-froala-wysiwyg";
     KnowledgeBaseComponent,
     ContactComponent,
     KnowledgeBaseComponent,
-    EventComponent
+    EventComponent,
+    DetailedViewComponent
   ],
   imports: [
     BrowserModule,
@@ -64,8 +66,8 @@ import {FroalaEditorModule} from "angular2-froala-wysiwyg";
     ReactiveFormsModule,
     TabsModule,
     DateValueAccessorModule,
-    KSSwiperModule,
     CalendarModule.forRoot(),
+    KSSwiperModule,
     FroalaEditorModule.forRoot(),
     appRouting
 

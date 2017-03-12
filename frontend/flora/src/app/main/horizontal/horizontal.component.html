@@ -10,12 +10,23 @@
       <!--{{last ? initSwiper() : ''}}-->
       <div class="row">
         <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3">
-          <div class="item-short-desc" [innerHTML]="item.shortDescription">{{item.shortDescription}}
-            <div class="text-right">{{item.date | date }}</div>
+          <div class="item-short-desc" [innerHTML]="item.shortDescription"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3">
+          <div class="row">
+            <div class="col-lg-6 col-sm-6">
+              <div class="text-left readable-background"><a (click)="onDetailedView(item)">Bővebben</a></div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+              <div class="text-right readable-background">{{item.date | date }}</div>
+            </div>
           </div>
         </div>
       </div>
     </ks-swiper-slide>
     <!--<div class="swiper-pagination"></div>-->
   </ks-swiper-container>
+  <flora-detailed-view></flora-detailed-view>
 </div>
