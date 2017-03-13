@@ -28,8 +28,8 @@ export class NewsComponent implements OnInit, OnDestroy {
 
   public shortDescContent;
   public descContent;
-  public clearShortEditor;
-  public clearEditor;
+  public setShortDescription;
+  public setDescription;
   public shortDescControl;
   public descControl;
 
@@ -64,16 +64,16 @@ export class NewsComponent implements OnInit, OnDestroy {
   public initShortDesc(initControls) {
     initControls.initialize();
     this.shortDescControl = initControls;
-    this.clearShortEditor = function() {
-      this.shortDescControl.getEditor()('html.set', '');
+    this.setShortDescription = function(value: string) {
+      this.shortDescControl.getEditor()('html.set', value);
     };
   }
 
   public initDesc(initControls) {
     initControls.initialize();
     this.descControl = initControls;
-    this.clearEditor = function() {
-      this.descControl.getEditor()('html.set', '');
+    this.setDescription = function(value: string) {
+      this.descControl.getEditor()('html.set', value);
     };
   }
 
@@ -102,24 +102,29 @@ export class NewsComponent implements OnInit, OnDestroy {
     this.uploaderComponent.fileInput.nativeElement.value = "";
   }
 
-  onLoadValue() {
-    this.showModal = true;
-    this.isNew = false;
-    this.selectedRow.date = new Date(this.selectedRow.date);
-    this.uploaderComponent.uploader.clearQueue();
-    this.uploaderComponent.fileInput.nativeElement.value = "";
-    this.image = this.selectedRow.image;
-    this.clearEditor();
-    this.clearShortEditor();
-    this.newsForm.setValue(this.selectedRow);
+  onLoadValue(id: number) {
+    this.backendService.getNewsById(id).subscribe(
+      data => {
+        this.showModal = true;
+        this.isNew = false;
+        data.date = new Date(data.date);
+        this.uploaderComponent.uploader.clearQueue();
+        this.uploaderComponent.fileInput.nativeElement.value = "";
+        this.image = data.image;
+        this.newsForm.setValue(data);
+        this.setDescription(data.description);
+        this.setShortDescription(data.shortDescription);
+      }
+    );
+
   }
 
   onNew() {
     this.showModal = true;
     this.isNew = true;
     this.image = null;
-    this.clearEditor();
-    this.clearShortEditor();
+    this.setDescription('');
+    this.setShortDescription('');
     this.uploaderComponent.uploader.clearQueue();
     this.uploaderComponent.fileInput.nativeElement.value = "";
     this.newsForm.reset();

@@ -18,6 +18,11 @@ export class BackendService {
       .map((response: Response) => response.json())
   }
 
+  getNewsById(id: number): Observable<any> {
+    return this.http.get(environment.bUrl + "/api/news/" + id)
+      .map((response: Response) => response.json())
+  }
+
   getColleagues(): Observable<any> {
     return this.http.get(environment.bUrl + "/api/colleague")
       .map((response: Response) => response.json())

@@ -69,8 +69,8 @@ import { DonationComponent } from './main/donation/donation.component';
     TabsModule,
     DateValueAccessorModule,
     CalendarModule.forRoot(),
-    KSSwiperModule,
     FroalaEditorModule.forRoot(),
+    KSSwiperModule,
     appRouting
 
   ],
