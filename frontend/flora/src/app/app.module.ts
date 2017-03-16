@@ -67,10 +67,10 @@ import { DonationComponent } from './main/donation/donation.component';
     DataTableModule,
     ReactiveFormsModule,
     TabsModule,
+    KSSwiperModule,
     DateValueAccessorModule,
     CalendarModule.forRoot(),
     FroalaEditorModule.forRoot(),
-    KSSwiperModule,
     appRouting
 
   ],

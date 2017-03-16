@@ -1,6 +1,29 @@
-<div class="row horizontal">
-  <ks-swiper-container [options]="swiperOptions">
-    <ks-swiper-slide *ngFor="let item of knowledges;">
-    {{item.title}}</ks-swiper-slide>
-  </ks-swiper-container>
+<div class="row">
+  <div class="col-lg-4 col-lg-offset-4 text-center"><h2 class="title">Tudásbázis</h2></div>
+</div>
+
+<div class="row horizontal library">
+
+  <div class="col-lg-4">
+    <ul class="list-group">
+      <li *ngFor="let item of knowledges;"
+          (click)="onKnowledgeSelected(item)"
+          [class.active]="selected == item"
+          class="list-group-item hvr-bounce-to-right">
+        {{item.title}}
+      </li>
+    </ul>
+  </div>
+  <div class="col-lg-7 col-lg-offset-1">
+    <div class="row">
+      <h2>{{selected?.title}}</h2>
+    </div>
+    <div class="row">
+      {{selected?.description}}
+    </div>
+    <div class="row">
+      Készitette:    {{selected?.creator}} -- {{selected?.date | date}}
+    </div>
+  </div>
+
 </div>

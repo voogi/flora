@@ -1,0 +1,15 @@
+.library{
+  padding: 40px;
+}
+
+.list-group-item:hover {
+  cursor: pointer;
+}
+
+.hvr-bounce-to-right:before {
+  background: #2098D1;
+}
+
+.list-group-item.active {
+  background: #2098D1;
+}
