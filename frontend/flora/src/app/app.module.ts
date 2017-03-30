@@ -33,6 +33,8 @@ import {CalendarModule} from "angular-calendar";
 import {FroalaEditorModule} from "angular2-froala-wysiwyg";
 import { DetailedViewComponent } from './detailed-view/detailed-view.component';
 import { DonationComponent } from './main/donation/donation.component';
+import { VolunAdminComponent } from './admin/volun-admin/volun-admin.component';
+import { SubsAdminComponent } from './admin/subs-admin/subs-admin.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { DonationComponent } from './main/donation/donation.component';
     KnowledgeBaseComponent,
     EventComponent,
     DetailedViewComponent,
-    DonationComponent
+    DonationComponent,
+    VolunAdminComponent,
+    SubsAdminComponent
   ],
   imports: [
     BrowserModule,
