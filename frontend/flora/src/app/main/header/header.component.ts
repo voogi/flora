@@ -22,9 +22,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  onNewsLetter(){
-    // this.backendService.newsLetterReg(this.newsletterForm.value).subscribe( data => console.log("sikeres"))
-    //TODO sikeres popup
+  onSubscribe(){
+    this.backendService.subscribe(this.newsletterForm.value).subscribe( data => console.log("sikeres"));
   }
 
 }

@@ -59,6 +59,18 @@ INSERT INTO `event` (`id`, `title`, `description`, `address`, `image`, `date`) V
 /*!40000 ALTER TABLE `event` ENABLE KEYS */;
 
 
+DROP TABLE IF EXISTS `subscribers`;
+CREATE TABLE IF NOT EXISTS `subscribers` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT  CHARSET =utf8;
+
+ALTER TABLE `subscribers` DISABLE KEYS;
+INSERT INTO `subscribers` (`id`,`email`) VALUES (5, 'lofutty23xx@gmail.com');
+INSERT INTO `subscribers` (`id`,`email`) VALUES (6, 'gardiangy@gmail.com');
+ALTER TABLE `subscribers` ENABLE KEYS;
+
 -- Dumping structure for tábla flora.knowledge_base
 DROP TABLE IF EXISTS `knowledge_base`;
 CREATE TABLE IF NOT EXISTS `knowledge_base` (

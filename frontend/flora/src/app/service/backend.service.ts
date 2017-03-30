@@ -67,6 +67,7 @@ export class BackendService {
   getKnowledges(): Observable<any> {
     return this.http.get(environment.bUrl + "/api/knowledge")
       .map((response: Response) => response.json())
+      .catch(this.handleError)
   }
 
   deleteKnowledge(id: string): Observable<any> {
@@ -79,10 +80,15 @@ export class BackendService {
       .catch(this.handleError);
   }
 
-  newsLetterReg(body:any):Observable<any>{
-    // TODO newsletter api
-    return this.http.post(environment.bUrl + "",body, {headers: this.headers})
-      .map((data: Response) => data.json())
+  subscribe(body:any): Observable<any>{
+    return this.http.post(environment.bUrl + "/api/newsletter", body, {headers: this.headers})
+      .map((data: Response) => data.json());
+      // .catch(this.handleError);
+  }
+
+  getALlSubscriber(): Observable<any> {
+    return this.http.get(environment.bUrl + "/api/newsletter")
+      .map((response: Response) => response.json())
       .catch(this.handleError);
   }
 

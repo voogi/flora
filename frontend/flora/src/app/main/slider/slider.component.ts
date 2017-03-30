@@ -46,14 +46,14 @@ export class SliderComponent implements OnInit, AfterViewInit {
         anchor : "library"
       },
       {
-        title : "önkéntesség",
-        icon : "book-icon",
-        anchor : "self"
-      },
-      {
         title : "tamogatas",
         icon : "banknotes-icon",
         anchor : "donation"
+      },
+      {
+        title : "önkéntesség",
+        icon : "book-icon",
+        anchor : "self"
       },
       {
         title : "kapcsolat",
