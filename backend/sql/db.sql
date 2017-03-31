@@ -71,6 +71,20 @@ INSERT INTO `subscribers` (`id`,`email`) VALUES (5, 'lofutty23xx@gmail.com');
 INSERT INTO `subscribers` (`id`,`email`) VALUES (6, 'gardiangy@gmail.com');
 ALTER TABLE `subscribers` ENABLE KEYS;
 
+DROP TABLE IF EXISTS `volunteers`;
+CREATE TABLE IF NOT EXISTS `volunteers` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `phone` bigint(40) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT  CHARSET =utf8;
+
+ALTER TABLE `volunteers` DISABLE KEYS;
+INSERT INTO `volunteers` (`id`,`email`,`name`,`phone`) VALUES (5, 'lofutty23xx@gmail.com','Dani', '+36205545151');
+INSERT INTO `volunteers` (`id`,`email`,`name`,`phone`) VALUES (6, 'gardiangy@gmail.com','Gyuri', '+36205545151');
+ALTER TABLE `volunteers` ENABLE KEYS;
+
 -- Dumping structure for tábla flora.knowledge_base
 DROP TABLE IF EXISTS `knowledge_base`;
 CREATE TABLE IF NOT EXISTS `knowledge_base` (
