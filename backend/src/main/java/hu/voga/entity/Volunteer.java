@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@Table(name = "volunteer")
+@Table(name = "volunteers")
 public class Volunteer {
 
     @Id
