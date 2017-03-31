@@ -92,6 +92,18 @@ export class BackendService {
       .catch(this.handleError);
   }
 
+  getAllVolunteer(): Observable<any> {
+    return this.http.get(environment.bUrl + "/api/volunteer")
+      .map((response: Response) => response.json())
+      .catch(this.handleError);
+  }
+
+  saveVolunteer(body:any): Observable<any> {
+    return this.http.post(environment.bUrl + "/api/volunteer", body, {headers: this.headers})
+      .map((data: Response) => data.json());
+    // .catch(this.handleError);
+  }
+
   private handleError(error: any) {
     console.log(error);
     return Observable.throw(error.json())

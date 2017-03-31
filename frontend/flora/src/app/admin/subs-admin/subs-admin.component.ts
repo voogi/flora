@@ -12,6 +12,7 @@ export class SubsAdminComponent implements OnInit,OnDestroy {
   public sortBy = "email";
   private subsSub: Subscription;
   public subs: Array<any>;
+  private selectedRow: any;
 
   constructor(private backendService:BackendService) { }
 
@@ -21,6 +22,7 @@ export class SubsAdminComponent implements OnInit,OnDestroy {
 
   ngOnDestroy() {
     this.subsSub.unsubscribe();
+    this.selectedRow = null;
   }
 
   private loadNews() {

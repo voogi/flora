@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {BackendService} from "../../service/backend.service";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'flora-volunteer',
   templateUrl: './volunteer.component.html',
   styleUrls: ['./volunteer.component.css']
 })
-export class VolunteerComponent implements OnInit {
+export class VolunteerComponent implements OnInit, OnDestroy {
 
   private volunteerForm: FormGroup;
+  private subscription: Subscription;
 
   constructor(private backendService:BackendService, private formBuilder:FormBuilder) {
 
@@ -23,9 +25,12 @@ export class VolunteerComponent implements OnInit {
 
   ngOnInit() {
   }
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
+  }
 
   onSubmit(){
-    //TODO register volunteer
+    this.subscription = this.backendService.saveVolunteer(this.volunteerForm.value).subscribe( data => console.log("sikeres"));
   }
 
 }
