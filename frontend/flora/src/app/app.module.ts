@@ -35,6 +35,7 @@ import { DetailedViewComponent } from './detailed-view/detailed-view.component';
 import { DonationComponent } from './main/donation/donation.component';
 import { VolunAdminComponent } from './admin/volun-admin/volun-admin.component';
 import { SubsAdminComponent } from './admin/subs-admin/subs-admin.component';
+import {FilterPipe} from "../pipes/filter";
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { SubsAdminComponent } from './admin/subs-admin/subs-admin.component';
     HeaderComponent,
     FileSelectDirective,
     TruncatePipe,
+    FilterPipe,
     ColleagueComponent,
     VolunteerComponent,
     KnowledgeComponent,

@@ -92,6 +92,12 @@ export class BackendService {
       .catch(this.handleError);
   }
 
+  getSubscriberEmails(): Observable<any> {
+    return this.http.get(environment.bUrl + "/api/newsletter/emails")
+      .map((response: Response) => response.text())
+      .catch(this.handleError);
+  }
+
   getAllVolunteer(): Observable<any> {
     return this.http.get(environment.bUrl + "/api/volunteer")
       .map((response: Response) => response.json())
