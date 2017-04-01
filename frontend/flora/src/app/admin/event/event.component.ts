@@ -21,6 +21,8 @@ export class AdminEventComponent implements OnInit, OnDestroy {
 
   public events: Array<any>;
   public sortBy = "title";
+  public searchTitle = "";
+  public searchColumn = "title";
   private eventSub: Subscription;
   private selectedRow: any;
 

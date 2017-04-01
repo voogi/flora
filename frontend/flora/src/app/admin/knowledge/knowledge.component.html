@@ -3,7 +3,11 @@
   <a class="btn btn-success" (click)="onNew()">Új</a>
   <a class="btn btn-primary" [class.disabled]="!selectedRow"  (click)="onLoadValue()">Szerkesztés</a>
   <a class="btn btn-danger" [class.disabled]="!selectedRow"  (click)="onDelete()">Törlés</a>
-  <table class="table table-striped table-hover" [mfData]="news" #mf="mfDataTable" [(mfSortBy)]="sortBy" [mfRowsOnPage]="5">
+  <div class="pull-right">
+    <label for="search-title">Keresés a címben:</label>
+    <input id="search-title" type="text" [(ngModel)]="searchTitle">
+  </div>
+  <table class="table table-striped table-hover" [mfData]="news | filter: searchColumn:searchTitle" #mf="mfDataTable" [(mfSortBy)]="sortBy" [mfRowsOnPage]="5">
     <thead>
     <tr>
       <th style="width: 20%">

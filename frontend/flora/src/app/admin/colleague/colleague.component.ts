@@ -21,6 +21,8 @@ export class AdminColleagueComponent implements OnInit, OnDestroy {
 
   public colleagues: Array<any>;
   public sortBy = "name";
+  public searchName = "";
+  public searchColumn = "name";
   private colleagueSub: Subscription;
   private selectedRow: any;
 

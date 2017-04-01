@@ -17,6 +17,8 @@ export class KnowledgeComponent implements OnInit, OnDestroy {
 
   public news: Array<any>;
   public sortBy = "title";
+  public searchTitle = "";
+  public searchColumn = "title";
   private newsSub: Subscription;
   private selectedRow: any;
 
