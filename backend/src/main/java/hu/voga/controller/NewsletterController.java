@@ -29,6 +29,11 @@ public class NewsletterController {
         return newsletterService.findAll();
     }
 
+    @GetMapping("emails")
+    public String getAllEmails() {
+        return newsletterService.getAllEmail();
+    }
+
     @PostMapping()
     public Subscriber subscribe(@RequestBody Subscriber sub) {
         return this.newsletterService.save(sub);

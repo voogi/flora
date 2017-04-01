@@ -4,8 +4,10 @@ import hu.voga.dao.NewsletterRepository;
 import hu.voga.entity.Subscriber;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by GGyuri on 2017. 02. 20..
@@ -26,6 +28,14 @@ public class NewsletterService {
 
     public List<Subscriber> findAll(){
         return (List<Subscriber>) newsletterRepository.findAll();
+    }
+
+    public String getAllEmail(){
+        List<String> emails = ((List<Subscriber>) newsletterRepository.findAll())
+                .stream()
+                .map(Subscriber::getEmail)
+                .collect(Collectors.toList());
+        return String.join(",", emails);
     }
 
     public void delete(Long id){
