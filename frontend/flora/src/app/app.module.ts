@@ -67,9 +67,9 @@ import {FilterPipe} from "../pipes/filter";
     SubsAdminComponent
   ],
   imports: [
-    KSSwiperModule,
     BrowserModule,
     FormsModule,
+    KSSwiperModule,
     HttpModule,
     DataTableModule,
     ReactiveFormsModule,
