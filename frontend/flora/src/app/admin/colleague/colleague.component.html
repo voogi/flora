@@ -87,6 +87,21 @@
               </div>
             </div>
             <div class="form-group">
+              <label class="col-lg-2 control-label">Önéletrajz</label>
+              <div class="row">
+                <div class="col-lg-6">
+                  <input formControlName="cv" id="cv" type="input" [(ngModel)]="cv" class="form-control" disabled>
+                </div>
+                <div class="col-lg-3">
+                  <a class="btn btn-danger" (click)="onDeleteCV()" *ngIf="cv">Önéletrajz törlése</a>
+                </div>
+              </div>
+              <div class="col-lg-9 col-lg-offset-2">
+                <flora-uploader [isCV]="true" (imageUploaded)="onCVUploaded($event)"></flora-uploader>
+              </div>
+
+            </div>
+            <div class="form-group">
               <label class="col-lg-2 control-label">Feltöltés</label>
               <div class="col-lg-9">
                 <flora-uploader (imageUploaded)="onImageUploaded($event)"></flora-uploader>

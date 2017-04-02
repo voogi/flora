@@ -17,6 +17,7 @@ export class AdminColleagueComponent implements OnInit, OnDestroy {
   private colleagueForm: FormGroup;
   private saveSubscription: Subscription;
   private image;
+  private cv;
   @ViewChild(UploaderComponent) uploaderComponent: UploaderComponent;
 
   public colleagues: Array<any>;
@@ -34,6 +35,7 @@ export class AdminColleagueComponent implements OnInit, OnDestroy {
       'phone': [''],
       'email': [''],
       'image': [''],
+      'cv': [''],
       'active': ['']
     });
   }
@@ -63,6 +65,9 @@ export class AdminColleagueComponent implements OnInit, OnDestroy {
   onImageUploaded(fileName:string){
     this.image = fileName;
   }
+  onCVUploaded(fileName:string){
+    this.cv = fileName;
+  }
   getImage(){
     return environment.imagesUrl + this.image;
   }
@@ -71,6 +76,10 @@ export class AdminColleagueComponent implements OnInit, OnDestroy {
     this.image = null;
     this.uploaderComponent.uploader.clearQueue();
     this.uploaderComponent.fileInput.nativeElement.value = "";
+  }
+
+  onDeleteCV(){
+    this.cv = null;
   }
 
   onLoadValue() {

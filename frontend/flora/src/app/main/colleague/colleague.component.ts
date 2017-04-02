@@ -41,4 +41,9 @@ export class ColleagueComponent implements OnInit, OnDestroy {
     this.sanitizer.bypassSecurityTrustStyle("url("+environment.imagesUrl + fileName+")");
     return environment.imagesUrl + fileName;
   }
+
+  getCVUrl(fileName: string){
+    // this.sanitizer.bypassSecurityTrustStyle("url("+environment.imagesUrl + fileName+")");
+    return environment.cvsUrl + fileName;
+  }
 }

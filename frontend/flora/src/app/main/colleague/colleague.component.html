@@ -22,8 +22,10 @@
                       <p>{{item.phone}}</p>
                       <label>Email</label>
                       <p>{{item.email}}</p>
-                      <label>Önéletrajz</label>
-                      <p><a>letöltés</a></p>
+                      <div *ngIf="item.cv">
+                        <label>Önéletrajz</label>
+                        <p><a href="{{getCVUrl(item.cv)}}" target="_blank">letöltés</a></p>
+                      </div>
                     </div>
                   </div>
 
