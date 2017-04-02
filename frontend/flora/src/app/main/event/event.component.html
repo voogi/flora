@@ -3,9 +3,9 @@
 </div>
 
 <div class="row">
-  <div class="col-lg-5 col-md-5 calendar">
+  <div class="col-lg-4 col-lg-offset-1 col-md-4 calendar">
     <div class="row text-center">
-      <div class="col-md-4">
+      <div class="col-lg-5 col-md-5">
         <div class="btn-group">
           <div
             class="btn btn-primary"
@@ -43,9 +43,13 @@
       </mwl-calendar-month-view>
     </div>
   </div>
-  <div class="col-lg-5 col-lg-offset-1">
+  <div class="col-lg-5">
+    <div *ngIf="eventsForSelectedDate.length == 0" class="col-lg-5 col-lg-offset-3 col-sm-5 col-sm-offset-3 panel panel-default">
+      <p class="no-event-title">A kiválasztott napon nincs esemény</p>
+    </div>
+
     <ks-swiper-container [options]="swiperOptions">
-      <ks-swiper-slide *ngFor="let item of events">
+      <ks-swiper-slide *ngFor="let item of eventsForSelectedDate">
         <div class="row">
           <div class="col-lg-10 col-lg-offset-1 col-sm-10 col-sm-offset-1">
             <div class="panel panel-default">
@@ -54,7 +58,7 @@
                   <h2>{{item.title}}</h2>
                 </div>
                 <div class="row">
-                  <div class="text-justify colleague-desc col-lg-12 col-sm-12">
+                  <div class="text-justify colleague-desc col-lg-12 col-sm-12" [froalaView]>
                     {{item.description}}
                   </div>
                 </div>
