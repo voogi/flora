@@ -26,6 +26,7 @@ export class EventComponent implements OnInit, OnDestroy {
   selectedDay: CalendarMonthViewDay;
 
   private events: Array<any> = [];
+  private eventsForSelectedDate: Array<any> = [];
   private getEventsSubscription:Subscription;
   private swiperOptions: any;
 
@@ -39,7 +40,6 @@ export class EventComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.getEventsSubscription = this.backendService.getEvents().subscribe(
       data => {
-
         this.events = data;
         data.forEach(event => {
           this.calEvents.push({
@@ -60,6 +60,16 @@ export class EventComponent implements OnInit, OnDestroy {
     }
     day.cssClass = 'cal-day-selected';
     this.selectedDay = day;
+    this.eventsForSelectedDate = [];
+    for (let i in this.events) {
+      let event = this.events[i];
+      let eventDate = new Date(event.date);
+      if (eventDate.getFullYear() == day.date.getFullYear()
+        && eventDate.getMonth() == day.date.getMonth()
+        && eventDate.getDate() == day.date.getDate()) {
+        this.eventsForSelectedDate.push(event);
+      }
+    }
   }
 
   ngOnDestroy(){

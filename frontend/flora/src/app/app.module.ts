@@ -30,7 +30,7 @@ import { ContactComponent } from './main/contact/contact.component';
 import { EventComponent } from './main/event/event.component';
 import {AdminEventComponent} from "./admin/event/event.component";
 import {CalendarModule} from "angular-calendar";
-import {FroalaEditorModule} from "angular2-froala-wysiwyg";
+import {FroalaEditorModule,FroalaViewModule} from "angular2-froala-wysiwyg";
 import { DetailedViewComponent } from './detailed-view/detailed-view.component';
 import { DonationComponent } from './main/donation/donation.component';
 import { VolunAdminComponent } from './admin/volun-admin/volun-admin.component';
@@ -77,6 +77,7 @@ import {FilterPipe} from "../pipes/filter";
     DateValueAccessorModule,
     CalendarModule.forRoot(),
     FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot(),
     appRouting
 
   ],

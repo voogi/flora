@@ -1,11 +1,18 @@
-.cal-day-selected {
-  background-color: #fb8e0e !important;
+:host >>> .cal-day-selected {
+  background-color: #337ab7 !important;
+}
+
+:host >>> .cal-month-view .cal-day-cell {
+  min-height: 80px;
 }
 
 .calendar {
   background-color: #ffffff;
-  margin-left: 30px;
   box-shadow: 1px 1px 3px 0px #424242;
+}
+
+.no-event-title {
+  margin-top: 5px;
 }
 
 .title {
