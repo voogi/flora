@@ -10,6 +10,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class HeaderComponent implements OnInit {
 
   private newsletterForm: FormGroup;
+  private visible: boolean = false;
+
 
   constructor(private backendService:BackendService, private formBuilder:FormBuilder) {
 
@@ -19,11 +21,17 @@ export class HeaderComponent implements OnInit {
 
   }
 
+  onToggleSubPopup(){
+    this.visible = !this.visible;
+  }
+
   ngOnInit() {
   }
 
   onSubscribe(){
     this.backendService.subscribe(this.newsletterForm.value).subscribe( data => console.log("sikeres"));
   }
+
+
 
 }

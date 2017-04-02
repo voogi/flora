@@ -67,13 +67,13 @@ import {FilterPipe} from "../pipes/filter";
     SubsAdminComponent
   ],
   imports: [
+    KSSwiperModule,
     BrowserModule,
     FormsModule,
     HttpModule,
     DataTableModule,
     ReactiveFormsModule,
     TabsModule,
-    KSSwiperModule,
     DateValueAccessorModule,
     CalendarModule.forRoot(),
     FroalaEditorModule.forRoot(),
