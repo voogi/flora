@@ -80,17 +80,13 @@
             <div class="form-group">
               <label for="shortDescription" class="col-lg-2 control-label">Rövid leírás</label>
               <div class="col-lg-9">
-                <!--<input formControlName="shortDescription" id="shortDescription" type="text" class="form-control">-->
-                <input id="shortDescription" formControlName="shortDescription" class="hidden" [(ngModel)]="shortDescContent"/>
-                <div [froalaEditor]="froalaOptions" [(froalaModel)]="shortDescContent" (froalaInit)="initShortDesc($event)"></div>
+                <textarea [froalaEditor]="froalaOptions" id="shortDescription" formControlName="shortDescription"></textarea>
               </div>
             </div>
             <div class="form-group">
               <label for="description" class="col-lg-2 control-label">Hosszú leírás</label>
               <div class="col-lg-9">
-                <!--<textarea formControlName="description" id="description" class="form-control"></textarea>-->
-                <input formControlName="description" id="description" class="hidden" [(ngModel)]="descContent"/>
-                <div [froalaEditor]="froalaOptions" [(froalaModel)]="descContent" (froalaInit)="initDesc($event)"></div>
+                <textarea [froalaEditor]="froalaOptions"  formControlName="description" id="description"></textarea>
               </div>
             </div>
             <div class="form-group">
@@ -100,15 +96,10 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="date" class="col-lg-2 control-label">Feltöltés</label>
-              <div class="col-lg-9">
-               <flora-uploader (imageUploaded)="onImageUploaded($event)"></flora-uploader>
-              </div>
-            </div>
-            <div class="form-group">
               <label for="date" class="col-lg-2 control-label">Kép</label>
               <div class="col-lg-8">
-                <input formControlName="image" id="image" type="input" class="hidden">
+                <flora-uploader [title]="'Kép feltöltés'" (imageUploaded)="onImageUploaded($event)"></flora-uploader>
+                <input formControlName="image" id="image" type="input" [(ngModel)]="image" class="hidden">
                 <div class="row">
                   <div class="col-lg-9">
                     <img id="mainImage" class="img-responsive img-thumbnail" *ngIf="image" src="{{getImage()}}">

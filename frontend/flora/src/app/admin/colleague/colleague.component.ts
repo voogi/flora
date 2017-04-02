@@ -18,7 +18,9 @@ export class AdminColleagueComponent implements OnInit, OnDestroy {
   private saveSubscription: Subscription;
   private image;
   private cv;
-  @ViewChild(UploaderComponent) uploaderComponent: UploaderComponent;
+  public froalaOptions: Object = {
+    imageUploadURL: environment.bUrl + "/api/file/image"
+  };
 
   public colleagues: Array<any>;
   public sortBy = "name";
@@ -74,8 +76,6 @@ export class AdminColleagueComponent implements OnInit, OnDestroy {
 
   onDeleteImage(){
     this.image = null;
-    this.uploaderComponent.uploader.clearQueue();
-    this.uploaderComponent.fileInput.nativeElement.value = "";
   }
 
   onDeleteCV(){
@@ -85,24 +85,18 @@ export class AdminColleagueComponent implements OnInit, OnDestroy {
   onLoadValue() {
     this.showModal = true;
     this.isNew = false;
-    this.uploaderComponent.uploader.clearQueue();
-    this.uploaderComponent.fileInput.nativeElement.value = "";
-    this.image = this.selectedRow.image;
     this.colleagueForm.setValue(this.selectedRow);
   }
 
   onNew() {
     this.showModal = true;
     this.isNew = true;
-    this.image = null;
-    this.uploaderComponent.uploader.clearQueue();
-    this.uploaderComponent.fileInput.nativeElement.value = "";
     this.colleagueForm.reset();
+    this.colleagueForm.controls['description'].setValue("");
   }
 
   onSubmit() {
     let form = this.colleagueForm.value;
-    form["image"] = this.image;
     const body = JSON.stringify(form);
     this.saveSubscription = this.backendService.saveColleague(body, this.isNew).subscribe(
       data => {

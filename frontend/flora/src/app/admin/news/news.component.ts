@@ -16,7 +16,6 @@ export class NewsComponent implements OnInit, OnDestroy {
   private newsForm: FormGroup;
   private saveSubscription: Subscription;
   private image;
-  @ViewChild(UploaderComponent) uploaderComponent: UploaderComponent;
 
   public news: Array<any>;
   public sortBy = "title";
@@ -28,13 +27,6 @@ export class NewsComponent implements OnInit, OnDestroy {
   public froalaOptions: Object = {
     imageUploadURL: environment.bUrl + "/api/file/image"
   };
-
-  public shortDescContent;
-  public descContent;
-  public setShortDescription;
-  public setDescription;
-  public shortDescControl;
-  public descControl;
   public activeNews:number = 0;
 
 
@@ -78,22 +70,6 @@ export class NewsComponent implements OnInit, OnDestroy {
     }
   }
 
-  public initShortDesc(initControls) {
-    initControls.initialize();
-    this.shortDescControl = initControls;
-    this.setShortDescription = function(value: string) {
-      this.shortDescControl.getEditor()('html.set', value);
-    };
-  }
-
-  public initDesc(initControls) {
-    initControls.initialize();
-    this.descControl = initControls;
-    this.setDescription = function(value: string) {
-      this.descControl.getEditor()('html.set', value);
-    };
-  }
-
   onDelete(){
     this.backendService.deleteNews(this.selectedRow["id"]).subscribe(
       (resp) => {this.loadNews(); this.selectedRow = null}
@@ -123,8 +99,6 @@ export class NewsComponent implements OnInit, OnDestroy {
 
   onDeleteImage(){
     this.image = null;
-    this.uploaderComponent.uploader.clearQueue();
-    this.uploaderComponent.fileInput.nativeElement.value = "";
   }
 
   onLoadValue(id: number) {
@@ -133,12 +107,7 @@ export class NewsComponent implements OnInit, OnDestroy {
         this.showModal = true;
         this.isNew = false;
         data.date = new Date(data.date);
-        this.uploaderComponent.uploader.clearQueue();
-        this.uploaderComponent.fileInput.nativeElement.value = "";
-        this.image = data.image;
         this.newsForm.setValue(data);
-        this.setDescription(data.description);
-        this.setShortDescription(data.shortDescription);
       }
     );
 
@@ -147,17 +116,13 @@ export class NewsComponent implements OnInit, OnDestroy {
   onNew() {
     this.showModal = true;
     this.isNew = true;
-    this.image = null;
-    this.setDescription('');
-    this.setShortDescription('');
-    this.uploaderComponent.uploader.clearQueue();
-    this.uploaderComponent.fileInput.nativeElement.value = "";
     this.newsForm.reset();
+    this.newsForm.controls['description'].setValue("");
+    this.newsForm.controls['shortDescription'].setValue("");
   }
 
   onSubmit() {
     let form = this.newsForm.value;
-    form["image"] = this.image;
     const body = JSON.stringify(form);
     this.saveSubscription = this.backendService.saveNews(body, this.isNew).subscribe(
       data => {

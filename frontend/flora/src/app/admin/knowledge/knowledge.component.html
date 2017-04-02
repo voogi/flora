@@ -50,7 +50,7 @@
                 aria-hidden="true">&times;</button>
         <div class="row">
           <div class="col-lg-4 col-sm-4">
-            <h4 class="modal-title">Hír szerkesztés</h4>
+            <h4 class="modal-title">Tudásbázis szerkesztés</h4>
           </div>
           <div class="col-lg-3 col-sm-3">
             <button [disabled]="!newsForm.valid" (click)="onSubmit()" class="btn btn-primary pull-right">Mentés</button>
@@ -77,7 +77,7 @@
             <div class="form-group">
               <label for="description" class="col-lg-2 control-label">Hosszú leírás</label>
               <div class="col-lg-9">
-                <textarea formControlName="description" id="description" class="form-control"></textarea>
+                <textarea [froalaEditor]="froalaOptions" formControlName="description" id="description" class="form-control"></textarea>
               </div>
             </div>
             <div class="form-group">

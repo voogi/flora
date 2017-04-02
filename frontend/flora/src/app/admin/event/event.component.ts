@@ -17,7 +17,6 @@ export class AdminEventComponent implements OnInit, OnDestroy {
   private eventForm: FormGroup;
   private saveSubscription: Subscription;
   private image;
-  @ViewChild(UploaderComponent) uploaderComponent: UploaderComponent;
 
   public events: Array<any>;
   public sortBy = "title";
@@ -25,6 +24,9 @@ export class AdminEventComponent implements OnInit, OnDestroy {
   public searchColumn = "title";
   private eventSub: Subscription;
   private selectedRow: any;
+  public froalaOptions: Object = {
+    imageUploadURL: environment.bUrl + "/api/file/image"
+  };
 
 
   constructor(private formBuilder: FormBuilder, private backendService:BackendService) {
@@ -68,32 +70,24 @@ export class AdminEventComponent implements OnInit, OnDestroy {
 
   onDeleteImage(){
     this.image = null;
-    this.uploaderComponent.uploader.clearQueue();
-    this.uploaderComponent.fileInput.nativeElement.value = "";
   }
 
   onLoadValue() {
     this.showModal = true;
     this.isNew = false;
     this.selectedRow.date = new Date(this.selectedRow.date);
-    this.uploaderComponent.uploader.clearQueue();
-    this.uploaderComponent.fileInput.nativeElement.value = "";
-    this.image = this.selectedRow.image;
     this.eventForm.setValue(this.selectedRow);
   }
 
   onNew() {
     this.showModal = true;
     this.isNew = true;
-    this.image = null;
-    this.uploaderComponent.uploader.clearQueue();
-    this.uploaderComponent.fileInput.nativeElement.value = "";
     this.eventForm.reset();
+    this.eventForm.controls['description'].setValue("");
   }
 
   onSubmit() {
     let form = this.eventForm.value;
-    form["image"] = this.image;
     const body = JSON.stringify(form);
     this.saveSubscription = this.backendService.saveEvent(body, this.isNew).subscribe(
       data => {

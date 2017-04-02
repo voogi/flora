@@ -13,6 +13,8 @@ export class UploaderComponent implements OnInit {
   @Output() imageUploaded: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild('fileInput') fileInput: any;
   @Input() isCV: boolean;
+  @Input() title: string;
+  public showModal = false;
 
   constructor() { }
 
@@ -21,7 +23,20 @@ export class UploaderComponent implements OnInit {
     this.uploader = new FileUploader({url: url});
     this.uploader.onCompleteItem = (fileItem, response: string) => {
       this.imageUploaded.emit(response);
+      this.onClose();
     }
+  }
+
+  onClose(){
+    this.showModal = false;
+    this.uploader.clearQueue();
+    this.fileInput.nativeElement.value = "";
+  }
+
+  onOpen(){
+    this.showModal = true;
+    this.uploader.clearQueue();
+    this.fileInput.nativeElement.value = "";
   }
 
 }

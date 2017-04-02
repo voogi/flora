@@ -1,13 +1,14 @@
 <div class="col-lg-8">
   <h1>Munkatársak</h1>
   <a class="btn btn-success" (click)="onNew()">Új</a>
-  <a class="btn btn-primary" [class.disabled]="!selectedRow"  (click)="onLoadValue()">Szerkesztés</a>
-  <a class="btn btn-danger" [class.disabled]="!selectedRow"  (click)="onDelete()">Törlés</a>
+  <a class="btn btn-primary" [class.disabled]="!selectedRow" (click)="onLoadValue()">Szerkesztés</a>
+  <a class="btn btn-danger" [class.disabled]="!selectedRow" (click)="onDelete()">Törlés</a>
   <div class="pull-right">
     <label for="search-title">Keresés a névben:</label>
     <input id="search-title" type="text" [(ngModel)]="searchName">
   </div>
-  <table class="table table-striped table-hover" [mfData]="colleagues | filter: searchColumn:searchName" #mf="mfDataTable" [(mfSortBy)]="sortBy" [mfRowsOnPage]="5">
+  <table class="table table-striped table-hover" [mfData]="colleagues | filter: searchColumn:searchName"
+         #mf="mfDataTable" [(mfSortBy)]="sortBy" [mfRowsOnPage]="5">
     <thead>
     <tr>
       <th style="width: 20%">
@@ -71,7 +72,8 @@
             <div class="form-group">
               <label for="description" class="col-lg-2 control-label">Leírás</label>
               <div class="col-lg-9">
-                <textarea formControlName="description" id="description" class="form-control"></textarea>
+                <textarea [froalaEditor]="froalaOptions" formControlName="description"
+                          id="description" class="form-control"></textarea>
               </div>
             </div>
             <div class="form-group">
@@ -88,29 +90,25 @@
             </div>
             <div class="form-group">
               <label class="col-lg-2 control-label">Önéletrajz</label>
-              <div class="row">
-                <div class="col-lg-6">
-                  <input formControlName="cv" id="cv" type="input" [(ngModel)]="cv" class="form-control" disabled>
+              <div class="col-lg-8">
+                <flora-uploader [title]="'Önéletrajz feltöltés'" [isCV]="true"
+                                (imageUploaded)="onCVUploaded($event)"></flora-uploader>
+                <div class="row">
+                  <div class="col-lg-9">
+                    <input formControlName="cv" id="cv" type="input" [(ngModel)]="cv" class="form-control" disabled>
+                  </div>
+                  <div class="col-lg-3">
+                    <a class="btn btn-danger" (click)="onDeleteCV()" *ngIf="cv">Önéletrajz törlése</a>
+                  </div>
                 </div>
-                <div class="col-lg-3">
-                  <a class="btn btn-danger" (click)="onDeleteCV()" *ngIf="cv">Önéletrajz törlése</a>
-                </div>
-              </div>
-              <div class="col-lg-9 col-lg-offset-2">
-                <flora-uploader [isCV]="true" (imageUploaded)="onCVUploaded($event)"></flora-uploader>
               </div>
 
             </div>
             <div class="form-group">
-              <label class="col-lg-2 control-label">Feltöltés</label>
-              <div class="col-lg-9">
-                <flora-uploader (imageUploaded)="onImageUploaded($event)"></flora-uploader>
-              </div>
-            </div>
-            <div class="form-group">
               <label for="image" class="col-lg-2 control-label">Kép</label>
               <div class="col-lg-8">
-                <input formControlName="image" id="image" type="input" class="hidden">
+                <flora-uploader [title]="'Kép feltöltés'" (imageUploaded)="onImageUploaded($event)"></flora-uploader>
+                <input formControlName="image" id="image" type="input" [(ngModel)]="image" class="hidden">
                 <div class="row">
                   <div class="col-lg-9">
                     <img id="mainImage" class="img-responsive img-thumbnail" *ngIf="image" src="{{getImage()}}">

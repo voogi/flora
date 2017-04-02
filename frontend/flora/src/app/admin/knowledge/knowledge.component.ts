@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild, OnDestroy} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {Subscription} from "rxjs";
 import {BackendService} from "../../service/backend.service";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'flora-knowledge',
@@ -21,7 +22,9 @@ export class KnowledgeComponent implements OnInit, OnDestroy {
   public searchColumn = "title";
   private newsSub: Subscription;
   private selectedRow: any;
-
+  public froalaOptions: Object = {
+    imageUploadURL: environment.bUrl + "/api/file/image"
+  };
 
 
   constructor(private formBuilder: FormBuilder, private backendService:BackendService) {
@@ -71,6 +74,7 @@ export class KnowledgeComponent implements OnInit, OnDestroy {
     this.showModal = true;
     this.isNew = true;
     this.newsForm.reset();
+    this.newsForm.controls['description'].setValue("");
   }
 
   onSubmit() {
