@@ -23,6 +23,7 @@ export class NewsComponent implements OnInit, OnDestroy {
   public searchTitle = "";
   public searchColumn = "title";
   private newsSub: Subscription;
+  private activationSub: Subscription;
   private selectedRow: any;
   public froalaOptions: Object = {
     imageUploadURL: environment.bUrl + "/api/file/image"
@@ -34,6 +35,7 @@ export class NewsComponent implements OnInit, OnDestroy {
   public setDescription;
   public shortDescControl;
   public descControl;
+  public activeNews:number = 0;
 
 
 
@@ -57,10 +59,23 @@ export class NewsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.saveSubscription.unsubscribe();
     this.newsSub.unsubscribe();
+    this.activationSub.unsubscribe();
   }
 
   onNewsSaved() {
 
+  }
+
+  onActivation(newsItem){
+    if(newsItem.active){
+      this.activationSub = this.backendService.inActivateNews(newsItem.id).subscribe(
+        data => this.loadNews()
+      );
+    } else {
+      this.activationSub = this.backendService.activateNews(newsItem.id).subscribe(
+        data =>  this.loadNews()
+      );
+    }
   }
 
   public initShortDesc(initControls) {
@@ -87,7 +102,15 @@ export class NewsComponent implements OnInit, OnDestroy {
 
   private loadNews() {
     this.newsSub = this.backendService.getNews().subscribe(
-      data => this.news = data
+      data => {
+        this.news = data;
+        this.activeNews = 0;
+        for(let i in data){
+          if(data[i].active){
+            this.activeNews++;
+          }
+        }
+      }
     );
   }
 

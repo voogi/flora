@@ -29,7 +29,7 @@ export class HorizontalComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    this.getNewsSubscription = this.backendService.getNews().subscribe(
+    this.getNewsSubscription = this.backendService.getActiveNews().subscribe(
       data => {
         this.news = data;
       }

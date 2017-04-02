@@ -13,3 +13,18 @@
   }
 }
 
+
+.checkbox input[type=checkbox],
+.checkbox-inline input[type=checkbox],
+.radio input[type=radio],
+.radio-inline input[type=radio] {
+  margin-left: -19px;
+}
+
+input[type=checkbox], input[type=radio]{
+  margin: 8px 0 0;
+}
+
+.table .checkbox {
+  padding-left: 50px;
+}

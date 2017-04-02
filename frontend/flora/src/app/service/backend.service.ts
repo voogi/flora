@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
-import {Http, Response, Headers} from "@angular/http";
+import {Http, Response, Headers, URLSearchParams, RequestOptions} from "@angular/http";
 import {environment} from "../../environments/environment";
 
 @Injectable()
@@ -15,6 +15,15 @@ export class BackendService {
 
   getNews(): Observable<any> {
     return this.http.get(environment.bUrl + "/api/news")
+      .map((response: Response) => response.json())
+  }
+
+  getActiveNews(): Observable<any> {
+    let params: URLSearchParams = new URLSearchParams();
+    params.set("active", "true");
+    let requestOptions = new RequestOptions();
+    requestOptions.search = params;
+    return this.http.get(environment.bUrl + "/api/news", requestOptions)
       .map((response: Response) => response.json())
   }
 
@@ -61,6 +70,16 @@ export class BackendService {
   saveNews(body: any, isNew: boolean): Observable<any> {
     return this.http[isNew ? "post" : "put"](environment.bUrl + "/api/news", body, {headers: this.headers})
       .map((data: Response) => data.json())
+      .catch(this.handleError);
+  }
+
+  activateNews(body: any): Observable<any> {
+    return this.http.post(environment.bUrl + "/api/news/activate", body, {headers: this.headers})
+      .catch(this.handleError);
+  }
+
+  inActivateNews(body: any): Observable<any> {
+    return this.http.post(environment.bUrl + "/api/news/inactivate", body, {headers: this.headers})
       .catch(this.handleError);
   }
 

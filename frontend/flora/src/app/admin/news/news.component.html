@@ -1,5 +1,5 @@
 <div class="col-lg-8">
-  <h1>Hírek</h1>
+  <h1>Hírek ({{activeNews}} aktív hír)</h1>
   <a class="btn btn-success" (click)="onNew()">Új</a>
   <a class="btn btn-primary" [class.disabled]="!selectedRow"  (click)="onLoadValue(selectedRow.id)">Szerkesztés</a>
   <a class="btn btn-danger" [class.disabled]="!selectedRow"  (click)="onDelete()">Törlés</a>
@@ -13,14 +13,17 @@
       <th style="width: 20%">
         <mfDefaultSorter by="title">Cím</mfDefaultSorter>
       </th>
-      <th style="width: 30%">
+      <th style="width: 25%">
         <mfDefaultSorter by="shortDescription">Rövid leírás</mfDefaultSorter>
       </th>
-      <th style="width: 40%">
+      <th style="width: 35%">
         <mfDefaultSorter by="description">Leírás</mfDefaultSorter>
       </th>
       <th style="width: 10%" class="text-right">
         <mfDefaultSorter by="date">Dátum</mfDefaultSorter>
+      </th>
+      <th style="width: 10%" class="text-center">
+        <mfDefaultSorter by="active">Aktív</mfDefaultSorter>
       </th>
     </tr>
     </thead>
@@ -30,6 +33,12 @@
       <td>{{item.shortDescription | truncate : 200}}</td>
       <td>{{item.description | truncate : 200}}</td>
       <td class="text-right">{{item.date | date }}</td>
+      <td class="text-center" style="vertical-align: middle">
+        <div class="checkbox checkbox-primary">
+          <input class="styled" type="checkbox" [checked]="item.active" (change)="onActivation(item)"/>
+          <label></label>
+        </div>
+      </td>
     </tr>
     </tbody>
     <tfoot>
