@@ -25,6 +25,16 @@ public class NewsService {
         newsRepository.delete(id);
     }
 
+    public void activate(News news){
+        news.setActive(true);
+        newsRepository.save(news);
+    }
+
+    public void inActivate(News news){
+        news.setActive(false);
+        newsRepository.save(news);
+    }
+
 
     public News findOne(Long id){
         return newsRepository.findOne(id);
@@ -32,6 +42,10 @@ public class NewsService {
 
     public List<News> findAll(){
         return (List<News>) newsRepository.findAll();
+    }
+
+    public List<News> findAllActive(){
+        return (List<News>) newsRepository.findByActive(true);
     }
 
 }

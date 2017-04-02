@@ -32,6 +32,18 @@ public class NewsController {
         newsService.delete(id);
     }
 
+    @RequestMapping(value = "activate",  method = RequestMethod.POST)
+    public void activateNews(@RequestBody Long id) {
+        News news = newsService.findOne(id);
+        newsService.activate(news);
+    }
+
+    @RequestMapping(value = "inactivate",  method = RequestMethod.POST)
+    public void inActivateNews(@RequestBody Long id) {
+        News news = newsService.findOne(id);
+        newsService.inActivate(news);
+    }
+
 
     @RequestMapping("{id}")
     public News findNews(@PathVariable("id") Long id) {
@@ -39,7 +51,10 @@ public class NewsController {
     }
 
     @RequestMapping("")
-    public List<News> allNews() {
+    public List<News> allNews(@RequestParam(value = "active", required = false) Boolean active) {
+        if(null != active && active){
+            return newsService.findAllActive();
+        }
         return newsService.findAll();
     }
 }
