@@ -40,6 +40,10 @@ public final class Colleague {
     private String image;
 
     @Basic
+    @Column(name = "cv", nullable = true)
+    private String cv;
+
+    @Basic
     @Column(name = "active", nullable = false)
     private Boolean active;
 

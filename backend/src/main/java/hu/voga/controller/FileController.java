@@ -23,10 +23,17 @@ public class FileController {
     private FileUtils fileUtils;
 
     @ResponseBody
-    @RequestMapping(value = "/upload", method = RequestMethod.POST)
-    public String uploadFile(@RequestParam("file") final MultipartFile file) throws IOException
+    @RequestMapping(value = "/upload/image", method = RequestMethod.POST)
+    public String uploadImage(@RequestParam("file") final MultipartFile file) throws IOException
     {
         return fileUtils.uploadImage("file", file.getBytes());
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/upload/cv", method = RequestMethod.POST)
+    public String uploadCV(@RequestParam("file") final MultipartFile file) throws IOException
+    {
+        return fileUtils.uploadCV(file.getOriginalFilename(), file.getBytes());
     }
 
     @ResponseBody

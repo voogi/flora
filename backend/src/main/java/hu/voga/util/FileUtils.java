@@ -30,6 +30,10 @@ public final class FileUtils
 	@Value("${images.location}")
 	private String imagesLocation;
 
+	@Value("${cvs.location}")
+	private String cvsLocation;
+
+
 	public String uploadImage(String fileName, final byte[] image) throws IOException
 	{
 		logger.info("Storing file [" + fileName + "]...");
@@ -41,20 +45,38 @@ public final class FileUtils
 		if (!file.getParentFile().exists()) {
 			file.getParentFile().mkdirs();
 		}
+		saveFile(file,image);
+		return fileName.concat(DEFAULT_EXTENSION);
+	}
+
+	public String uploadCV(String fileName, final byte[] fileBytes) throws IOException
+	{
+		logger.info("Storing file [" + fileName + "]...");
+		if (!(cvsLocation.endsWith("/") || cvsLocation.endsWith(File.separator))) {
+			cvsLocation += File.separator;
+		}
+		final File file = new File(cvsLocation + fileName);
+		if (!file.getParentFile().exists()) {
+			file.getParentFile().mkdirs();
+		}
+		saveFile(file,fileBytes);
+		return fileName;
+	}
+
+	private void saveFile(File file, byte[] bytes) throws IOException {
 		ByteArrayInputStream byteArrayInputStream = null;
 		FileOutputStream fileOutputStream = null;
 		try {
-			byteArrayInputStream = new ByteArrayInputStream(image);
+			byteArrayInputStream = new ByteArrayInputStream(bytes);
 			fileOutputStream = new FileOutputStream(file);
 			IOUtils.copy(byteArrayInputStream, fileOutputStream);
-			logger.info("File created [" + fileName + "]");
+			logger.info("File created [" + file.getName() + "]");
 		} catch (final IOException e) {
-			logger.error("Failed to upload file [" + fileName + "]", e);
+			logger.error("Failed to upload file [" + file.getName() + "]", e);
 			throw e;
 		} finally {
 			IOUtils.closeQuietly(byteArrayInputStream);
 			IOUtils.closeQuietly(fileOutputStream);
 		}
-		return fileName.concat(DEFAULT_EXTENSION);
 	}
 }
