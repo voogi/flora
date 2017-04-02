@@ -4,6 +4,12 @@
   max-height: 600px;
 }
 
+
+.overfap {
+  height: 500px;
+  overflow: auto;
+}
+
 .list-group-item:hover {
   cursor: pointer;
 }
