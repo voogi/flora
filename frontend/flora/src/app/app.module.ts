@@ -69,8 +69,8 @@ import {FilterPipe} from "../pipes/filter";
   imports: [
     BrowserModule,
     FormsModule,
-    KSSwiperModule,
     HttpModule,
+    KSSwiperModule,
     DataTableModule,
     ReactiveFormsModule,
     TabsModule,
