@@ -6,6 +6,10 @@
   min-height: 80px;
 }
 
+:host >>> .cal-month-view .cal-day-cell.cal-today {
+  background-color: #fd5c3d;
+}
+
 .calendar {
   background-color: #ffffff;
   box-shadow: 1px 1px 3px 0px #424242;
