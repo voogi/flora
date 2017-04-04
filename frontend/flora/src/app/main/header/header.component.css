@@ -95,13 +95,13 @@
   margin-left: 0;
 }
 
-.header .title {
+.header .header-title {
   font-size: 65px;
   transition: all 0.2s ease;
   transition-delay: 0.3s;
 }
 
-.header-fixed .title {
+.header-fixed .header-title {
   font-size: 35px;
   transition: all 0.2s ease;
 }
@@ -147,7 +147,7 @@
   }
 }
 
-.title {
+.header-title {
   font-size: x-large;
 }
 
