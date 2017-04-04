@@ -11,8 +11,56 @@ export class MainComponent implements OnInit, AfterViewInit {
 
   private homeElement:any;
   private activeElement:any;
+  private menuItems:any;
 
   constructor(@Inject(DOCUMENT) private document: Document, private scrollService:ScrollService) {
+    this.menuItems = [
+      {
+        title : "kezdőlap",
+        icon : "house-icon",
+        anchor : "home"
+      },
+      {
+        title : "rolunk",
+        icon : "us-icon",
+        anchor : "us"
+      }/*,
+       {
+       title : "galeria",
+       icon : "book-icon",
+       anchor : "gallery"
+       }*/,
+      {
+        title : "esemenyek",
+        icon : "event-icon",
+        anchor : "events"
+      },
+      {
+        title : "munkatarsak",
+        icon : "colleges-icon",
+        anchor : "colleges"
+      },
+      {
+        title : "tudasbazis",
+        icon : "know-icon",
+        anchor : "library"
+      },
+      {
+        title : "tamogatas",
+        icon : "donation-icon",
+        anchor : "donation"
+      },
+      {
+        title : "önkéntesség",
+        icon : "volunteer-icon",
+        anchor : "self"
+      },
+      {
+        title : "kapcsolat",
+        icon : "contact-icon",
+        anchor : "contact"
+      }
+    ];
   }
 
   ngOnInit() {

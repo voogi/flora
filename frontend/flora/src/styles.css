@@ -103,26 +103,59 @@ a {
 }
 
 .house-icon {
-  background-image: url('assets/imgs/house-256-white.gif');
-  /*-webkit-box-shadow: 0px 0px 31px 0px rgba(255,255,255,1);*/
-  /*-moz-box-shadow: 0px 0px 31px 0px rgba(255,255,255,1);*/
-  /*box-shadow: 0px 0px 31px 0px rgba(255,255,255,1);*/
+  background-image: url('assets/imgs/menu/home-5-256.png') !important;
+  background-position: 50% 50% !important;
+  background-size: 20px 20px !important;
+  background-repeat: no-repeat !important;
 }
 
-.book-icon {
-  background-image: url('assets/imgs/book-stack-256-white.gif');
+.us-icon {
+  background-image: url('assets/imgs/menu/info-2-256.png') !important;
+  background-position: 50% 50% !important;
+  background-size: 20px 20px !important;
+  background-repeat: no-repeat !important;
 }
 
-.banknotes-icon {
-  background-image: url('assets/imgs/banknotes-256-white.gif');
+.event-icon {
+  background-image: url('assets/imgs/menu/calendar-2-256.png') !important;
+  background-position: 50% 50% !important;
+  background-size: 20px 20px !important;
+  background-repeat: no-repeat !important;
 }
 
-.gallery-icon {
-  background-image: url('assets/imgs/stack-of-photos-256-white.gif');
+.colleges-icon {
+  background-image: url('assets/imgs/menu/group-256.png') !important;
+  background-position: 50% 50% !important;
+  background-size: 20px 20px !important;
+  background-repeat: no-repeat !important;
 }
 
-.project-icon {
-  background-image: url('assets/imgs/network-256.gif');
+.know-icon {
+  background-image: url('assets/imgs/menu/book-16-256.png') !important;
+  background-position: 50% 50% !important;
+  background-size: 20px 20px !important;
+  background-repeat: no-repeat !important;
+}
+
+.donation-icon {
+  background-image: url('assets/imgs/menu/christmas-20-256.png') !important;
+  background-position: 50% 50% !important;
+  background-size: 20px 20px !important;
+  background-repeat: no-repeat !important;
+}
+
+.volunteer-icon {
+  background-image: url('assets/imgs/menu/add-user-3-256.png') !important;
+  background-position: 50% 50% !important;
+  background-size: 20px 20px !important;
+  background-repeat: no-repeat !important;
+}
+
+.contact-icon {
+  background-image: url('assets/imgs/menu/contacts-2-256.png') !important;
+  background-position: 50% 50% !important;
+  background-size: 20px 20px !important;
+  background-repeat: no-repeat !important;
 }
 
 .icon-background {

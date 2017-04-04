@@ -69,10 +69,10 @@ import {FilterPipe} from "../pipes/filter";
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    KSSwiperModule,
     DataTableModule,
     ReactiveFormsModule,
+    HttpModule,
+    KSSwiperModule,
     TabsModule,
     DateValueAccessorModule,
     CalendarModule.forRoot(),

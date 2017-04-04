@@ -14,53 +14,7 @@ export class SliderComponent implements OnInit, AfterViewInit {
 
   constructor(private elementRef:ElementRef, private scrollService:ScrollService) {
 
-    this.menuItems = [
-      {
-        title : "kezdőlap",
-        icon : "house-icon",
-        anchor : "home"
-      },
-      {
-        title : "rolunk",
-        icon : "gallery-icon",
-        anchor : "us"
-      }/*,
-      {
-        title : "galeria",
-        icon : "book-icon",
-        anchor : "gallery"
-      }*/,
-      {
-        title : "esemenyek",
-        icon : "book-icon",
-        anchor : "events"
-      },
-      {
-        title : "munkatarsak",
-        icon : "project-icon",
-        anchor : "colleges"
-      },
-      {
-        title : "tudasbazis",
-        icon : "book-icon",
-        anchor : "library"
-      },
-      {
-        title : "tamogatas",
-        icon : "banknotes-icon",
-        anchor : "donation"
-      },
-      {
-        title : "önkéntesség",
-        icon : "book-icon",
-        anchor : "self"
-      },
-      {
-        title : "kapcsolat",
-        icon : "book-icon",
-        anchor : "contact"
-      }
-    ];
+
 
   }
 

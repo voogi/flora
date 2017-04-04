@@ -2,6 +2,14 @@
   <flora-header></flora-header>
 
 
+  <ul class="menu">
+    <li *ngFor="let menu of menuItems;">
+      <a class="fa {{menu.icon}}">
+        <span>{{menu.title}}</span>
+      </a>
+    </li>
+  </ul>
+
   <!--social-->
   <ul class='social'>
     <li>
@@ -29,6 +37,7 @@
     </li>
 
   </ul>
+
 
   <!--<div class="header-placeholder"></div>-->
   <div scroll class="col-lg-12 placeholder home">
@@ -101,5 +110,5 @@
     <flora-contact></flora-contact>
   </div>
   <flora-footer></flora-footer>
-  <flora-slider [direction]="'right'"></flora-slider>
+  <!--<flora-slider [direction]="'right'"></flora-slider>-->
 </div>
