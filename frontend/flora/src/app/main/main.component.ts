@@ -26,22 +26,22 @@ export class MainComponent implements OnInit, AfterViewInit {
        anchor : "gallery"
        }*/,
       {
-        title : "esemenyek",
+        title : "események",
         icon : "event-icon",
         anchor : "events"
       },
       {
-        title : "munkatarsak",
+        title : "munkatársak",
         icon : "colleges-icon",
         anchor : "colleges"
       },
       {
-        title : "tudasbazis",
+        title : "tudásbázis",
         icon : "know-icon",
         anchor : "library"
       },
       {
-        title : "tamogatas",
+        title : "támogatás",
         icon : "donation-icon",
         anchor : "donation"
       },
@@ -51,7 +51,7 @@ export class MainComponent implements OnInit, AfterViewInit {
         anchor : "self"
       },
       {
-        title : "rolunk",
+        title : "rólunk",
         icon : "us-icon",
         anchor : "us"
       },
