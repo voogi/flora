@@ -6,7 +6,7 @@
 }
 
 .impress {
-  background-color: #02614d !important;
+  background-color: #307D6D !important;
   color: aliceblue;
   padding-top: 20px;
   padding-bottom: 10px;
@@ -14,6 +14,7 @@
 
 .center {
   /*background-color: #870a1f;*/
-  background-color: #02614d;
+  background-color: #307D6D;
+  /*background-color: #02614d;*/
 }
 

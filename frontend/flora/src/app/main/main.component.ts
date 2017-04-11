@@ -19,11 +19,6 @@ export class MainComponent implements OnInit, AfterViewInit {
         title : "kezdőlap",
         icon : "house-icon",
         anchor : "home"
-      },
-      {
-        title : "rolunk",
-        icon : "us-icon",
-        anchor : "us"
       }/*,
        {
        title : "galeria",
@@ -54,6 +49,11 @@ export class MainComponent implements OnInit, AfterViewInit {
         title : "önkéntesség",
         icon : "volunteer-icon",
         anchor : "self"
+      },
+      {
+        title : "rolunk",
+        icon : "us-icon",
+        anchor : "us"
       },
       {
         title : "kapcsolat",

@@ -12,15 +12,17 @@
       </li>
     </ul>
   </div>
-  <div class="col-lg-7 col-lg-offset-1">
-    <div class="row">
-      <h2>{{selected?.title}}</h2>
-    </div>
-    <div class="row">
-      {{selected?.description}}
-    </div>
-    <div class="row">
-      Készitette:    {{selected?.creator}} -- {{selected?.date | date}}
+  <div class="col-lg-6 col-lg-offset-1">
+    <div class="panel panel-default">
+      <div class="row">
+        <h2>{{selected?.title}}</h2>
+      </div>
+      <div class="row">
+        {{selected?.description}}
+      </div>
+      <div class="row">
+        Készitette:    {{selected?.creator}} -- {{selected?.date | date}}
+      </div>
     </div>
   </div>
 

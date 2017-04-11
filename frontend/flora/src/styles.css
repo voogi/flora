@@ -43,19 +43,19 @@ a {
 
 .btn-primary {
   color: #fff;
-  background-color: #02614d;
+  background-color: #307D6D;
   border-color: grey;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #eef2d7;
+  background-color: #02614d;
   border-color: grey;
 }
 
 .btn-primary[disabled]:hover {
   color: #fff;
-  background-color: #02614d;
+  background-color: #307D6D;
   border-color: grey;
 }
 
@@ -199,7 +199,7 @@ a {
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #870a1f;
+  background-color: #02614d;
 }
 
 .btn {
