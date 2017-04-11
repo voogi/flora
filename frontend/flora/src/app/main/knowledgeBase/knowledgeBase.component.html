@@ -7,14 +7,14 @@
       <li *ngFor="let item of knowledges;"
           (click)="onKnowledgeSelected(item)"
           [class.active]="selected == item"
-          class="list-group-item hvr-bounce-to-right">
+          class="list-group-item hvr-sweep-to-right">
         {{item.title}}
       </li>
     </ul>
   </div>
   <div class="col-lg-6 col-lg-offset-1">
     <div class="panel panel-default">
-      <div class="row">
+      <div class="row center">
         <h2>{{selected?.title}}</h2>
       </div>
       <div class="row">
