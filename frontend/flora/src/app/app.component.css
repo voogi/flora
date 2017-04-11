@@ -1,0 +1,8 @@
+:host >>> .panel {
+  color: #fff;
+  background-color: #02614D;
+  padding: 1em;
+  box-shadow: 2px 4px 8px -1px #424242;
+  border-radius: inherit;
+  border-color: #153119;
+}
