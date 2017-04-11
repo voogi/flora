@@ -25,9 +25,9 @@ body {
   overflow-x: hidden;
 }
 
-a {
-  color: white;
-}
+/*a {*/
+  /*color: white;*/
+/*}*/
 
 .panel {
   background-color: #eef2d7;
