@@ -3,19 +3,17 @@
   line-height: 30px;
   color: aliceblue;
   z-index: 1000;
-
-
-
 }
 
 .impress {
-  background-color: #870a1f !important;
+  background-color: #02614d !important;
   color: aliceblue;
   padding-top: 20px;
   padding-bottom: 10px;
 }
 
 .center {
-  background-color: #870a1f;
+  /*background-color: #870a1f;*/
+  background-color: #02614d;
 }
 

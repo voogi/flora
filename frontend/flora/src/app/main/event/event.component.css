@@ -7,11 +7,11 @@
 }
 
 :host >>> .cal-month-view .cal-day-cell.cal-today {
-  background-color: #fd5c3d;
+  background-color: #cddc8b;
 }
 
 .calendar {
-  background-color: #ffffff;
+  background-color: #eef2d7;
   box-shadow: 1px 1px 3px 0px #424242;
 }
 

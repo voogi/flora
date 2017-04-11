@@ -15,11 +15,11 @@
 }
 
 .hvr-bounce-to-right:before {
-  background: #fd5c3d;
+  background: #f2665c;
 }
 
 .list-group-item.active {
-  background: #fd5c3d;
+  background: #f2665c;
 }
 
 .list-group-item {

@@ -29,6 +29,10 @@ a {
   color: white;
 }
 
+.panel {
+  background-color: #eef2d7;
+}
+
 /*buttons*/
 
 /*#870a1f*/
@@ -39,20 +43,20 @@ a {
 
 .btn-primary {
   color: #fff;
-  background-color: #fd5c3d;
-  border-color: #870a1f;
+  background-color: #02614d;
+  border-color: grey;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #fec566;
-  border-color: #870a1f;
+  background-color: #eef2d7;
+  border-color: grey;
 }
 
 .btn-primary[disabled]:hover {
   color: #fff;
-  background-color: #fd5c3d;
-  border-color: #870a1f;
+  background-color: #02614d;
+  border-color: grey;
 }
 
 .row-padding {

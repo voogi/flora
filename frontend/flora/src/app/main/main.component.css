@@ -10,7 +10,8 @@
 }
 
 :host >>> .title {
-  background-color: #fd5c3d;
+  /*background-color: #fd5c3d;*/
+  background-color: #f2665c;
   color: #ffffff;
   font-family: Roboto Bold, sans-serif;
   font-size: 35px;
@@ -61,7 +62,8 @@
   display: block;
   height: 40px;
   width: 40px;
-  background: #870a1f;
+  /*background: #870a1f;*/
+  background: #02614d;
   border-bottom: 1px solid #333;
   font: normal normal normal
   16px/20px

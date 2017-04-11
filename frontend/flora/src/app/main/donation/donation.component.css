@@ -61,7 +61,8 @@ article:hover  .content-bottom{
 .content-bottom {
   height: 400px;
   width: 300px;
-  background-color: #fec566;
+  /*background-color: #eef2d7;*/
+  background-color: #eef2d7;
   position: absolute;
   top: 155px;
   left: 0;
