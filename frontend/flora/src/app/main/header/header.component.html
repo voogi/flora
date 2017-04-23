@@ -36,7 +36,7 @@
             </div>
             <div class="modal-footer">
               <button (click)="visible = !visible" type="button" class="btn btn-default" data-dismiss="modal">Bezárás</button>
-              <button (click)="onSubscribe()" type="button" class="btn btn-primary">Feliratkozás</button>
+              <button (click)="onSubscribe()" type="button" [disabled]="!newsletterForm.valid" class="btn btn-primary">Feliratkozás</button>
             </div>
           </div>
         </div>

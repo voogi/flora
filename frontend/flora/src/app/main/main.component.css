@@ -77,6 +77,12 @@
   position: relative;
 }
 
+.menu li a{
+  height: 60px;
+  width: 60px;
+  background-size: 30px 30px !important;
+}
+
 .social li:first-child a:hover { background: #3b5998 }
 .social li:nth-child(2) a:hover { background: #00acee }
 .social li:nth-child(3) a:hover { background: #e52d27 }

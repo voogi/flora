@@ -11,8 +11,7 @@ export class BackendService {
   loggedInUser: User = new User();
 
   private headers: Headers = new Headers({
-    'Content-Type': 'application/json',
-    "Authorization":  "Basic " + btoa( this.loggedInUser.username || "" + ":" + this.loggedInUser.password || "")
+    'Content-Type': 'application/json'
   });
 
   constructor(private http: Http) {
@@ -25,6 +24,7 @@ export class BackendService {
         if (!User.isNull(user)) {
           this.isLoggedIn = true;
           this.loggedInUser = userObject;
+          this.headers.append("Authorization", "Basic " + btoa( this.loggedInUser.username + ":" + this.loggedInUser.password ));
           return true
         } else {
           this.isLoggedIn = false;
@@ -132,19 +132,19 @@ export class BackendService {
   }
 
   getALlSubscriber(): Observable<any> {
-    return this.http.get(environment.bUrl + "/api/newsletter")
+    return this.http.get(environment.bUrl + "/api/newsletter", {headers: this.headers})
       .map((response: Response) => response.json())
       .catch(this.handleError);
   }
 
   getSubscriberEmails(): Observable<any> {
-    return this.http.get(environment.bUrl + "/api/newsletter/emails")
+    return this.http.get(environment.bUrl + "/api/newsletter/emails", {headers: this.headers})
       .map((response: Response) => response.text())
       .catch(this.handleError);
   }
 
   getAllVolunteer(): Observable<any> {
-    return this.http.get(environment.bUrl + "/api/volunteer")
+    return this.http.get(environment.bUrl + "/api/volunteer", {headers: this.headers})
       .map((response: Response) => response.json())
       .catch(this.handleError);
   }

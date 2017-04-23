@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   constructor(private backendService:BackendService, private formBuilder:FormBuilder) {
 
     this.newsletterForm = formBuilder.group({
-      'email' : ['', Validators.required]
+      'email' : ['', [Validators.required,Validators.email]]
     })
 
   }
