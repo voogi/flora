@@ -2,15 +2,41 @@ import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {Http, Response, Headers, URLSearchParams, RequestOptions} from "@angular/http";
 import {environment} from "../../environments/environment";
+import {User} from "../login/user";
 
 @Injectable()
 export class BackendService {
 
+  isLoggedIn: boolean = false;
+  loggedInUser: User = new User();
+
   private headers: Headers = new Headers({
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    "Authorization":  "Basic " + btoa( this.loggedInUser.username || "" + ":" + this.loggedInUser.password || "")
   });
 
   constructor(private http: Http) {
+  }
+
+  login(userObject: User): Observable<boolean> {
+    return this.http.post(environment.bUrl + "/login", userObject)
+      .map(response => response.json() as User)
+      .map(user => {
+        if (!User.isNull(user)) {
+          this.isLoggedIn = true;
+          this.loggedInUser = userObject;
+          return true
+        } else {
+          this.isLoggedIn = false;
+          return false
+        }
+      })
+      .catch(this.handleError);
+  }
+
+  logOut(): Observable<boolean> {
+    this.isLoggedIn = !this.isLoggedIn;
+    return Observable.of(false);
   }
 
   getNews(): Observable<any> {

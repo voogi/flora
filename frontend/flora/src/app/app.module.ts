@@ -36,6 +36,8 @@ import { DonationComponent } from './main/donation/donation.component';
 import { VolunAdminComponent } from './admin/volun-admin/volun-admin.component';
 import { SubsAdminComponent } from './admin/subs-admin/subs-admin.component';
 import {FilterPipe} from "../pipes/filter";
+import { LoginComponent } from './login/login.component';
+import {AuthGuardService} from "./login/auth-guard.service";
 
 @NgModule({
   declarations: [
@@ -44,10 +46,10 @@ import {FilterPipe} from "../pipes/filter";
     AdminColleagueComponent,
     AdminEventComponent,
     NewsComponent,
-    FooterComponent,
     SliderComponent,
-    HorizontalComponent,
+    FooterComponent,
     UploaderComponent,
+    HorizontalComponent,
     MainComponent,
     NewsComponent,
     HeaderComponent,
@@ -64,7 +66,8 @@ import {FilterPipe} from "../pipes/filter";
     DetailedViewComponent,
     DonationComponent,
     VolunAdminComponent,
-    SubsAdminComponent
+    SubsAdminComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +84,7 @@ import {FilterPipe} from "../pipes/filter";
     appRouting
 
   ],
-  providers: [ScrollService, BackendService],
+  providers: [ScrollService, BackendService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
