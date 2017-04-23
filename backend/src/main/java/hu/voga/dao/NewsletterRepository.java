@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface NewsletterRepository extends PagingAndSortingRepository<Subscriber, Long> {
+
+    Subscriber findByEmail(String email);
 }

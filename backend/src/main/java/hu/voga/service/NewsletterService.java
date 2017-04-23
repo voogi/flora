@@ -19,6 +19,10 @@ public class NewsletterService {
     private NewsletterRepository newsletterRepository;
 
     public Subscriber save(Subscriber subscriber){
+        Subscriber existingSubscriber = newsletterRepository.findByEmail(subscriber.getEmail());
+        if(null != existingSubscriber){
+            return subscriber;
+        }
         return newsletterRepository.save(subscriber);
     }
 
