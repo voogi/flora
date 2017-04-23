@@ -34,8 +34,8 @@ body {
 }
 
 /*froala unlicense disable*/
-.fr-box div:not([class]) {
-  display: none;
+.fr-box div:not([class]) a {
+  display: none !important;
 }
 
 
