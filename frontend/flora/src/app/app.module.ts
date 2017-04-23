@@ -64,8 +64,8 @@ import {AuthGuardService} from "./login/auth-guard.service";
     KnowledgeBaseComponent,
     EventComponent,
     DetailedViewComponent,
-    DonationComponent,
     VolunAdminComponent,
+    DonationComponent,
     SubsAdminComponent,
     LoginComponent
   ],
