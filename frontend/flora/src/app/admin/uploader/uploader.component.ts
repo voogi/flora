@@ -1,5 +1,6 @@
 import {Component, OnInit, EventEmitter, Output, ViewChild, Input} from '@angular/core';
 import {FileUploader} from "ng2-file-upload";
+import {environment} from "../../../environments/environment";
 import {Response} from "@angular/http";
 
 @Component({
@@ -19,7 +20,7 @@ export class UploaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    let url = this.isCV ? "http://localhost:8080/api/file/upload/cv" : "http://localhost:8080/api/file/upload/image";
+    let url = this.isCV ? environment.bUrl + "/api/file/upload/cv" : environment.bUrl + "/api/file/upload/image";
     this.uploader = new FileUploader({url: url});
     this.uploader.onCompleteItem = (fileItem, response: string) => {
       this.imageUploaded.emit(response);
