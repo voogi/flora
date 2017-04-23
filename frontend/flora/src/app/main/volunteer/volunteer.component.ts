@@ -11,7 +11,7 @@ import {Subscription} from "rxjs";
 export class VolunteerComponent implements OnInit, OnDestroy {
 
   private volunteerForm: FormGroup;
-  private subscription: Subscription;
+  private subscription: Subscription = new Subscription();
 
   constructor(private backendService:BackendService, private formBuilder:FormBuilder) {
 
