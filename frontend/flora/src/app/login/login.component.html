@@ -2,14 +2,12 @@
   <div>
     <label for="username">Username: </label>
     <input id="username" type="username"
-           [(ngModel)]="model.username" #firstname="ngModel" name="username"
-           pInputText>
+           [(ngModel)]="model.username" #firstname="ngModel" name="username">
   </div>
   <div>
     <label for="password">Password: </label>
     <input id="password" type="password"
-           [(ngModel)]="model.password" #password="ngModel" name="password"
-           pInputText>
+           [(ngModel)]="model.password" #password="ngModel" name="password">
   </div>
-  <button pButton type="submit" label="Log In"></button>
+  <button type="submit">Log In</button>
 </form>

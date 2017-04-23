@@ -33,6 +33,12 @@ body {
   background-color: #eef2d7;
 }
 
+/*froala unlicense disable*/
+.fr-box div:nth-child(4)  {
+  display: none;
+}
+
+
 /*buttons*/
 
 /*#870a1f*/
