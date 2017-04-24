@@ -81,8 +81,10 @@
   height: 140px;
   width: 140px;
   /*background-size: cover;*/
-  margin-left: 30%;
+}
 
+.header .logo-wrapper {
+  text-align: center;
 }
 
 .header-fixed .logo {
@@ -154,3 +156,22 @@
 .newsletter {
   /*transform: translateY(50%);*/
 }
+
+@media (max-width: 1750px){
+  .header .header-title {
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 1460px){
+  .header .header-title {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 1200px){
+  .header .header-title {
+    font-size: 35px;
+  }
+}
+
