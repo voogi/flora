@@ -3,7 +3,7 @@
 
 
   <ul class="menu">
-    <li *ngFor="let menu of menuItems;">
+    <li *ngFor="let menu of menuItems;" (click)="onMenuItemClick(menu.anchor)" >
       <a class="fa {{menu.icon}}">
         <span>{{menu.title}}</span>
       </a>
@@ -13,13 +13,13 @@
   <!--social-->
   <ul class='social'>
     <li>
-      <a class="fa fa-facebook" href="#">
+      <a target="_blank" class="fa fa-facebook" href="https://www.facebook.com/Fl%C3%B3ra-%C3%89rtelmi-Fogyat%C3%A9kosok%C3%A9rt-%C3%A9s-Autist%C3%A1k%C3%A9rt-Alap%C3%ADtv%C3%A1ny-1728126340850628/?fref=ts">
         <span>Facebook</span>
       </a>
     </li>
 
     <li>
-      <a class="fa fa-twitter" href="#">
+      <a target="_blank" class="fa fa-twitter" href="https://twitter.com/floraalapitvany?lang=hu">
         <span>Twitter</span>
       </a>
     </li>
@@ -31,7 +31,7 @@
     </li>
 
     <li>
-      <a class="fa fa-google-plus" href="#">
+      <a target="_blank" class="fa fa-google-plus" href="https://plus.google.com/104329925718228576786">
         <span>Google Plus</span>
       </a>
     </li>
