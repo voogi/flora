@@ -40,6 +40,14 @@ article:hover  .content-bottom{
   left: 0;
 }
 
+.row-center {
+  text-align:center;
+}
+
+.col-center {
+  display:inline-block;
+  float:none;
+}
 
 .paypal {
   background: url("../../../assets/imgs/paypal.png") no-repeat;
