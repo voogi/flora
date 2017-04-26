@@ -76,6 +76,13 @@ export class MainComponent implements OnInit, AfterViewInit {
     this.document.querySelector("."+menuItem).scrollIntoView({
       behavior: 'smooth'
     });
+
+    let htmlElement  = <HTMLElement>document.querySelector("."+menuItem);
+
+    window.scroll({
+      top:  htmlElement.offsetTop-80,
+      left: 0, behavior: 'smooth'
+    });
   }
 
   @HostListener("window:scroll", [])
