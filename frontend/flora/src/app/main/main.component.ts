@@ -12,6 +12,7 @@ export class MainComponent implements OnInit, AfterViewInit {
   private homeElement:any;
   private activeElement:any;
   private menuItems:any;
+  private lastFocusedMenuItem:any = null;
 
   constructor(@Inject(DOCUMENT) private document: Document, private scrollService:ScrollService) {
     this.menuItems = [
@@ -73,16 +74,22 @@ export class MainComponent implements OnInit, AfterViewInit {
   }
 
   onMenuItemClick(menuItem:any) {
-    this.document.querySelector("."+menuItem).scrollIntoView({
-      behavior: 'smooth'
-    });
 
     let htmlElement  = <HTMLElement>document.querySelector("."+menuItem);
+    let headerElement = document.querySelector(".header").getBoundingClientRect().height;
+    let calculatedTop = htmlElement.offsetTop - headerElement;
+
+    if(menuItem == "events" && (this.lastFocusedMenuItem == "home" || this.lastFocusedMenuItem == null)){
+      calculatedTop -= 77;
+    }
 
     window.scroll({
-      top:  htmlElement.offsetTop-80,
+      top:  calculatedTop,
       left: 0, behavior: 'smooth'
     });
+
+    this.lastFocusedMenuItem = menuItem;
+
   }
 
   @HostListener("window:scroll", [])
@@ -101,6 +108,7 @@ export class MainComponent implements OnInit, AfterViewInit {
       this.document.querySelector(".header-title").classList.remove("col-sm-8");
       this.document.querySelector(".header-title").classList.add("col-lg-10");
       this.document.querySelector(".header-title").classList.add("col-sm-10");
+      this.lastFocusedMenuItem = null;
     }
 
     let bcr = this.activeElement.getBoundingClientRect();
