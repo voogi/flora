@@ -10,6 +10,7 @@
   animation: mymove1 0.1s forwards;
   animation-timing-function: ease;
   transition: all 0.5s ease;
+  min-width: 1000px;
 }
 
 .social {
@@ -104,7 +105,7 @@
 }
 
 .header-fixed .header-title {
-  font-size: 35px;
+  font-size: 50px;
   transition: all 0.2s ease;
 }
 
@@ -126,7 +127,7 @@
   transition: all 0.5s ease;
   transition-delay: 0.3s;
   /*transform: translateX(0);*/
-  width: 100%;
+  /*width: 100%;*/
   /*visibility: visible;*/
 }
 
@@ -159,7 +160,11 @@
 
 @media (max-width: 1750px){
   .header .header-title {
-    font-size: 55px;
+    font-size: 50px;
+  }
+
+  .header-fixed .header-title {
+    font-size: 40px;
   }
 }
 
@@ -167,11 +172,27 @@
   .header .header-title {
     font-size: 45px;
   }
+
+  .header-fixed .header-title {
+    font-size: 35px;
+  }
 }
 
 @media (max-width: 1200px){
   .header .header-title {
+    font-size: 40px;
+  }
+  .header-fixed .header-title {
     font-size: 35px;
+  }
+}
+
+@media (max-width: 1100px){
+  .header .header-title {
+    font-size: 35px;
+  }
+  .header-fixed .header-title {
+    font-size: 30px;
   }
 }
 
