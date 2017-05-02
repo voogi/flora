@@ -1,8 +1,6 @@
 .colleague-image {
   width: 150px;
-  position: absolute;
-  top: 50px;
-  left: 100px;
+  margin: -150px auto 0;
   box-shadow: 1px 1px 3px 0px #424242;
 }
 

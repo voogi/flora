@@ -1,5 +1,5 @@
 :host >>> .cal-day-selected {
-  background-color: #02614D !important;
+  background-color: #307D6D !important;
 }
 
 :host >>> .cal-month-view .cal-day-cell {
@@ -7,7 +7,7 @@
 }
 
 :host >>> .cal-month-view .cal-day-cell.cal-today {
-  background-color: #569c75;
+  background-color: #307D6D;
 }
 
 .calendar {

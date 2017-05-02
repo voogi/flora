@@ -12,6 +12,9 @@ article {
   overflow: hidden;
   -webkit-transition: 0.3s all ease-in-out;
   transition: 0.3s all ease-in-out;
+
+  box-shadow: 2px 4px 8px -1px #424242;
+  border: 1px solid #153119;
 }
 
 article:hover  .content-bottom{

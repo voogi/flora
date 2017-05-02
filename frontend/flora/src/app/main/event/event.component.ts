@@ -1,5 +1,6 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit, OnDestroy, Inject} from '@angular/core';
 import {Subject, Subscription} from "rxjs";
+import {DOCUMENT} from "@angular/platform-browser";
 import {CalendarEvent, CalendarMonthViewDay} from 'angular-calendar';
 import {BackendService} from "../../service/backend.service";
 declare var Swiper;
@@ -30,7 +31,7 @@ export class EventComponent implements OnInit, OnDestroy {
   private getEventsSubscription:Subscription;
   private swiperOptions: any;
 
-  constructor(private backendService:BackendService) {
+  constructor(@Inject(DOCUMENT) private document: Document, private backendService:BackendService) {
     this.swiperOptions = {
       pagination: '.swiper-pagination',
       paginationClickable: true
@@ -50,6 +51,8 @@ export class EventComponent implements OnInit, OnDestroy {
           });
         });
         this.refresh.next();
+        this.setEventsForDate(new Date());
+
       }
     );
   }
@@ -59,14 +62,22 @@ export class EventComponent implements OnInit, OnDestroy {
       delete this.selectedDay.cssClass;
     }
     day.cssClass = 'cal-day-selected';
+    let todayCell = this.document.querySelector(".cal-day-cell.cal-today");
+    if(todayCell){
+      todayCell.classList.remove("cal-today");
+    }
     this.selectedDay = day;
+    this.setEventsForDate(day.date);
+  }
+
+  private setEventsForDate(date: Date): void {
     this.eventsForSelectedDate = [];
     for (let i in this.events) {
       let event = this.events[i];
       let eventDate = new Date(event.date);
-      if (eventDate.getFullYear() == day.date.getFullYear()
-        && eventDate.getMonth() == day.date.getMonth()
-        && eventDate.getDate() == day.date.getDate()) {
+      if (eventDate.getFullYear() == date.getFullYear()
+        && eventDate.getMonth() == date.getMonth()
+        && eventDate.getDate() == date.getDate()) {
         this.eventsForSelectedDate.push(event);
       }
     }

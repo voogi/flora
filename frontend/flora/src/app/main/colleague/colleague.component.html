@@ -6,16 +6,17 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-sm-8 col-sm-offset-2">
           <div class="panel panel-default">
-            <div class="colleague-image">
-              <img alt="" class="img-responsive img-thumbnail"
-                   src="{{item.image ? getImageUrl(item.image) : 'https://www.whatmatrix.com/assets/images/default_user.png'}}">
-            </div>
+
             <div class="panel-body">
               <div class="col-lg-8 col-lg-offset-3 col-sm-8 col-sm-offset-3">
                 <h2>{{item.name}}</h2>
               </div>
               <div class="row">
                 <div class="col-lg-3 col-sm-3">
+                  <div class="colleague-image">
+                    <img alt="" class="img-responsive img-thumbnail"
+                         src="{{item.image ? getImageUrl(item.image) : 'https://www.whatmatrix.com/assets/images/default_user.png'}}">
+                  </div>
                   <div class="colleague-contact-wrapper">
                     <h4>Elérhetőségek</h4>
                     <div class="colleague-contacts">
@@ -31,8 +32,7 @@
                   </div>
 
                 </div>
-                <div class="text-justify colleague-desc col-lg-8 col-sm-8">
-                  {{item.description}}
+                <div class="text-justify colleague-desc col-lg-8 col-sm-8" [innerHTML]="item.description">
                 </div>
               </div>
             </div>
