@@ -139,6 +139,7 @@ export class NewsComponent implements OnInit, OnDestroy {
         this.newsForm.setValue(data);
         this.loadNews();
         this.selectedRow = null;
+        this.showModal = !this.showModal;
       }
     );
   }

@@ -111,6 +111,7 @@ export class AdminColleagueComponent implements OnInit, OnDestroy {
         this.colleagueForm.setValue(data);
         this.loadColleagues();
         this.selectedRow = null;
+        this.showModal = !this.showModal;
       }
     );
   }

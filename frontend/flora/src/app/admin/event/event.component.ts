@@ -100,6 +100,7 @@ export class AdminEventComponent implements OnInit, OnDestroy {
         this.eventForm.setValue(data);
         this.loadEvents();
         this.selectedRow = null;
+        this.showModal = !this.showModal;
       }
     );
   }
