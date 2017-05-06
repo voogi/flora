@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
 
   private newsletterForm: FormGroup;
   private visible: boolean = false;
+  private subscribed: boolean = false;
 
 
   constructor(private backendService:BackendService, private formBuilder:FormBuilder) {
@@ -29,7 +30,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onSubscribe(){
-    this.backendService.subscribe(this.newsletterForm.value).subscribe( data => console.log("sikeres"));
+    this.backendService.subscribe(this.newsletterForm.value).subscribe( data => this.subscribed = true );
   }
 
 

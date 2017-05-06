@@ -29,7 +29,8 @@
               <form [formGroup]="newsletterForm" class="form-horizontal">
                 <div class="form-group no-form-group-margin-bottom">
                   <div class="col-lg-12">
-                      <input formControlName="email" type="text" class="form-control" id="newsletter" placeholder="Email cim">
+                      <input *ngIf="!subscribed" formControlName="email" type="text" class="form-control" id="newsletter" placeholder="Email cim">
+                      <span *ngIf="subscribed">Köszönjük!</span>
                   </div>
                 </div>
               </form>
