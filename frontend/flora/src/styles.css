@@ -92,6 +92,12 @@ body {
   text-align: center;
 }
 
+.centerAndHighlighter {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 500;
+}
+
 .verticalSeparator {
   width: 2px;
   background-color: aliceblue;

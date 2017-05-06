@@ -12,6 +12,7 @@ export class VolunteerComponent implements OnInit, OnDestroy {
 
   private volunteerForm: FormGroup;
   private subscription: Subscription = new Subscription();
+  private volunteered: boolean = false;
 
   constructor(private backendService:BackendService, private formBuilder:FormBuilder) {
 
@@ -30,7 +31,7 @@ export class VolunteerComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(){
-    this.subscription = this.backendService.saveVolunteer(this.volunteerForm.value).subscribe( data => console.log("sikeres"));
+    this.subscription = this.backendService.saveVolunteer(this.volunteerForm.value).subscribe( data => this.volunteered = true );
   }
 
 }

@@ -8,7 +8,7 @@
       Alapítványunk szívesen fogadja azokat az önkénteseket akik felelősséget éreznek elesett embertársaikért, foglalkozásainkon, táborozásainkon nagy segítséget jelentenek.</p>
   </div>
   <div class="col-lg-6 col-sm-6">
-    <form [formGroup]="volunteerForm" (submit)="onSubmit()" class="form-horizontal">
+    <form *ngIf="!volunteered" [formGroup]="volunteerForm" (submit)="onSubmit()" class="form-horizontal">
 
       <div class="form-group">
         <label for="inputName" class="col-lg-2 control-label">Név</label>
@@ -38,5 +38,6 @@
       </div>
 
     </form>
+    <span class="centerAndHighlighter" *ngIf="volunteered">Köszönjük!</span>
   </div>
 </div>
