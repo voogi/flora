@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'flora-admin',
@@ -9,11 +10,15 @@ export class AdminComponent implements OnInit {
 
   private activeTab: any;
 
-  constructor() {
+  constructor(private router:Router) {
   }
 
   ngOnInit() {
 
+  }
+
+  onNavigateToHome(){
+    this.router.navigate(['../']);
   }
 
 

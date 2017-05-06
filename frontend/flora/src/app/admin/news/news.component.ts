@@ -2,7 +2,6 @@ import {Component, OnInit, Input, OnDestroy, EventEmitter, Output, ViewChild} fr
 import {Validators, FormBuilder, FormGroup} from "@angular/forms";
 import {Subscription} from "rxjs";
 import {BackendService} from "../../service/backend.service";
-import {UploaderComponent} from "../uploader/uploader.component";
 import {environment} from "../../../environments/environment";
 
 @Component({
@@ -49,9 +48,18 @@ export class NewsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.saveSubscription.unsubscribe();
-    this.newsSub.unsubscribe();
-    this.activationSub.unsubscribe();
+    if(this.saveSubscription){
+      this.saveSubscription.unsubscribe();
+    }
+
+    if(this.newsSub){
+      this.newsSub.unsubscribe();
+    }
+
+    if(this.activationSub){
+      this.activationSub.unsubscribe();
+    }
+
   }
 
   onNewsSaved() {

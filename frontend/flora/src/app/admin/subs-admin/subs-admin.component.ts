@@ -24,8 +24,12 @@ export class SubsAdminComponent implements OnInit,OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subsSub.unsubscribe();
-    this.emailSub.unsubscribe();
+    if(this.subsSub){
+      this.subsSub.unsubscribe();
+    }
+    if(this.emailSub){
+      this.emailSub.unsubscribe();
+    }
     this.selectedRow = null;
   }
 

@@ -43,8 +43,12 @@ export class KnowledgeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.saveSubscription.unsubscribe();
-    this.newsSub.unsubscribe();
+    if(this.saveSubscription){
+      this.saveSubscription.unsubscribe();
+    }
+    if(this.newsSub){
+      this.newsSub.unsubscribe();
+    }
   }
 
   onNewsSaved() {

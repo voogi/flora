@@ -23,8 +23,8 @@ export class HorizontalComponent implements OnInit, OnDestroy {
     this.newsOptions = {
       paginationClickable: true,
       // spaceBetween: 30,
-      autoplay: "3000",
-      loop: true,
+      // autoplay: "3000",
+      // loop: true,
       autoplayDisableOnInteraction: false,
       pagination: '.swiper-pagination'
     }
@@ -34,7 +34,11 @@ export class HorizontalComponent implements OnInit, OnDestroy {
 
     this.getNewsSubscription = this.backendService.getActiveNews().subscribe(
       data => {
-        this.news = data;
+        this.news = data.map( data => {
+          let _data = data;
+          _data.bDetailedView = false;
+          return _data;
+        } );
       }
     );
   }
@@ -44,7 +48,7 @@ export class HorizontalComponent implements OnInit, OnDestroy {
   }
 
   onDetailedView(item:any){
-    this.detailedView.onShow(item);
+    item.bDetailedView = !item.bDetailedView;
   }
 
   getImageUrl(fileName: string) {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BackendService} from "../../service/backend.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'flora-header',
@@ -14,7 +15,7 @@ export class HeaderComponent implements OnInit {
   private subscribed: boolean = false;
 
 
-  constructor(private backendService:BackendService, private formBuilder:FormBuilder) {
+  constructor(private router:Router,private backendService:BackendService, private formBuilder:FormBuilder) {
 
     this.newsletterForm = formBuilder.group({
       'email' : ['', [Validators.required,Validators.email]]
@@ -33,6 +34,9 @@ export class HeaderComponent implements OnInit {
     this.backendService.subscribe(this.newsletterForm.value).subscribe( data => this.subscribed = true );
   }
 
+  onNavigateToHome(){
+    this.router.navigate(['/']);
+  }
 
 
 }

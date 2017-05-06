@@ -45,8 +45,12 @@ export class AdminEventComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.saveSubscription.unsubscribe();
-    this.eventSub.unsubscribe();
+    if(this.saveSubscription){
+      this.saveSubscription.unsubscribe();
+    }
+    if(this.eventSub){
+      this.eventSub.unsubscribe();
+    }
   }
 
   onDelete(){

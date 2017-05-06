@@ -47,8 +47,15 @@ export class AdminColleagueComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.saveSubscription.unsubscribe();
-    this.colleagueSub.unsubscribe();
+
+    if(this.saveSubscription){
+      this.saveSubscription.unsubscribe();
+    }
+
+    if(this.colleagueSub){
+      this.colleagueSub.unsubscribe();
+    }
+
   }
 
 
