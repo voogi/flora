@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule, LOCALE_ID} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -84,7 +84,7 @@ import {AuthGuardService} from "./login/auth-guard.service";
     appRouting
 
   ],
-  providers: [ScrollService, BackendService, AuthGuardService],
+  providers: [ScrollService, BackendService, AuthGuardService, { provide: LOCALE_ID, useValue: "hu-HU" }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
