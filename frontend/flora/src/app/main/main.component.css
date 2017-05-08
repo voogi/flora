@@ -58,6 +58,12 @@
   list-style: none;
 }
 
+@media (max-width: 1000px){
+  .menu {
+    display: none;
+  }
+}
+
 .social li a, .menu li a {
   display: block;
   height: 40px;
