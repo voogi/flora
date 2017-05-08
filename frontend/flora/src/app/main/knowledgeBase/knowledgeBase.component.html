@@ -2,7 +2,7 @@
 
 <div class="row horizontal library">
 
-  <div class="col-lg-4 overfap">
+  <div class="col-lg-4 col-md-4 col-sm-4 overfap">
     <ul class="list-group">
       <li *ngFor="let item of knowledges;"
           (click)="onKnowledgeSelected(item)"
@@ -12,7 +12,7 @@
       </li>
     </ul>
   </div>
-  <div class="col-lg-6 col-lg-offset-1">
+  <div class="col-lg-6 col-md-8 col-sm-8 col-lg-offset-1">
     <div class="panel panel-default overfap">
       <div class="center">
         <h2>{{selected?.title}}</h2>

@@ -98,15 +98,19 @@ export class MainComponent implements OnInit, AfterViewInit {
     if(offset < -70){
       this.document.querySelector(".header").classList.add("header-fixed");
       this.document.querySelector(".header-title").classList.remove("col-lg-10");
+      this.document.querySelector(".header-title").classList.remove("col-md-10");
       this.document.querySelector(".header-title").classList.remove("col-sm-10");
       this.document.querySelector(".header-title").classList.add("col-lg-8");
-      this.document.querySelector(".header-title").classList.add("col-sm-8");
+      this.document.querySelector(".header-title").classList.add("col-md-8");
+      this.document.querySelector(".header-title").classList.add("col-sm-6");
     }
     if(offset > -110){
       this.document.querySelector(".header").classList.remove("header-fixed");
       this.document.querySelector(".header-title").classList.remove("col-lg-8");
-      this.document.querySelector(".header-title").classList.remove("col-sm-8");
+      this.document.querySelector(".header-title").classList.remove("col-md-8");
+      this.document.querySelector(".header-title").classList.remove("col-sm-6");
       this.document.querySelector(".header-title").classList.add("col-lg-10");
+      this.document.querySelector(".header-title").classList.add("col-md-10");
       this.document.querySelector(".header-title").classList.add("col-sm-10");
       this.lastFocusedMenuItem = null;
     }

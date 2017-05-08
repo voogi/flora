@@ -2,20 +2,20 @@
   <ks-swiper-container [options]="newsOptions">
     <ks-swiper-slide [style.background-image]=" 'url(' + getImageUrl(item.image) + ')'" *ngFor="let item of news">
       <div class="row">
-        <div class="col-lg-4 col-lg-offset-1 col-sm-4 col-sm-offset-1">
+        <div class="col-lg-4 col-lg-offset-1 col-sm-6 col-sm-offset-1">
           <div [innerHTML]="item?.title" class="item-title"></div>
         </div>
       </div>
 
       <!--{{last ? initSwiper() : ''}}-->
       <div class="row">
-        <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3">
+        <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2">
           <div *ngIf="!item.bDetailedView" class="item-short-desc" [innerHTML]="item.shortDescription"></div>
           <div *ngIf="item.bDetailedView" class="item-desc" [innerHTML]="item.description"></div>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3">
+        <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2">
           <div class="col-lg-6 col-sm-6 readable-background">
             <div *ngIf="!item.bDetailedView" class="text-left newsMore"><a (click)="onDetailedView(item)">Bővebben</a></div>
             <div *ngIf="item.bDetailedView" class="text-left newsMore"><a (click)="onDetailedView(item)">Vissza</a></div>

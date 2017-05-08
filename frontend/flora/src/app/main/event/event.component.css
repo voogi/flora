@@ -18,3 +18,9 @@
 .no-event-title {
   margin-top: 5px;
 }
+
+@media (max-width: 1100px){
+  .calendar {
+    font-size: 16px;
+  }
+}

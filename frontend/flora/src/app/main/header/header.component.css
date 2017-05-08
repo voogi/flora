@@ -196,3 +196,16 @@
   }
 }
 
+@media (max-width: 970px){
+  .header .header-title {
+    font-size: 27px;
+  }
+  .header-fixed .header-title {
+    font-size: 22px;
+  }
+
+  blockquote {
+    font-size: 15px;
+  }
+}
+
