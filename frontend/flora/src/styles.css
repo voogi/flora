@@ -98,6 +98,11 @@ body {
   font-weight: 500;
 }
 
+.normalizeATag {
+  color: white !important;
+  text-decoration: underline !important;
+}
+
 .verticalSeparator {
   width: 2px;
   background-color: aliceblue;

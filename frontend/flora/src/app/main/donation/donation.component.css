@@ -83,11 +83,26 @@ article:hover  .content-bottom{
 }
 
 .content-title {
-
+  font-size: 36px;
+  font-weight: 500;
+  margin-top: 10px;
 }
 
 .content {
+  text-align: justify;
+  padding: 20px;
+}
 
+.content a {
+  color: white !important;
+  text-align: center !important;
+  border: 1px white solid;
+  border-radius: 3px;
+  padding: 4px;
+}
+
+.content p:first-child {
+  margin-top: 10px;
 }
 
 

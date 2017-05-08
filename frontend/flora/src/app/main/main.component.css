@@ -29,7 +29,7 @@
   padding-bottom: 120px;
 }
 
-.donation, .contact {
+.donation, .contact, .us {
   padding-bottom: 45px;
 }
 
@@ -132,7 +132,7 @@
   transform-origin: right;
   position: absolute;
   left: -170px;
-  top:32px;
+  top:40px;
 }
 
 

@@ -17,7 +17,7 @@ export class MainComponent implements OnInit, AfterViewInit {
   constructor(@Inject(DOCUMENT) private document: Document, private scrollService:ScrollService) {
     this.menuItems = [
       {
-        title : "kezdőlap",
+        title : "Kezdőlap",
         icon : "house-icon",
         anchor : "home"
       }/*,
@@ -27,37 +27,37 @@ export class MainComponent implements OnInit, AfterViewInit {
        anchor : "gallery"
        }*/,
       {
-        title : "események",
+        title : "Események",
         icon : "event-icon",
         anchor : "events"
       },
       {
-        title : "munkatársak",
+        title : "Munkatársak",
         icon : "colleges-icon",
         anchor : "colleges"
       },
       {
-        title : "tudásbázis",
+        title : "Tudásbázis",
         icon : "know-icon",
         anchor : "library"
       },
       {
-        title : "támogatás",
+        title : "Támogatás",
         icon : "donation-icon",
         anchor : "donation"
       },
       {
-        title : "önkéntesség",
+        title : "Önkéntesség",
         icon : "volunteer-icon",
         anchor : "self"
       },
       {
-        title : "rólunk",
+        title : "Rólunk",
         icon : "us-icon",
         anchor : "us"
       },
       {
-        title : "kapcsolat",
+        title : "Kapcsolat",
         icon : "contact-icon",
         anchor : "contact"
       }
