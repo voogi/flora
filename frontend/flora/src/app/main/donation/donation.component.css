@@ -91,9 +91,10 @@ article:hover  .content-bottom{
 .content {
   text-align: justify;
   padding: 20px;
+  height: 220px;
 }
 
-.content a {
+.content-button a {
   color: white !important;
   text-align: center !important;
   border: 1px white solid;
