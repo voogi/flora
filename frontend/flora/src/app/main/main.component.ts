@@ -14,7 +14,7 @@ export class MainComponent implements OnInit, AfterViewInit {
   private menuItems:any;
   private lastFocusedMenuItem:any = null;
 
-  constructor(@Inject(DOCUMENT) private document: Document, private scrollService:ScrollService) {
+  constructor(@Inject(DOCUMENT) private document: any, private scrollService:ScrollService) {
     this.menuItems = [
       {
         title : "Kezdőlap",
@@ -102,13 +102,13 @@ export class MainComponent implements OnInit, AfterViewInit {
       this.document.querySelector(".header-title").classList.remove("col-sm-10");
       this.document.querySelector(".header-title").classList.add("col-lg-8");
       this.document.querySelector(".header-title").classList.add("col-md-8");
-      this.document.querySelector(".header-title").classList.add("col-sm-6");
+      this.document.querySelector(".header-title").classList.add("col-sm-7");
     }
     if(offset > -110){
       this.document.querySelector(".header").classList.remove("header-fixed");
       this.document.querySelector(".header-title").classList.remove("col-lg-8");
       this.document.querySelector(".header-title").classList.remove("col-md-8");
-      this.document.querySelector(".header-title").classList.remove("col-sm-6");
+      this.document.querySelector(".header-title").classList.remove("col-sm-7");
       this.document.querySelector(".header-title").classList.add("col-lg-10");
       this.document.querySelector(".header-title").classList.add("col-md-10");
       this.document.querySelector(".header-title").classList.add("col-sm-10");

@@ -31,7 +31,7 @@ export class EventComponent implements OnInit, OnDestroy {
   private getEventsSubscription:Subscription;
   private swiperOptions: any;
 
-  constructor(@Inject(DOCUMENT) private document: Document, private backendService:BackendService) {
+  constructor(@Inject(DOCUMENT) private document: any, private backendService:BackendService) {
     this.swiperOptions = {
       pagination: '.swiper-pagination',
       paginationClickable: true

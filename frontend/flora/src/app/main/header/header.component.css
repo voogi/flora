@@ -10,7 +10,6 @@
   animation: mymove1 0.1s forwards;
   animation-timing-function: ease;
   transition: all 0.5s ease;
-  min-width: 1000px;
 }
 
 .social {
@@ -205,6 +204,22 @@
   }
 
   blockquote {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px){
+  .header .logo {
+    height: 100px;
+    width: 100px;
+  }
+
+  .header-fixed .logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .newsletter .btn {
     font-size: 15px;
   }
 }
