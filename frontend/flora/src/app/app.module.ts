@@ -16,7 +16,7 @@ import { NewsComponent } from './admin/news/news.component';
 import {DateValueAccessorModule} from "angular-date-value-accessor";
 import {BackendService} from "./service/backend.service";
 import { UploaderComponent } from './admin/uploader/uploader.component';
-import {FileSelectDirective} from "ng2-file-upload";
+import {FileUploadModule} from "ng2-file-upload";
 import { HeaderComponent } from './main/header/header.component';
 import { ColleagueComponent } from './main/colleague/colleague.component';
 import {TabsModule} from "ngx-tabs";
@@ -38,6 +38,7 @@ import { SubsAdminComponent } from './admin/subs-admin/subs-admin.component';
 import {FilterPipe} from "../pipes/filter";
 import { LoginComponent } from './login/login.component';
 import {AuthGuardService} from "./login/auth-guard.service";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -53,7 +54,6 @@ import {AuthGuardService} from "./login/auth-guard.service";
     MainComponent,
     NewsComponent,
     HeaderComponent,
-    FileSelectDirective,
     TruncatePipe,
     FilterPipe,
     ColleagueComponent,
@@ -77,6 +77,8 @@ import {AuthGuardService} from "./login/auth-guard.service";
     HttpModule,
     TabsModule,
     KSSwiperModule,
+    FileUploadModule,
+    BrowserAnimationsModule,
     DateValueAccessorModule,
     CalendarModule.forRoot(),
     FroalaEditorModule.forRoot(),

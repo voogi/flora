@@ -10,8 +10,14 @@
       <!--{{last ? initSwiper() : ''}}-->
       <div class="row">
         <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2">
-          <div *ngIf="!item.bDetailedView" class="item-short-desc" [innerHTML]="item.shortDescription"></div>
-          <div *ngIf="item.bDetailedView" class="item-desc" [innerHTML]="item.description"></div>
+          <div class="item-short-desc">
+            <div [innerHTML]="item.shortDescription"></div>
+
+            <div class="item-desc" [style.height]="item.descHeight">
+              <div class="desc-wrapper" [innerHTML]="item.description"></div>
+            </div>
+          </div>
+
         </div>
       </div>
       <div class="row">
