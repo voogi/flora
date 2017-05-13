@@ -38,6 +38,7 @@ import { SubsAdminComponent } from './admin/subs-admin/subs-admin.component';
 import {FilterPipe} from "../pipes/filter";
 import { LoginComponent } from './login/login.component';
 import {AuthGuardService} from "./login/auth-guard.service";
+import {StickyModule} from 'ng2-sticky-kit/ng2-sticky-kit';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
@@ -79,6 +80,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     KSSwiperModule,
     FileUploadModule,
     BrowserAnimationsModule,
+    StickyModule,
     DateValueAccessorModule,
     CalendarModule.forRoot(),
     FroalaEditorModule.forRoot(),

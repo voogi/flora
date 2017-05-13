@@ -6,6 +6,11 @@
   height: 150px;
 }
 
+.pages {
+  top: 180px;
+  position: relative;
+}
+
 .swiper-slide {
 }
 

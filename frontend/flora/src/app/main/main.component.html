@@ -3,7 +3,7 @@
 
 
   <ul class="menu">
-    <li *ngFor="let menu of menuItems;" (click)="onMenuItemClick(menu.anchor)" >
+    <li *ngFor="let menu of menuItems;" (click)="onMenuItemClick(menu.anchor)">
       <a class="fa {{menu.icon}}">
         <span>{{menu.title}}</span>
       </a>
@@ -13,7 +13,8 @@
   <!--social-->
   <ul class='social'>
     <li>
-      <a target="_blank" class="fa fa-facebook" href="https://www.facebook.com/Fl%C3%B3ra-%C3%89rtelmi-Fogyat%C3%A9kosok%C3%A9rt-%C3%A9s-Autist%C3%A1k%C3%A9rt-Alap%C3%ADtv%C3%A1ny-1728126340850628/?fref=ts">
+      <a target="_blank" class="fa fa-facebook"
+         href="https://www.facebook.com/Fl%C3%B3ra-%C3%89rtelmi-Fogyat%C3%A9kosok%C3%A9rt-%C3%A9s-Autist%C3%A1k%C3%A9rt-Alap%C3%ADtv%C3%A1ny-1728126340850628/?fref=ts">
         <span>Facebook</span>
       </a>
     </li>
@@ -39,73 +40,81 @@
   </ul>
 
 
-  <!--<div class="header-placeholder"></div>-->
-  <div scroll class="col-lg-12 placeholder home">
-    <flora-horizontal></flora-horizontal>
-  </div>
-  <!--<div scroll style="background-color: bisque" class="col-lg-12 placeholder gallery">gallery</div>-->
-  <div scroll class="col-lg-12 placeholder events">
-    <flora-event></flora-event>
-  </div>
-  <div scroll class="col-lg-12 placeholder colleges">
-    <flora-colleague></flora-colleague>
-  </div>
-  <div scroll class="col-lg-12 placeholder library">
-    <flora-knowledge-base></flora-knowledge-base>
-  </div>
-  <div scroll class="col-lg-12 placeholder donation">
-    <flora-donation></flora-donation>
-    <!--<tabset>-->
-    <!--<tab title="Magánszemély">-->
+  <div class="pages">
 
-    <!--</tab>-->
-    <!--<tab title="Cég">-->
-    <!--This is content of the contacts tabasdasds-->
-    <!--</tab>-->
-    <!--</tabset>-->
-  </div>
-  <div scroll class="col-lg-12 placeholder self left">
-    <flora-volunteer></flora-volunteer>
-  </div>
-  <div scroll class="col-lg-12 placeholder us">
-    <div class="row title">Bemutatkozás</div>
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-9 col-sm-offset-1 panel panel-default text-justify">
-        <p><strong>Alapítványunk a kezdetekkor</strong></p>
-        <p>Az Alapítványt, 16 évvel ezelőtt, olyan érintett szülő hozta létre, aki az értelmi fogyatékos és autista
-          fiatalok, felnőttek, és családjaik támogatását tűzte ki célul.</p>
-        <p>Az Alapítvány az otthonukban élő, önkiszolgálásra részben képes értelmi fogyatékos, autista, esetenként
-          halmozottan sérült fiatalok foglalkoztatásának-, illetve fejlesztési lehetőségeinek anyagi segítését, az őket
-          nevelő szülők összefogását kívánta támogatni, ezzel közhasznú tevékenységet végezni.</p>
-        <p>A segítés, 14 éven keresztül, főként közvetett formában valósult meg. Fiataljaink az Óbudai Rehabilitációs és
-          Foglalkoztatási Központ keretében működő ÉNO, majd FNO ellátottjai voltak, nagyrészt ma is azok, így célszerű
-          volt
-          a támogatás jelentős részét, az aktuális vezetővel egyeztetve, az Intézményen keresztül felhasználni, ezzel
-          lehetővé tenni a napközbeni ellátás színvonalának emelését.</p>
-        <p>Az Alapítvány anyagi támogatásával lehetővé vált: esetenként, a fejlesztő foglalkozást vezető terapeuták
-          díjazása; sport- illetve szórakoztató eszközök beszerzése; kézművességhez szükséges anyagok vásárlása; az
-          egyéni
-          fejlesztő programok lehetőségének bővítése; egészségmegőrző programok, pl. úszás, bevezetése; fiataljaink
-          szállításának finanszírozása.</p>
-        <p>Lényegesnek tartottuk és tartjuk, hogy a szülőket is bevonjuk az Alapítvány tevékenységébe, ezért
-          közkívánatra
-          intézménylátogatásokat, és többek között közösségépítő céllal, kirándulásokat szerveztünk. Mind az
-          intézménylátogatás, mind a kirándulás nyitott volt, a fiatalokon kívül részt vettek ezeken a rendezvényeinken
-          hozzátartozók, intézményi dolgozók, illetve külsős, pl. XI. kerületi „lakóotthonos” tagok is, s néhány régi
-          ÉNO-s
-          fiatal és hozzátartozója is.</p>
-        <p>2015 januárjától megváltozott az Alapítvány támogatási rendszere, szükségtelenné vált a közvetett,
-          Intézményen
-          keresztüli támogatás, ezért tevékenységünket átstrukturáltuk.</p>
-        <p><strong>Köszönjük Mindazoknak, Akik anyagi hozzájárulásukkal segítették munkánkat, kérjük, amennyiben
-          továbbra is
-          egyetértenek céljainkkal, lehetőség szerint támogassanak a jövőben is!</strong></p>
+    <!--<div class="header-placeholder"></div>-->
+    <div scroll class="col-lg-12 placeholder home">
+      <flora-horizontal></flora-horizontal>
+    </div>
+    <!--<div scroll style="background-color: bisque" class="col-lg-12 placeholder gallery">gallery</div>-->
+    <div scroll class="col-lg-12 placeholder events">
+      <flora-event></flora-event>
+    </div>
+    <div scroll class="col-lg-12 placeholder colleges">
+      <flora-colleague></flora-colleague>
+    </div>
+    <div scroll class="col-lg-12 placeholder library">
+      <flora-knowledge-base></flora-knowledge-base>
+    </div>
+    <div scroll class="col-lg-12 placeholder donation">
+      <flora-donation></flora-donation>
+      <!--<tabset>-->
+      <!--<tab title="Magánszemély">-->
+
+      <!--</tab>-->
+      <!--<tab title="Cég">-->
+      <!--This is content of the contacts tabasdasds-->
+      <!--</tab>-->
+      <!--</tabset>-->
+    </div>
+    <div scroll class="col-lg-12 placeholder self left">
+      <flora-volunteer></flora-volunteer>
+    </div>
+    <div scroll class="col-lg-12 placeholder us">
+      <div class="row title">Bemutatkozás</div>
+      <div class="row">
+        <div
+          class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-9 col-sm-offset-1 panel panel-default text-justify">
+          <p><strong>Alapítványunk a kezdetekkor</strong></p>
+          <p>Az Alapítványt, 16 évvel ezelőtt, olyan érintett szülő hozta létre, aki az értelmi fogyatékos és autista
+            fiatalok, felnőttek, és családjaik támogatását tűzte ki célul.</p>
+          <p>Az Alapítvány az otthonukban élő, önkiszolgálásra részben képes értelmi fogyatékos, autista, esetenként
+            halmozottan sérült fiatalok foglalkoztatásának-, illetve fejlesztési lehetőségeinek anyagi segítését, az
+            őket
+            nevelő szülők összefogását kívánta támogatni, ezzel közhasznú tevékenységet végezni.</p>
+          <p>A segítés, 14 éven keresztül, főként közvetett formában valósult meg. Fiataljaink az Óbudai Rehabilitációs
+            és
+            Foglalkoztatási Központ keretében működő ÉNO, majd FNO ellátottjai voltak, nagyrészt ma is azok, így
+            célszerű
+            volt
+            a támogatás jelentős részét, az aktuális vezetővel egyeztetve, az Intézményen keresztül felhasználni, ezzel
+            lehetővé tenni a napközbeni ellátás színvonalának emelését.</p>
+          <p>Az Alapítvány anyagi támogatásával lehetővé vált: esetenként, a fejlesztő foglalkozást vezető terapeuták
+            díjazása; sport- illetve szórakoztató eszközök beszerzése; kézművességhez szükséges anyagok vásárlása; az
+            egyéni
+            fejlesztő programok lehetőségének bővítése; egészségmegőrző programok, pl. úszás, bevezetése; fiataljaink
+            szállításának finanszírozása.</p>
+          <p>Lényegesnek tartottuk és tartjuk, hogy a szülőket is bevonjuk az Alapítvány tevékenységébe, ezért
+            közkívánatra
+            intézménylátogatásokat, és többek között közösségépítő céllal, kirándulásokat szerveztünk. Mind az
+            intézménylátogatás, mind a kirándulás nyitott volt, a fiatalokon kívül részt vettek ezeken a
+            rendezvényeinken
+            hozzátartozók, intézményi dolgozók, illetve külsős, pl. XI. kerületi „lakóotthonos” tagok is, s néhány régi
+            ÉNO-s
+            fiatal és hozzátartozója is.</p>
+          <p>2015 januárjától megváltozott az Alapítvány támogatási rendszere, szükségtelenné vált a közvetett,
+            Intézményen
+            keresztüli támogatás, ezért tevékenységünket átstrukturáltuk.</p>
+          <p><strong>Köszönjük Mindazoknak, Akik anyagi hozzájárulásukkal segítették munkánkat, kérjük, amennyiben
+            továbbra is
+            egyetértenek céljainkkal, lehetőség szerint támogassanak a jövőben is!</strong></p>
+        </div>
       </div>
     </div>
+    <div scroll class="col-lg-12 placeholder contact">
+      <flora-contact></flora-contact>
+    </div>
+    <flora-footer></flora-footer>
   </div>
-  <div scroll class="col-lg-12 placeholder contact">
-    <flora-contact></flora-contact>
-  </div>
-  <flora-footer></flora-footer>
   <!--<flora-slider [direction]="'right'"></flora-slider>-->
 </div>

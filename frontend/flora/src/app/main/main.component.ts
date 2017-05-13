@@ -77,10 +77,13 @@ export class MainComponent implements OnInit, AfterViewInit {
 
     let htmlElement  = <HTMLElement>document.querySelector("."+menuItem);
     let headerElement = document.querySelector(".header").getBoundingClientRect().height;
-    let calculatedTop = htmlElement.offsetTop - headerElement;
+    let calculatedTop = htmlElement.offsetTop + 180 - 77;
 
-    if(menuItem == "events" && (this.lastFocusedMenuItem == "home" || this.lastFocusedMenuItem == null)){
-      calculatedTop -= 77;
+    // if(menuItem == "events" && (this.lastFocusedMenuItem == "home" || this.lastFocusedMenuItem == null)){
+    //   calculatedTop -= 77;
+    // }
+    if(menuItem == "home"){
+      calculatedTop = 0;
     }
 
     window.scroll({
