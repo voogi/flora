@@ -37,6 +37,7 @@ export class NewsComponent implements OnInit, OnDestroy {
       'shortDescription': [''],
       'description': [''],
       'date': [''],
+      'orderNo': [''],
       'image': [''],
       'active': ['']
     });
