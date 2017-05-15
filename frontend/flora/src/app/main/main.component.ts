@@ -103,9 +103,11 @@ export class MainComponent implements OnInit, AfterViewInit {
       this.document.querySelector(".header-title").classList.remove("col-lg-10");
       this.document.querySelector(".header-title").classList.remove("col-md-10");
       this.document.querySelector(".header-title").classList.remove("col-sm-10");
+      this.document.querySelector(".newsletter").classList.remove("hidden");
       this.document.querySelector(".header-title").classList.add("col-lg-8");
       this.document.querySelector(".header-title").classList.add("col-md-8");
       this.document.querySelector(".header-title").classList.add("col-sm-7");
+
     }
     if(offset > -110){
       this.document.querySelector(".header").classList.remove("header-fixed");
@@ -115,6 +117,7 @@ export class MainComponent implements OnInit, AfterViewInit {
       this.document.querySelector(".header-title").classList.add("col-lg-10");
       this.document.querySelector(".header-title").classList.add("col-md-10");
       this.document.querySelector(".header-title").classList.add("col-sm-10");
+      this.document.querySelector(".newsletter").classList.add("hidden");
       this.lastFocusedMenuItem = null;
     }
 

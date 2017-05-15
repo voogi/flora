@@ -4,15 +4,15 @@
   <ks-swiper-container [options]="swiperOptions">
     <ks-swiper-slide *ngFor="let item of colleagues">
       <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-sm-8 col-sm-offset-2">
+        <div class="col-lg-8 col-lg-offset-2 col-sm-10 col-sm-offset-1">
           <div class="panel panel-default">
 
             <div class="panel-body">
-              <div class="col-lg-8 col-lg-offset-3 col-sm-8 col-sm-offset-3 col-xs-offset-3">
-                <h2>{{item.name}}</h2>
+              <div class="col-lg-8 col-lg-offset-3 col-sm-8 col-sm-offset-3 col-xs-12">
+                <h2 class="colleague-name">{{item.name}}</h2>
               </div>
               <div class="row">
-                <div class="col-lg-3 col-sm-3 col-xs-3">
+                <div class="col-lg-3 col-sm-4 col-xs-12">
                   <div class="colleague-image">
                     <img alt="" class="img-responsive img-thumbnail"
                          src="{{item.image ? getImageUrl(item.image) : 'https://www.whatmatrix.com/assets/images/default_user.png'}}">
@@ -32,7 +32,7 @@
                   </div>
 
                 </div>
-                <div class="text-justify colleague-desc col-lg-8 col-sm-8 col-xs-8" [innerHTML]="item.description">
+                <div class="text-justify colleague-desc col-lg-8 col-sm-8 col-xs-12" [innerHTML]="item.description">
                 </div>
               </div>
             </div>

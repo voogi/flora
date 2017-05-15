@@ -23,6 +23,10 @@
   .calendar {
     font-size: 16px;
   }
+
+  :host >>> .cal-month-view .cal-day-cell {
+    min-height: 60px;
+  }
 }
 
 @media (max-width: 768px){
@@ -33,6 +37,16 @@
   .panel {
     margin-top: 20px;
   }
+
+  :host >>>  .cal-month-view .cal-day-badge {
+    margin-top: 5px;
+  }
+
+  :host >>>  .cal-month-view .cal-day-number {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
 }
 
 

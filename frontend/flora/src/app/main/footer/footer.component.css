@@ -18,3 +18,10 @@
   /*background-color: #02614d;*/
 }
 
+@media (max-width: 768px) {
+  .footer-name {
+    text-align: center;
+  }
+}
+
+

@@ -1,7 +1,5 @@
 .library{
   padding: 40px;
-  min-height: 600px;
-  max-height: 600px;
 }
 
 
@@ -24,4 +22,11 @@
 
 .list-group-item {
   border: none;
+}
+
+@media (max-width: 768px){
+  .knowledge-detail{
+    font-size: 16px;
+  }
+
 }

@@ -25,8 +25,8 @@ export class HorizontalComponent implements OnInit, OnDestroy {
     this.newsOptions = {
       paginationClickable: true,
       // spaceBetween: 30,
-      autoplay: "3000",
-      loop: true,
+      // autoplay: "3000",
+      // loop: true,
       autoplayDisableOnInteraction: true,
       pagination: '.swiper-pagination',
       onSlideChangeStart  : function(){
@@ -64,18 +64,12 @@ export class HorizontalComponent implements OnInit, OnDestroy {
 
   onDetailedView(item:any){
     item.bDetailedView = !item.bDetailedView;
-    let index = 0;
-    for(let news of this.news){
-      if(news.id == item.id){
-        index = this.news.indexOf(news);
-      }
-    }
 
-    let growDiv = this.document.querySelectorAll('.item-desc')[index];
+    let growDiv = this.document.querySelectorAll('[data-news-id="'+item.id+'"] .item-desc')[0];
     if (growDiv.clientHeight) {
       item.descHeight = 0;
     } else {
-      let wrapper = this.document.querySelectorAll('.desc-wrapper')[index];
+      let wrapper = this.document.querySelectorAll('[data-news-id="'+item.id+'"] .desc-wrapper')[0];
       item.descHeight = wrapper.clientHeight + "px";
     }
   }

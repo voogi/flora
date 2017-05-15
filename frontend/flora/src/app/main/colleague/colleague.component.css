@@ -22,3 +22,22 @@
 .colleague-contacts {
   margin-top: 20px;
 }
+
+
+@media (max-width: 768px){
+  .colleague-image {
+    margin: 10px auto 0;
+  }
+
+  .colleague-contact-wrapper {
+    margin-top: 30px;
+  }
+
+  .colleague-desc {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .colleague-name{
+    font-size: 26px;
+  }
+}
