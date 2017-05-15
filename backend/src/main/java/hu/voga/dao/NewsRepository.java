@@ -12,5 +12,5 @@ import java.util.List;
 @Repository
 public interface NewsRepository extends PagingAndSortingRepository<News, Long> {
 
-    List<News> findByActive(Boolean active);
+    List<News> findByActiveOrderByOrderNoAsc(Boolean active);
 }

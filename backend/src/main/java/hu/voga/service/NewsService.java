@@ -17,7 +17,9 @@ public class NewsService {
     private NewsRepository newsRepository;
 
     public News save(News news){
-        news.setActive(true);
+        if(null == news.getId()){
+            news.setActive(true);
+        }
         return newsRepository.save(news);
     }
 
@@ -45,7 +47,7 @@ public class NewsService {
     }
 
     public List<News> findAllActive(){
-        return (List<News>) newsRepository.findByActive(true);
+        return newsRepository.findByActiveOrderByOrderNoAsc(true);
     }
 
 }

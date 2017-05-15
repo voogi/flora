@@ -40,6 +40,10 @@ public final class News {
     private Date date;
 
     @Basic
+    @Column(name = "orderNo", nullable = true)
+    private Integer orderNo;
+
+    @Basic
     @Column(name = "active", nullable = false)
     private Boolean active;
 
