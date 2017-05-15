@@ -40,6 +40,8 @@ body {
 }
 
 
+
+
 /*buttons*/
 
 /*#870a1f*/
@@ -218,6 +220,25 @@ body {
 
 .swiper-pagination-bullet-active {
   background-color: #02614d;
+}
+
+.swiper-button-next {
+  right: 200px;
+  top:50%;
+}
+
+.swiper-button-prev {
+  left: 200px;
+  top:50%;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.swiper-button-next:focus, .swiper-button-prev:focus {
+  border: none !important;
 }
 
 .btn {

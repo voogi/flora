@@ -7,6 +7,7 @@ import {environment} from "../../../environments/environment";
 import {DomSanitizer, DOCUMENT} from "@angular/platform-browser";
 import {DetailedViewComponent} from "../../detailed-view/detailed-view.component";
 import {trigger, state, style, transition, animate} from "@angular/animations";
+import {KSSwiperContainer} from "angular2-swiper";
 
 @Component({
   selector: 'flora-horizontal',
@@ -18,7 +19,7 @@ export class HorizontalComponent implements OnInit, OnDestroy {
   private getNewsSubscription: Subscription;
   private news: Array<any> = [];
   private newsOptions: any = {};
-  @ViewChild(DetailedViewComponent) detailedView: DetailedViewComponent;
+  @ViewChild(KSSwiperContainer) swiperContainer: KSSwiperContainer;
 
   constructor(@Inject(DOCUMENT) private document: any,private backendService: BackendService, private sanitizer: DomSanitizer) {
     this.newsOptions = {
@@ -51,6 +52,14 @@ export class HorizontalComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.getNewsSubscription.unsubscribe();
+  }
+
+  moveNext() {
+    this.swiperContainer.swiper.slideNext();
+  }
+
+  movePrev() {
+    this.swiperContainer.swiper.slidePrev();
   }
 
   onDetailedView(item:any){
