@@ -25,9 +25,9 @@ export class HorizontalComponent implements OnInit, OnDestroy {
     this.newsOptions = {
       paginationClickable: true,
       // spaceBetween: 30,
-      autoplay: "3000",
-      loop: true,
-      autoplayDisableOnInteraction: true,
+      // autoplay: "3000",
+      // loop: true,
+      // autoplayDisableOnInteraction: true,
       pagination: '.swiper-pagination',
       onSlideChangeStart  : function(){
         for(let n of this.news){
