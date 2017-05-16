@@ -18,6 +18,7 @@
   bottom: auto;
   min-height: 180px;
   max-height: 180px;
+  overflow: hidden;
 }
 
 .social {
@@ -116,9 +117,10 @@
 .header-fixed .header-title {
   font-size: 50px;
   transition: all 0.6s ease;
+  text-align: center;
 }
 
-.header-fixed blockquote {
+.header-fixed .quote {
   display: none;
 }
 
@@ -133,8 +135,9 @@
 
 .header-fixed .newsletter {
   opacity: 1;
-  transition: all 0.5s ease;
-  transition-delay: 0.3s;
+  transition: opacity 0.5s ease;
+  transition-delay: 0.6s;
+  line-height: 77px;
   /*transform: translateX(0);*/
   /*width: 100%;*/
   /*visibility: visible;*/
@@ -164,7 +167,7 @@
 }
 
 .newsletter {
-  /*transform: translateY(50%);*/
+
 }
 
 @media (max-width: 1750px){
@@ -220,8 +223,8 @@
 
 @media (max-width: 768px){
   .header .logo {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
   }
 
   .header-fixed .logo {

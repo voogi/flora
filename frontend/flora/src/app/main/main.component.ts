@@ -100,24 +100,27 @@ export class MainComponent implements OnInit, AfterViewInit {
     let offset = this.document.querySelector("body").getBoundingClientRect().top;
     if(offset < -70){
       this.document.querySelector(".header").classList.add("header-fixed");
+      this.document.querySelector(".header > .row").classList.add("v-center");
       this.document.querySelector(".header-title").classList.remove("col-lg-10");
-      this.document.querySelector(".header-title").classList.remove("col-md-10");
-      this.document.querySelector(".header-title").classList.remove("col-sm-10");
-      this.document.querySelector(".newsletter").classList.remove("hidden");
+      this.document.querySelector(".header-title").classList.remove("col-sm-9");
+      this.document.querySelector(".header-title").classList.remove("col-xs-9");
       this.document.querySelector(".header-title").classList.add("col-lg-8");
       this.document.querySelector(".header-title").classList.add("col-md-8");
       this.document.querySelector(".header-title").classList.add("col-sm-7");
+      this.document.querySelector(".header-title").classList.add("col-xs-6");
 
     }
     if(offset > -110){
       this.document.querySelector(".header").classList.remove("header-fixed");
+      this.document.querySelector(".header > .row").classList.remove("v-center");
       this.document.querySelector(".header-title").classList.remove("col-lg-8");
       this.document.querySelector(".header-title").classList.remove("col-md-8");
       this.document.querySelector(".header-title").classList.remove("col-sm-7");
+      this.document.querySelector(".header-title").classList.remove("col-xs-6");
       this.document.querySelector(".header-title").classList.add("col-lg-10");
-      this.document.querySelector(".header-title").classList.add("col-md-10");
-      this.document.querySelector(".header-title").classList.add("col-sm-10");
-      this.document.querySelector(".newsletter").classList.add("hidden");
+      this.document.querySelector(".header-title").classList.add("col-sm-9");
+      this.document.querySelector(".header-title").classList.add("col-xs-9");
+
       this.lastFocusedMenuItem = null;
     }
 

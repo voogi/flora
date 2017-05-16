@@ -13,24 +13,27 @@
               </div>
               <div class="row">
                 <div class="col-lg-3 col-sm-4 col-xs-12">
-                  <div class="colleague-image">
-                    <img alt="" class="img-responsive img-thumbnail"
-                         src="{{item.image ? getImageUrl(item.image) : 'https://www.whatmatrix.com/assets/images/default_user.png'}}">
-                  </div>
-                  <div class="colleague-contact-wrapper">
-                    <h4>Elérhetőségek</h4>
-                    <div class="colleague-contacts">
-                      <label>Telefon</label>
-                      <p>{{item.phone}}</p>
-                      <label>Email</label>
-                      <p>{{item.email}}</p>
-                      <div *ngIf="item.cv">
-                        <label>Önéletrajz</label>
-                        <p><a href="{{getCVUrl(item.cv)}}" target="_blank">letöltés</a></p>
+                  <div class="row">
+                    <div class="col-xs-3 col-sm-12">
+                      <div class="colleague-image">
+                        <img alt="" class="img-responsive img-thumbnail"
+                             src="{{item.image ? getImageUrl(item.image) : 'https://www.whatmatrix.com/assets/images/default_user.png'}}">
+                      </div>
+                    </div>
+                    <div class="colleague-contact-wrapper col-xs-8 col-sm-12">
+                      <h4>Elérhetőségek</h4>
+                      <div class="colleague-contacts">
+                        <label>Telefon</label>
+                        <p>{{item.phone}}</p>
+                        <label>Email</label>
+                        <p>{{item.email}}</p>
+                        <div *ngIf="item.cv">
+                          <label>Önéletrajz</label>
+                          <p><a href="{{getCVUrl(item.cv)}}" target="_blank">letöltés</a></p>
+                        </div>
                       </div>
                     </div>
                   </div>
-
                 </div>
                 <div class="text-justify colleague-desc col-lg-8 col-sm-8 col-xs-12" [innerHTML]="item.description">
                 </div>
