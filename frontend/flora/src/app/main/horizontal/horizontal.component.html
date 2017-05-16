@@ -3,16 +3,20 @@
     <ks-swiper-slide [style.background-image]=" 'url(' + getImageUrl(item.image) + ')'" *ngFor="let item of news">
       <div class="row">
         <div class="col-lg-4 col-lg-offset-1 col-sm-6 col-sm-offset-1">
-          <div [innerHTML]="item?.title" class="item-title"></div>
+          <div style="margin-top: 50px" class="row">
+            <!--<div (click)="movePrev()" class="col-lg-1 col-sm-1 slider-next">1</div>-->
+            <div [innerHTML]="item?.title" class="item-title"></div>
+            <!--<div (click)="moveNext()" class="col-lg-1 col-sm-1 slider-prev">1</div>-->
+          </div>
         </div>
       </div>
+
 
       <!--{{last ? initSwiper() : ''}}-->
       <div class="row">
         <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2" attr.data-news-id="{{item.id}}">
           <div class="item-short-desc">
             <div [innerHTML]="item.shortDescription"></div>
-
             <div class="item-desc" [style.height]="item.descHeight">
               <div class="desc-wrapper" [innerHTML]="item.description"></div>
             </div>
@@ -22,11 +26,13 @@
       </div>
       <div class="row">
         <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2">
-          <div class="col-lg-6 col-sm-6 readable-background">
-            <div *ngIf="!item.bDetailedView" class="text-left newsMore"><a (click)="onDetailedView(item)">Bővebben</a></div>
-            <div *ngIf="item.bDetailedView" class="text-left newsMore"><a (click)="onDetailedView(item)">Vissza</a></div>
+          <div class="col-lg-6 col-sm-6 col-xs-6 readable-background">
+            <div *ngIf="!item.bDetailedView" class="text-left newsMore"><a (click)="onDetailedView(item)">Bővebben</a>
+            </div>
+            <div *ngIf="item.bDetailedView" class="text-left newsMore"><a (click)="onDetailedView(item)">Vissza</a>
+            </div>
           </div>
-          <div class="col-lg-6 col-sm-6 readable-background">
+          <div class="col-lg-6 col-sm-6 col-xs-6 readable-background">
             <div class="text-right newsDate">{{item.date | date }}</div>
           </div>
         </div>

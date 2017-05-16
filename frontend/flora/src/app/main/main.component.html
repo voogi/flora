@@ -2,7 +2,7 @@
   <flora-header></flora-header>
 
 
-  <ul class="menu hide">
+  <ul class="menu">
     <li *ngFor="let menu of menuItems;" (click)="onMenuItemClick(menu.anchor)">
       <a class="fa {{menu.icon}}">
         <span>{{menu.title}}</span>
