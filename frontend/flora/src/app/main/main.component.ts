@@ -100,7 +100,6 @@ export class MainComponent implements OnInit, AfterViewInit {
     let offset = this.document.querySelector("body").getBoundingClientRect().top;
     if(offset < -70){
       this.document.querySelector(".header").classList.add("header-fixed");
-      this.document.querySelector(".header > .row").classList.add("v-center");
       this.document.querySelector(".header-title").classList.remove("col-lg-10");
       this.document.querySelector(".header-title").classList.remove("col-sm-9");
       this.document.querySelector(".header-title").classList.remove("col-xs-9");
@@ -112,7 +111,6 @@ export class MainComponent implements OnInit, AfterViewInit {
     }
     if(offset > -110){
       this.document.querySelector(".header").classList.remove("header-fixed");
-      this.document.querySelector(".header > .row").classList.remove("v-center");
       this.document.querySelector(".header-title").classList.remove("col-lg-8");
       this.document.querySelector(".header-title").classList.remove("col-md-8");
       this.document.querySelector(".header-title").classList.remove("col-sm-6");
