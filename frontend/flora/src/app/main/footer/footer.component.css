@@ -18,9 +18,17 @@
   /*background-color: #02614d;*/
 }
 
-@media (max-width: 768px) {
+.bottom-social {
+  display: none;
+  padding: 1em;
+}
+
+@media (max-width: 1000px) {
   .footer-name {
     text-align: center;
+  }
+  .bottom-social {
+    display: block;
   }
 }
 
