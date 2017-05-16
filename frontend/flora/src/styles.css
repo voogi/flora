@@ -219,6 +219,11 @@ body {
   background-color: white;
 }
 
+.swiper-pagination-bullet {
+  width: 24px;
+  height: 24px;
+}
+
 .slider-next{
   width: 60px;
   background-color: #00acee;
