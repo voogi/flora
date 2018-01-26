@@ -41,7 +41,7 @@ public class FileController {
     public Map<String, String> uploadImageFromTextEditor(@RequestParam("file") final MultipartFile file) throws IOException
     {
         Map<String, String> link = new HashMap<>();
-        link.put("link", "http://localhost:8080/static/images/" + fileUtils.uploadImage("file", file.getBytes()));
+        link.put("link", "http://81.2.255.161/static/images/" + fileUtils.uploadImage("file", file.getBytes()));
         return link;
     }
 }
